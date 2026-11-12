@@ -1,0 +1,7 @@
+{
+  "schema": "project-control-target-tasks/1",
+  "project_id": "brakesync",
+  "tasks": [],
+  "selection_policy": "EXACTLY_ONE_READY_OR_EXPLICIT_TASK_ID",
+  "warning": "No Codex task is authorized by this initialization. Neither user request for management setup nor recorded working constraints authorize firmware, app or vehicle output execution."
+}

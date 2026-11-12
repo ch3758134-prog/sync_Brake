@@ -1,0 +1,28 @@
+{
+  "schema": "project-control-target-management/1",
+  "project_id": "brakesync",
+  "revision": 1,
+  "status": "DRAFT",
+  "deliverables": [],
+  "work": [],
+  "milestones": [],
+  "risks": [],
+  "progress": {},
+  "events": [],
+  "modules": [],
+  "process_control": {
+    "schema": "project-control-process-state/1",
+    "catalog_version": "1.2.0",
+    "catalog_sha256": "0e28b0a77d4367107ea56aa5f7624de458853c586fd23a618277234475c1d378",
+    "profile_id": "general-rd",
+    "profile_status": "PROPOSED_NOT_APPROVED",
+    "activities": [],
+    "intakes": [],
+    "reports": [],
+    "review_requests": [],
+    "current_focus": null,
+    "focus_history": [],
+    "warning": "No formal owner approval or task authorization is issued here."
+  },
+  "warning": "Initial draft only. Adoption inventory is in ADOPTION_REPORT.md; machine-managed work, milestones, risks and modules need separately reviewed records."
+}

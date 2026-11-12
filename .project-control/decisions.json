@@ -1,0 +1,8 @@
+{
+  "schema": "project-control-target-decisions/1",
+  "project_id": "brakesync",
+  "decisions": [],
+  "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
+  "clarification": "Owner working instructions were recorded separately; no traceable formal product, architecture, Gate, or release approvals asserted.",
+  "warning": "No approvals or historical Gate decisions inferred."
+}

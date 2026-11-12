@@ -1,0 +1,37 @@
+{
+  "schema": "project-control-target-project/1",
+  "project_id": "brakesync",
+  "display_name": "BrakeSync 拖挂式房车电子同步制动控制系统",
+  "name_status": "PROPOSED",
+  "repo_url": "https://github.com/ch3758134-prog/sync_Brake.git",
+  "intake_mode": "ADOPT",
+  "initialization_state": "CANDIDATE_NOT_APPROVED",
+  "formal_product_identity": "UNDECIDED",
+  "phase_gate": "NOT_VERIFIED",
+  "scope_decision": "NOT_RECORDED",
+  "management_role": "coordinator",
+  "observed_head": "5b60f8822619616287507464479846d0428c7b6c",
+  "observed_branch": "management",
+  "created_at": "2026-11-12T00:00:00Z",
+  "source_snapshot_date": "2026-11-12",
+  "branches": {
+    "main": {
+      "purpose": "neutral repository baseline",
+      "write_by_management_ai": false
+    },
+    "firmware": {
+      "head": "d1f38b250f2c229aeb122985dc0520b969fe971d",
+      "write_by_management_ai": false
+    },
+    "app": {
+      "head": "5b911b5b57352fb1c8d0017faeb4b00ace078eb0",
+      "write_by_management_ai": false
+    },
+    "management": {
+      "head_before_bootstrap": "5b60f8822619616287507464479846d0428c7b6c",
+      "write_by_management_ai": true
+    }
+  },
+  "context_scope": "Available project-conversation summaries, current user instructions, selected library product documents and GitHub source files; full historical chat transcripts not independently accessible.",
+  "warning": "User-selected project name and baseline bootstrap do not imply an approved project charter, requirements, Gate or target-hardware validation."
+}

@@ -1,0 +1,177 @@
+{
+  "schema": "project-control-target-assets/1",
+  "project_id": "brakesync",
+  "state": "UNREVIEWED",
+  "observation_source": "REMOTE_GITHUB_PLUS_PROJECT_CONTEXT_AND_LIBRARY",
+  "observed_head": "5b60f8822619616287507464479846d0428c7b6c",
+  "tracked_file_count": null,
+  "inventory_scope": "SELECTED_EVIDENCE_NOT_COMPLETE_FILE_INDEX",
+  "entries": [
+    {
+      "path": "ProjectControl/START_HERE.md",
+      "branch": "management",
+      "commit": "5b60f8822619616287507464479846d0428c7b6c",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/management/ProjectControl/START_HERE.md",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "Generic ProjectControl 4.6.1 candidate package; 46 imported files remain untouched"
+    },
+    {
+      "path": "ProjectControl/PORTABLE_MANIFEST.json",
+      "branch": "management",
+      "commit": "5b60f8822619616287507464479846d0428c7b6c",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/management/ProjectControl/PORTABLE_MANIFEST.json",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "CANDIDATE_NOT_RELEASED; do not label system as formally released"
+    },
+    {
+      "path": "firmware/README.md",
+      "branch": "firmware",
+      "commit": "d1f38b250f2c229aeb122985dc0520b969fe971d",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/firmware/firmware/README.md",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "Firmware architecture baseline 0.1; target validation not evidenced"
+    },
+    {
+      "path": "firmware/src/ASW/BrakeSystem.c",
+      "branch": "firmware",
+      "commit": "d1f38b250f2c229aeb122985dc0520b969fe971d",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/firmware/firmware/src/ASW/BrakeSystem.c",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "GetState is inhibited; CanEnableBrakeOutput returns false"
+    },
+    {
+      "path": "firmware/src/BSW/Cdd/Bma510.c",
+      "branch": "firmware",
+      "commit": "d1f38b250f2c229aeb122985dc0520b969fe971d",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/firmware/firmware/src/BSW/Cdd/Bma510.c",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "BMA510 I2C driver source exists; not a real-device test"
+    },
+    {
+      "path": "firmware/src/BSW/Cdd/Wlt8016.c",
+      "branch": "firmware",
+      "commit": "d1f38b250f2c229aeb122985dc0520b969fe971d",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/firmware/firmware/src/BSW/Cdd/Wlt8016.c",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "WLT8016 UART/BLE transport source exists; radio integration pending"
+    },
+    {
+      "path": "firmware/src/BSW/Driver",
+      "branch": "firmware",
+      "commit": "d1f38b250f2c229aeb122985dc0520b969fe971d",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/firmware/firmware/src/BSW/Driver",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "GPIO/CAN/Timer/UART/I2C driver interfaces and stubs; not all SDK-bound"
+    },
+    {
+      "path": "firmware/board/ytmicro/SDK_AUDIT.md",
+      "branch": "firmware",
+      "commit": "d1f38b250f2c229aeb122985dc0520b969fe971d",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/firmware/firmware/board/ytmicro/SDK_AUDIT.md",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "Historical YTM32B1LE0 SDK fragment audit; only GPIO adapter verified as source use"
+    },
+    {
+      "path": "firmware/docs/TRACEABILITY.md",
+      "branch": "firmware",
+      "commit": "d1f38b250f2c229aeb122985dc0520b969fe971d",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/firmware/firmware/docs/TRACEABILITY.md",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "Preliminary source/verification mapping; not verification signoff"
+    },
+    {
+      "path": ".github/workflows/firmware-host.yml",
+      "branch": "firmware",
+      "commit": "d1f38b250f2c229aeb122985dc0520b969fe971d",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/firmware/.github/workflows/firmware-host.yml",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "Host CI workflow exists; no green CI result independently established"
+    },
+    {
+      "path": "app/README.md",
+      "branch": "app",
+      "commit": "5b911b5b57352fb1c8d0017faeb4b00ace078eb0",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/app/app/README.md",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "Flutter UI skeleton uses mock device; BLE not live"
+    },
+    {
+      "path": "app/lib/main.dart",
+      "branch": "app",
+      "commit": "5b911b5b57352fb1c8d0017faeb4b00ace078eb0",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/app/app/lib/main.dart",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "App UI prototype and mock repository integration"
+    },
+    {
+      "path": "app/docs/BLE_INTERFACE_PENDING.md",
+      "branch": "app",
+      "commit": "5b911b5b57352fb1c8d0017faeb4b00ace078eb0",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/app/app/docs/BLE_INTERFACE_PENDING.md",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "Shared BLE interface contract missing"
+    },
+    {
+      "path": ".github/workflows/app-static.yml",
+      "branch": "app",
+      "commit": "5b911b5b57352fb1c8d0017faeb4b00ace078eb0",
+      "source": "https://github.com/ch3758134-prog/sync_Brake/blob/app/.github/workflows/app-static.yml",
+      "confidence": "OBSERVED",
+      "approval": "UNKNOWN",
+      "description": "Flutter static CI workflow exists; result not independently established"
+    }
+  ],
+  "external_sources": [
+    {
+      "name": "拖挂式房车制动同步器_产品方案设计说明_V1.0.pdf",
+      "storage": "ChatGPT project/history/library",
+      "confidence": "SOURCE_FOUND",
+      "approval": "UNKNOWN",
+      "description": "Historical product proposal; six example weight bands are illustrative, not calibration approval"
+    },
+    {
+      "name": "RV_Brake_Controller_User_Function_Plan_V2.5.pdf",
+      "storage": "ChatGPT project/history/library",
+      "confidence": "SOURCE_FOUND",
+      "approval": "UNKNOWN",
+      "description": "Historical user-function plan; LCD/App usage and optional feature candidates"
+    },
+    {
+      "name": "rv_context_v5.pdf",
+      "storage": "ChatGPT project/history/library",
+      "confidence": "SOURCE_FOUND",
+      "approval": "UNKNOWN",
+      "description": "Historical product-presentation context; product value and differentiation"
+    },
+    {
+      "name": "BST-BMA510-DS000-03.PDF",
+      "storage": "ChatGPT project/history/library",
+      "confidence": "SOURCE_FOUND",
+      "approval": "UNKNOWN",
+      "description": "Sensor device datasheet; existence confirmed in file library; not independently used to validate target hardware"
+    },
+    {
+      "name": "WLT8016模块规格书_F1_15_Rev2.1.pdf",
+      "storage": "ChatGPT project/history/library",
+      "confidence": "SOURCE_FOUND",
+      "approval": "UNKNOWN",
+      "description": "Bluetooth module specification referenced by earlier conversation and code; full software/GATT contract not established"
+    }
+  ],
+  "truncated": true,
+  "remote_history_pr_ci": "BRANCHES_REVIEWED_PR_ISSUES_EMPTY_WORKFLOW_FILES_OBSERVED_CHECK_RESULTS_NOT_CONFIRMED",
+  "warning": "These are existence and source observations, not formal approval, complete source ingestion, or hardware verification."
+}
