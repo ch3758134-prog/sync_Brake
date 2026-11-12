@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'domain/device.dart';
 import 'transport/device_repository.dart';
 import 'transport/mock_device_repository.dart';
@@ -141,14 +141,16 @@ class _BrakeSyncHomeState extends State<BrakeSyncHome> {
           ),
           const SizedBox(height: 10),
           Text('重量档：${s?.weightPreset ?? '-'}'),
-          for (final preset in [1, 2, 3])
-            RadioListTile<int>(
-              title: Text('档位 $preset（占位名称）'),
-              value: preset,
-              groupValue: s?.weightPreset,
-              onChanged: !connected ? null
-                : (v) { if (v != null) _changeWeight(v); },
-            ),
+          SegmentedButton<int>(
+            segments: const [
+              ButtonSegment(value: 1, label: Text('档位1')),
+              ButtonSegment(value: 2, label: Text('档位2')),
+              ButtonSegment(value: 3, label: Text('档位3')),
+            ],
+            selected: {s?.weightPreset ?? 1},
+            onSelectionChanged: !connected ? null
+                : (selection) => _changeWeight(selection.first),
+          ),
           if (_message != null) Text(_message!, style: const TextStyle(color: Colors.red)),
           const SizedBox(height: 20),
           const Text('此界面仅是结构及交互示例。真正车辆参数必须经 MCU 读取、鉴权和回执确认。'),
