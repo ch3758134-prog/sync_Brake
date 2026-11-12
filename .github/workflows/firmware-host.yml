@@ -1,0 +1,16 @@
+name: firmware-host
+on:
+  push:
+    branches: [firmware]
+  workflow_dispatch:
+jobs:
+  host:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S firmware -B build/firmware -DBUILD_TESTING=ON
+      - name: Build
+        run: cmake --build build/firmware --parallel
+      - name: Test
+        run: ctest --test-dir build/firmware --output-on-failure
