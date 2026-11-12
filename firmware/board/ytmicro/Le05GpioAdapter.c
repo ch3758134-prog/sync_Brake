@@ -39,11 +39,10 @@ BsStatus Le05Gpio_Install(BsPort *port, Le05GpioMapping *mapping)
                 return BS_E_ARGUMENT;
         }
     }
-    /* 当前 BsPort 统一 context 不支持并行组合多个独立外设 adapter。
-       因此仅允许在尚未设置 context 时安装，组合层应以同一 context 调度。 */
-    if (port->context || port->gpio_read || port->gpio_write)
+    /* 不占用其他外设 context，避免 GPIO 与 CAN/UART/I2C 绑定互相覆盖。 */
+    if (port->gpio_context || port->gpio_read || port->gpio_write)
         return BS_E_BUSY;
-    port->context = mapping;
+    port->gpio_context = mapping;
     port->gpio_read = ReadGpio;
     port->gpio_write = WriteGpio;
     return BS_OK;

@@ -20,7 +20,12 @@ typedef struct {
 } BsCanFrame;
 
 typedef struct {
-    void *context;
+    void *context;      /* 兼容原有共用 Board 上下文 */
+    void *gpio_context; /* 单独设备上下文，非空时优先 */
+    void *can_context;
+    void *timer_context;
+    void *uart_context;
+    void *i2c_context;
     BsStatus (*gpio_read)(void *, uint16_t logical_pin, bool *level);
     BsStatus (*gpio_write)(void *, uint16_t logical_pin, bool level);
     BsStatus (*can_send)(void *, uint8_t bus, const BsCanFrame *);
