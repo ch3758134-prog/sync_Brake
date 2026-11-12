@@ -1,0 +1,19 @@
+name: app-static
+on:
+  push:
+    branches: [app]
+  workflow_dispatch:
+jobs:
+  flutter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - name: Dependencies
+        run: cd app && flutter pub get
+      - name: Analyze
+        run: cd app && flutter analyze
+      - name: Test
+        run: cd app && flutter test
