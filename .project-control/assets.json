@@ -158,10 +158,15 @@
     },
     {
       "name": "BST-BMA510-DS000-03.PDF",
-      "storage": "ChatGPT project/history/library",
-      "confidence": "SOURCE_FOUND",
-      "approval": "UNKNOWN",
-      "description": "Sensor device datasheet; existence confirmed in file library; not independently used to validate target hardware"
+      "storage": "ChatGPT project Library; original PDF not copied to public GitHub",
+      "confidence": "SOURCE_INSPECTED",
+      "approval": "SOURCE_RECEIVED_NOT_PRODUCT_APPROVED",
+      "description": "Bosch BMA510 silicon datasheet, not evidence of actual sensor module type or board connection",
+      "sha256": "0eb1c96383b37a31604ad75ea4e389a96390c31426b783915268fe1d8a1e8099",
+      "size_bytes": 5912790,
+      "page_count": 174,
+      "revision": "BST-BMA510-DS000-03",
+      "redistribution_status": "THIRD_PARTY_COPYRIGHT_REPOST_PERMISSION_NOT_VERIFIED"
     },
     {
       "name": "WLT8016模块规格书_F1_15_Rev2.1.pdf",
@@ -169,9 +174,33 @@
       "confidence": "SOURCE_FOUND",
       "approval": "UNKNOWN",
       "description": "Bluetooth module specification referenced by earlier conversation and code; full software/GATT contract not established"
+    },
+    {
+      "name": "SCH_YTM32B1LE0_EVB_Q64_RevC.pdf",
+      "storage": "ChatGPT project Library; original PDF not copied to public GitHub",
+      "confidence": "SOURCE_INSPECTED",
+      "approval": "SOURCE_RECEIVED_NOT_PRODUCT_APPROVED",
+      "sha256": "65c9198ac5f31b2f58efb6e8af4205fafb92c7277ed54b68f6063969264f41c6",
+      "size_bytes": 556653,
+      "page_count": 5,
+      "revision": "RevC",
+      "redistribution_status": "PUBLIC_REPOST_PERMISSION_NOT_VERIFIED",
+      "description": "YTM32B1LE0 EVB Q64 schematic; assess against physical board revision"
+    },
+    {
+      "name": "YTM32B1LE0-EVB-LQFP64评估板参考手册.pdf",
+      "storage": "ChatGPT project Library; original PDF not copied to public GitHub",
+      "confidence": "SOURCE_INSPECTED",
+      "approval": "SOURCE_RECEIVED_NOT_PRODUCT_APPROVED",
+      "sha256": "bfd1af667d38b3fb2f73d469150af3162a877b604a1503fcaa0679616b432c04",
+      "size_bytes": 1274878,
+      "page_count": 16,
+      "revision": "RM-YTM32B1LE0-Q64-EVB-REVA V1.0",
+      "redistribution_status": "MARKED_CONFIDENTIAL",
+      "description": "EVB reference manual; RevA; do not assume same as RevC schematic"
     }
   ],
   "truncated": true,
   "remote_history_pr_ci": "BRANCHES_REVIEWED_PR_ISSUES_EMPTY_WORKFLOW_FILES_OBSERVED_CHECK_RESULTS_NOT_CONFIRMED",
-  "warning": "These are existence and source observations, not formal approval, complete source ingestion, or hardware verification."
+  "warning": "Three verified PDF source assets are indexed by SHA-256 but originals are not committed: repository is PUBLIC; Yuntu manual is marked Confidential and redistribution permissions have not been verified. Source inspection is not board-revision confirmation or real-device validation."
 }
