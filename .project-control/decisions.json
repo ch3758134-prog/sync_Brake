@@ -33,6 +33,15 @@
       "subject": "management 分支归档批准的 P0-P8 全阶段基线",
       "scope": "只归档已批准 Markdown 与当前执行台账；不写 firmware/app/main，不公开上传三份供应商 PDF",
       "evidence": "2026-11-13 用户最新消息"
+    },
+    {
+      "id": "DEC-CODE-RESTART-20261113",
+      "date": "2026-11-13",
+      "status": "OWNER_DIRECTIVE_APPLIED",
+      "subject": "旧代码资产退出实施基线，重新研究代码",
+      "scope": "先前 firmware/app 代码及基于其构建的 FW-01 等实施任务不再自动被继承；旧仓库留存历史供溯源，不做破坏性删除；P0-P8 产品需求、工程治理和已核对硬件资料继续有效。",
+      "evidence": "2026-11-13 用户明确要求：现有资产废掉吧，我们重新研究代码",
+      "implementation_authorization": "管理基线标记与研究授权；新代码架构/实现尚需本对话审阅，管理 AI 不修改 firmware/app"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
