@@ -1,17 +1,11 @@
-# BrakeSync 项目管理账本
+# BrakeSync 管理项目——当前有效审批状态
 
-**状态：ADOPT 接管初始化候选；不是正式项目阶段批准。**
+**已获负责人批准：** P0 立项 V0.1、P1 现状 V0.2；2026-11-13 批准 P2–P8 设计及工作计划 V0.1，并明确要求将全部批准文件写入 GitHub `management` 分支，持续推进项目。
 
-本目录是独立于通用 `ProjectControl/` 管理软件的 BrakeSync 专属记录。建立时间 2026-11-12，唯一管理写入分支 `management`。
+正式方案：[`baselines/2026-11-13_P0-P8_V0.1/`](../baselines/2026-11-13_P0-P8_V0.1/README.md)；审批依据见该目录的 `审批记录_2026-11-13.md`；当前执行：[execution/ACTIVE_WORK.md](../execution/ACTIVE_WORK.md)。
 
-读取顺序：`project.json` → `OWNER_DIRECTIVES.md` → `SOURCES.md` → `assets.json` → `ADOPTION_REPORT.md` → `decisions.json` → `management.json` → `tasks.json`。
+**本条更新替代 2026-11-12 的“仅候选/未批准”初始状态描述；其他初始文件如保留旧措辞，仅为当时历史快照。**
 
-- `project.json`：项目身份、仓库、ADOPT 候选及快照。
-- `assets.json`：**选择性**历史资产清单；当前仅覆盖已核实来源，不是所有对话/所有资料的穷尽清单。
-- `decisions.json`：正式决策清单（初始为空）；用户已表达的工作约束在 `OWNER_DIRECTIVES.md`，其有效性和正式批准另行判断。
-- `tasks.json`：Codex 执行合同（初始为空，不存在 READY）。
-- `management.json`：ProjectControl 通用工作台兼容的初始 DRAFT 数据，不自动授予任何任务/阶段许可。
-- `ADOPTION_REPORT.md`：接管发现、证据质量、关键缺口及下一步候选活动。
-- `resolve.py`、`workspace_manager.py`：与本次 ProjectControl 4.6.1 包相同的受控任务查询、工作区登记辅助脚本；仓库存在脚本不代表 Windows 实测。
+当前 MCU 研究开发板：`YTM32B1LE0-EVB-LQFP64`。最终 PCB 和产品安全验证未完成。审批 P5–P8 工作计划，不表示已经执行或验收。专业代码分支 `firmware` / `app` 仍不由管理 AI 直接写入，真实制动功率输出仍禁止。
 
-本次 GitHub 基线是管理性事实登记，**不是对完整系统需求、软件架构、产品里程碑的内容审批**。其他分支的研发进展仅观察，不跨分支修改。
+通用管理系统：[`ProjectControl/`](../ProjectControl/START_HERE.md)。管理记录：[project.json](./project.json)、[decisions.json](./decisions.json)、[assets.json](./assets.json)、[management.json](./management.json)、[tasks.json](./tasks.json)。通用引擎的 DRAFT/候选初始字段若需要调整，先核对其 Schema，不以手工猜测破坏工具功能。
