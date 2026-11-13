@@ -51,6 +51,15 @@
       "scope": "批准 S-01..S-06 系统级结论、SF-01..SF-09 功能分配、状态/接口/危险源/Variant/需求追溯初稿与 PD-01..PD-07 临时处理。量化产品指标、执行安全与法规结论未冻结；不授权真实输出。现有固件/App代码完全排除为实施基线。",
       "evidence": "用户于 2026-11-13 在管理对话回复“批准”",
       "approval_record": "baselines/2026-11-13_P3_SYS_V0.2/APPROVAL.md"
+    },
+    {
+      "id": "DEC-P3-ENVELOPE-20261113",
+      "date": "2026-11-13",
+      "status": "APPROVED_WITH_OPEN_NUMERIC_VALUES",
+      "subject": "P3 产品适用边界与性能需求收敛 V0.1",
+      "scope": "批准 PE-01..PE-06，OP/EX 工况目录、KPI-01..KPI-13 指标字典和取值方法、产品证据包 E-* 与后续系统工作验收标准；优先面向电控制动器的拖挂式房车为首版产品方向，不冻结质量/轴数、电流、电压、目标市场、时间性能、控制映射、法规符合性或真实制动输出准入。",
+      "evidence": "2026-11-13 用户在项目管理对话对该完整候审稿回复：批准吧",
+      "approved_original": "baselines/2026-11-13_P3_ENVELOPE_V0.1/P3_产品适用边界与性能需求_V0.1_批准原文.md"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
