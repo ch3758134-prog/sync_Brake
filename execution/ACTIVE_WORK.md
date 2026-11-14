@@ -1,5 +1,9 @@
 # BrakeSync｜集中审批后的执行基线（2026-11-14）
 
+> **交付格式已更新**：只在本对话交付 Markdown（必要时附 `.md` 文件），不再生成或推送新的 HTML 审阅版。已有 HTML 为历史归档。
+> **P4 DD-04/DD-06** 概念语义细化 V0.1 已批准；新增 [异常合同与验证场景工作稿 V0.2](./P4_CONFIG_STATUS_NEGATIVE_CASES_V0.2_WORKING.md)，尚未开展测试。
+
+
 > **当前有效批准包：** [P0–P8 V0.2 审批记录](../baselines/2026-11-14_P0-P8_CENTRAL_APPROVAL_V0.2/APPROVAL.md)。此文件取代旧版滚动工作台作为“现在在干什么”的入口。旧历史正文转存于 `execution/history/ACTIVE_WORK_before_central_V0.2.md`。
 
 ## 一、阶段实施事实

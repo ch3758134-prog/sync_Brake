@@ -88,6 +88,23 @@
       "evidence": "2026-11-14 项目负责人对完整集中审批包回复‘批准’。",
       "approved_original": "baselines/2026-11-14_P0-P8_CENTRAL_APPROVAL_V0.2/P0-P8_集中审批包_V0.2_原文.md",
       "approval_record": "baselines/2026-11-14_P0-P8_CENTRAL_APPROVAL_V0.2/APPROVAL.md"
+    },
+    {
+      "id": "DEC-P4-CONFIG-STATUS-V01-20261114",
+      "date": "2026-11-14",
+      "status": "APPROVED_AS_SYSTEM_CONCEPT",
+      "subject": "P4 DD-04/DD-06 配置事务和系统状态语义深化 V0.1",
+      "scope": "认可参数收到、形式校验、受理、生效、可靠存储、读回确认须区分；显示状态需区分设备权威状态/时间有效性/连接失联；接受 C-01..06 集中产品决策方向。仅为系统级概念批准，不自动冻结参数应用与存储顺序、具体状态转换、实物故障动作或执行准入。",
+      "evidence": "2026-11-14 项目负责人在当前对话明确回复‘不要html，md就行了，批准了’。",
+      "approved_document": "execution/P4_DD04_DD06_CONFIG_STATUS_NEXT_V0.1_WORKING.md"
+    },
+    {
+      "id": "DEC-DELIVERY-MD-ONLY-20261114",
+      "date": "2026-11-14",
+      "status": "OWNER_DIRECTIVE_ACTIVE",
+      "subject": "项目交付只用 Markdown",
+      "scope": "后续新交付一律以本对话完整文字和 .md 文件为准，不再生成 HTML 审阅版；GitHub management 只负责归档。既有已归档 HTML 属历史文件，不继续维护也不作为必读审批界面。",
+      "evidence": "2026-11-14 项目负责人：不要html，md就行了，批准了"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
