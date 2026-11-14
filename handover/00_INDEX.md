@@ -19,6 +19,12 @@
 - [外部/供应商原件控制登记](./04_EXTERNAL_REFERENCE_REGISTER.md)。
 - [未交付/未上库缺口清单](./05_MISSING_AND_EXCEPTION_LOG.md)。
 
+## 软件开发前的当前工作包（未批准详细实现）
+
+- [BS-SW-PREDEV-001 V0.1：软件模块、接口和交接总体设计](../execution/software_predevelopment/00_SOFTWARE_ARCHITECTURE_PREP_V0.1_WORKING.md)。
+- [BS-SW-HO-PLAN-001 V0.1：驱动细分与未来工作包](../execution/software_predevelopment/01_DRIVER_MODULE_HANDOFF_V0.1_WORKING.md)。
+- 目前只完成设计，不执行Keil环境核验或代码编写，详见[当前执行工作台](../execution/ACTIVE_WORK.md)。
+
 ## 关键说明
 
 当前 `management` 早期已归档的批准文档和批准原件保持只读；本轮补充的是**控制制度与完整性登记**。V0.1/V0.2 本地固件模板以及第三方原始资料是否全部进入 GitHub，以缺口清单和后续二次核验为准，不能因建立索引而宣称全部移交完成。

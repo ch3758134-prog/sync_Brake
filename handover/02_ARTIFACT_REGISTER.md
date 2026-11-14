@@ -59,6 +59,15 @@
 - [Issue #2：供应商受限资料](https://github.com/ch3758134-prog/sync_Brake/issues/2)（OPEN；唯一人类责任人 @ch3758134-prog）。
 - Host GCC/Clang 日志已按 **Git Blob SHA 与原本地日志一致** 核验，不视为 Target/MISRA PASS。
 
+## D2. 本轮新增软件实施前设计工作包
+
+| Artifact-ID | 文件与受控路径 | 版本 | 状态 | 最终责任人 | 编制/归档执行人 | 接收/评审人 | 客观证据与待办 |
+|---|---|---|---|---|---|---|---|
+| BS-SW-PREDEV-001 | [软件模块/接口与工程准备](../execution/software_predevelopment/00_SOFTWARE_ARCHITECTURE_PREP_V0.1_WORKING.md) | V0.1 | DESIGN_WORKING | 项目负责人 | ChatGPT | 项目负责人 | Git提交+文件SHA；未执行实施与验证 |
+| BS-SW-HO-PLAN-001 | [分驱动任务交接](../execution/software_predevelopment/01_DRIVER_MODULE_HANDOFF_V0.1_WORKING.md) | V0.1 | DESIGN_WORKING | 项目负责人 | ChatGPT | 项目负责人 | 任务/故障测试用例已设计；尚未授权Codex实施 |
+
+两个工作稿须在后续审查时建立需求到具体任务/验收用例的充分追踪；本轮并未取得正式详细设计验收签收。
+
 ## E. 登记准入与更新规则
 
 1. 任何新文件产生时**同一任务内**登记：唯一 ID、文件名、GitHub 路径、版本、来源版本、Git SHA/校验和、责任人、编制人、接收人、批准状态和证据级别。
