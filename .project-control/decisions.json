@@ -69,6 +69,15 @@
       "scope": "批准 HA-01～HA-12 危险主题目录、SG-01～SG-08 安全目标候选、SSR-01～SSR-18 系统安全需求候选及后续证据和工作顺序；仅作为进一步安全工程研究输入，未执行 HARA、未评级 ASIL、未冻结故障动作或安全性能数值、未许可真实制动输出。",
       "evidence": "2026-11-14 用户于本对话说：批准，P部分赶快吧",
       "approval_record": "baselines/2026-11-14_P3_SAFETY_SCREEN_V0.1/APPROVAL.md"
+    },
+    {
+      "id": "DEC-P3P8-CONSOLIDATION-20261114",
+      "date": "2026-11-14",
+      "status": "APPROVED_WITH_OPEN_DESIGN_ITEMS",
+      "subject": "BrakeSync P3–P8 系统设计收口与实施前准备 V0.1",
+      "scope": "批准 P3 条件性概念收口及 SF-01..09 的 P4 交接、DD-01..08 系统详细设计交付范围、P5–P8 阶段准入和证据要求、产品集中决策清单、附录 A 系统行为合同首稿作为继续细化的设计输入。未批准未决产品数值、具体物理安全动作、代码/SDK 研究或实施、制动功率输出；P4–P8 实际未完成。",
+      "evidence": "2026-11-14 项目负责人在对话中对整合稿回复‘批准’",
+      "original": "baselines/2026-11-14_P3P8_CONSOLIDATION_V0.1/P3-P8_系统设计收口与实施前准备_V0.1_批准原文.md"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
