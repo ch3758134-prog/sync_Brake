@@ -65,13 +65,10 @@
 |---|---|---|---|---|---|---|---|
 | BS-SW-PREDEV-001 | [软件模块/接口与工程准备](../execution/software_predevelopment/00_SOFTWARE_ARCHITECTURE_PREP_V0.1_WORKING.md) | V0.1 | DESIGN_WORKING | 项目负责人 | ChatGPT | 项目负责人 | Git提交+文件SHA；未执行实施与验证 |
 | BS-SW-HO-PLAN-001 | [分驱动任务交接](../execution/software_predevelopment/01_DRIVER_MODULE_HANDOFF_V0.1_WORKING.md) | V0.1 | DESIGN_WORKING | 项目负责人 | ChatGPT | 项目负责人 | 任务/故障测试用例已设计；尚未授权Codex实施 |
-
 | BS-SW-ICD-001 | [五类软件接口详细合同](../execution/software_predevelopment/02_FIVE_SOFTWARE_INTERFACE_CONTRACTS_V0.1_WORKING.md) | V0.1 | DESIGN_WORKING / NOT_APPROVED_AS_IMPLEMENTATION | 项目负责人 | ChatGPT | 项目负责人（待复核） | Git Blob `9d45d0934996503856c400e9751a42b015745a91`；源 P3/P4 合同；数值/物理动作OPEN |
 | BS-SW-TRACE-001 | [SSR→接口→34项测试追踪](../execution/software_predevelopment/03_REQUIREMENT_INTERFACE_TEST_TRACE_V0.1_WORKING.md) | V0.1 | TRACE_PLAN_ONLY / NOT_RUN | 项目负责人 | ChatGPT | 项目负责人（待复核） | Git Blob `9d2a43da557e13f07f69cc04525335d0626c8659`；18 SSR候选全项登记，测试0项执行 |
 
-四项软件实施前设计文件均属 `WORKING`，其中接口工作稿和测试追踪尚未获独立详细实现批准；
-
-两个工作稿须在后续审查时建立需求到具体任务/验收用例的充分追踪；本轮并未取得正式详细设计验收签收。
+四项软件实施前设计文件均属 `WORKING`；接口合同和测试追踪尚未获得详细实现批准。后续须补充完整需求到具体工作包/验收用例的追踪、数值和故障动作依据；本轮未取得详细设计的正式签收。
 
 ## E. 登记准入与更新规则
 
