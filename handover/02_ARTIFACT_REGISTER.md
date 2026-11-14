@@ -74,10 +74,10 @@
 
 | Artifact-ID | 文件及受控位置 | 版本 | 状态 | 责任人(A) | 编制/归档执行(R) | 接收/评审 | 验收证据和后续缺口 |
 |---|---|---|---|---|---|---|---|
-| BS-P4-SYS-ARCH-001 | [整机架构与软硬件责任分配](../execution/P4_system_architecture/00_SYSTEM_ARCHITECTURE_AND_ALLOCATION_V0.1_WORKING.md) | V0.1 | DESIGN_WORKING/NOT_APPROVED_AS_FINAL_ARCHITECTURE | 项目负责人 | ChatGPT | 项目负责人（未签收） | SF-01～09分配表、系统接口和P4 G01～08门槛；车型/安全等OPEN |
-| BS-P4-PCB-INPUT-001 | [PCB设计输入与准入矩阵](../execution/P4_system_architecture/01_PCB_INTERFACE_AND_READINESS_V0.1_WORKING.md) | V0.1 | DESIGN_WORKING/PCB_NOT_BUILT | 项目负责人 | ChatGPT | 项目负责人（未签收） | PCB-01～13对应设计文件/测试口与实体证据缺口；真实功率BLOCKED |
+| BS-P4-SYS-ARCH-001 | [整机架构与软硬件责任分配](../execution/P4_system_architecture/00_SYSTEM_ARCHITECTURE_AND_ALLOCATION_V0.1_WORKING.md) | V0.1 | APPROVED_WITH_CONDITIONS_AS_DESIGN_INPUT (NOT_P4_COMPLETE) | 项目负责人 | ChatGPT | 项目负责人（有条件批准） | SF-01～09分配表、系统接口和P4 G01～08门槛；车型/安全等OPEN |
+| BS-P4-PCB-INPUT-001 | [PCB设计输入与准入矩阵](../execution/P4_system_architecture/01_PCB_INTERFACE_AND_READINESS_V0.1_WORKING.md) | V0.1 | APPROVED_WITH_CONDITIONS_AS_DESIGN_INPUT (PCB_NOT_BUILT) | 项目负责人 | ChatGPT | 项目负责人（有条件批准） | PCB-01～13对应设计文件/测试口与实体证据缺口；真实功率BLOCKED |
 
-两份文件归档于 `management`，**不等于负责人已批准其全部新设计结论，也不等于正式PCB或软件已完成**。先前软件实施前设计文件继续保留但暂时 `PARKED`。
+两份V0.1已获[有条件批准](../baselines/2026-11-14_P4_SYSTEM_DESIGN_V0.1/APPROVAL.md)，原文Git提交与Blob均锁定；**不等于P4整体完成、PCB原理图完成或实板验证通过**。PCB原理图由项目负责人后续提供，当前未收到；先前软件详细设计稿保留为PARKED。
 
 ## E. 登记准入与更新规则
 

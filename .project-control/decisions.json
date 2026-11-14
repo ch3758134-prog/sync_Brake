@@ -164,6 +164,26 @@
       "scope": "开发板存在初步 Keil+ST-Link 使用和烧录尝试；这是现有优先环境，不应强行切换 GCC/YCT。未提供具体 Keil/Arm Compiler/ST-Link/板卡/SDK 版本及 Target Build/烧录校验/运行证据，不得将其标记为已验证成功。SW-00 改 PARTIAL，SW-01 保留未核验。",
       "evidence": "2026-11-14 负责人：现在云途的开发板有初步使用尝试的，是使用keil和stlink进行烧录的",
       "handover": "handover/03_SW00_SW01_HANDOFF.md"
+    },
+    {
+      "id": "DEC-P4-SYSTEM-INPUT-V01-20261114",
+      "date": "2026-11-14",
+      "status": "APPROVED_WITH_CONDITIONS_AS_SYSTEM_DESIGN_INPUT",
+      "subject": "P4整机系统架构与软硬件分配/PCB设计输入V0.1有条件批准",
+      "scope": "批准两份V0.1工作稿的系统设计输入原则和SF-01～09/PCB-01～13的分工与功能要求；不代表P4整体完成。真实PCB原理图负责人后续提供，当前未收到未审查。P4尚未收口不一律阻碍未来获单项授权且安全隔离的非功率研发；本次不授予Keil/固件/功率/PCB实施许可。所有实体数值/故障动作继续开放。",
+      "approved_snapshot_commit": "3edeb783dc28fe74c74fd67b5d88c0a7268e4a49",
+      "approved_originals": [
+        {
+          "path": "execution/P4_system_architecture/00_SYSTEM_ARCHITECTURE_AND_ALLOCATION_V0.1_WORKING.md",
+          "blob_sha": "5ae5e5e75c30887c6acf3d5de88c6e0929aa63d7"
+        },
+        {
+          "path": "execution/P4_system_architecture/01_PCB_INTERFACE_AND_READINESS_V0.1_WORKING.md",
+          "blob_sha": "9ff20a777642800269901d5d0ce52a52150311b6"
+        }
+      ],
+      "approval_record": "baselines/2026-11-14_P4_SYSTEM_DESIGN_V0.1/APPROVAL.md",
+      "evidence": "2026-11-14项目负责人：可以，pcb的实际原理图我后面拿到之后会给你，批准了"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
