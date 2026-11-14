@@ -105,6 +105,15 @@
       "subject": "项目交付只用 Markdown",
       "scope": "后续新交付一律以本对话完整文字和 .md 文件为准，不再生成 HTML 审阅版；GitHub management 只负责归档。既有已归档 HTML 属历史文件，不继续维护也不作为必读审批界面。",
       "evidence": "2026-11-14 项目负责人：不要html，md就行了，批准了"
+    },
+    {
+      "id": "DEC-RELEASE-SEQUENCE-20261114",
+      "date": "2026-11-14",
+      "status": "OWNER_DIRECTIVE_ACTIVE",
+      "subject": "BrakeSync 三版产品发布路线：测试版 → LCD 交付版 → App 版",
+      "scope": "第一版为实物模块和同步制动链路的基础功能测试版；第二版按此前 LCD 产品功能资料建立完整功能矩阵，经真实测试及新增需求迭代形成首个完整交付版；第三版在成熟共用核心基础上开发手机 App 智能产品。当前正式 PCB 尚未完成，仅先做总体系统框架/接口/验证准备，不称任一版本已完成或功率安全已通过。原 P8 R0-R2 是工程准入级别而非这三版产品编号。LCD/App 不再按平行首发理解。",
+      "evidence": "2026-11-14 负责人在项目对话说明第一版测试、第二版 LCD 交付、第三版 App，PCB 尚未完成，当前只搭框架",
+      "baseline": "baselines/2026-11-14_RELEASE_ROADMAP_V0.1/PRODUCT_RELEASE_ROADMAP.md"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
