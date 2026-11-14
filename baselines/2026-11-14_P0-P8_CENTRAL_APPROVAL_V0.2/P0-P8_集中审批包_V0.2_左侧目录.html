@@ -1,0 +1,2045 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BrakeSync | P0-P8 一次性集中审批包 V0.2</title><style>
+:root{color-scheme:light;--ink:#16283b;--muted:#637488;--line:#dbe4ed;--nav:#f4f7fb;--brand:#23558b;--pale:#eef5fd;--bg:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;margin:0;background:#f8fafc;color:var(--ink);line-height:1.75}
+.layout{display:grid;grid-template-columns:278px minmax(0,1fr);min-height:100vh}.side{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--nav);border-right:1px solid var(--line);padding:21px 15px}.brand{font-weight:800;font-size:17px;margin:0 6px 5px}.meta{color:var(--muted);font-size:12px;margin:0 6px 17px}.search{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px;font-size:13px;background:white;outline:none;margin-bottom:15px}.navgroup{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:16px 6px 8px}.side a{color:#3a4c5d;font-size:12.5px;display:block;text-decoration:none;padding:7px 10px;border-radius:8px;line-height:1.5}.side a:hover,.side a.active{color:#124579;background:#e0edfa}.main{padding:26px clamp(18px,5vw,72px) 90px;min-width:0}.paper{max-width:1130px;margin:auto;background:var(--bg);padding:38px clamp(22px,4vw,60px);border-radius:15px;border:1px solid var(--line);box-shadow:0 8px 28px #12345b08}.eyebrow{color:var(--brand);letter-spacing:.12em;text-transform:uppercase;font-size:12px;font-weight:800}.hero{border-bottom:1px solid var(--line);padding:0 0 18px;margin-bottom:24px}h1{font-size:27px;line-height:1.3;margin:5px 0 12px}h2{font-size:21px;line-height:1.4;margin:37px 0 16px;padding-top:12px;scroll-margin-top:15px}h3{font-size:17px;margin:28px 0 9px}h4{font-size:15px;margin:19px 0 6px}p{margin:10px 0}blockquote{margin:17px 0;padding:12px 16px;background:#f4f8fd;border-left:3px solid var(--brand);color:#39506a}blockquote p{margin:5px 0}table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0 20px;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;min-width:90px}th{background:#eff4f9;color:#31485e;font-weight:700}tbody tr:nth-child(even){background:#fafcfe}code{background:#f2f5f8;padding:1px 4px;border-radius:4px;font-size:.89em;white-space:normal}pre{background:#12243b;color:white;border-radius:10px;padding:16px;overflow-x:auto}pre code{color:inherit;background:transparent}li{margin:4px 0}a{color:#22558b}strong{color:#102a43}.section{border-top:1px solid var(--line);padding-top:4px}.goTop{position:fixed;right:22px;bottom:18px;text-decoration:none;background:#245886;color:white;border-radius:20px;padding:7px 15px;font-size:12px}footer{margin-top:36px;color:#7a8998;font-size:12px;text-align:center}@media(max-width:900px){.layout{display:block}.side{position:relative;height:auto;max-height:230px;border-right:0;border-bottom:1px solid var(--line)}.main{padding:12px}.paper{padding:24px 14px}h1{font-size:23px}.goTop{display:none}}@media print{.layout{display:block}.side,.goTop{display:none}.main{padding:0}.paper{padding:0;border:0;box-shadow:none}.section{break-inside:auto}body{background:white}table{font-size:10px;display:table}a{text-decoration:none;color:black}}
+</style></head><body><div class="layout"><aside class="side"><p class="brand">BrakeSync</p><p class="meta">P0–P8 · 一次性集中审批 · V0.2</p><input class="search" id="filter" type="search" placeholder="筛选目录标题" aria-label="筛选目录"><p class="navgroup">完整审阅目录</p><a href="#section-01" data-title="00｜给项目负责人的一页总审阅">00｜给项目负责人的一页总审阅</a><a href="#section-02" data-title="01｜共同生效的产品与安全底线">01｜共同生效的产品与安全底线</a><a href="#section-03" data-title="02｜本次统一审阅的 P4：DD-01～DD-08">02｜本次统一审阅的 P4：DD-01～DD-08</a><a href="#section-04" data-title="03｜P5：新工程研发与模块验证方案 V0.2">03｜P5：新工程研发与模块验证方案 V0.2</a><a href="#section-05" data-title="04｜P6：系统集成与跨模块联调方案 V0.2">04｜P6：系统集成与跨模块联调方案 V0.2</a><a href="#section-06" data-title="05｜P7：系统验证、可靠性与安全验收方案 V0.2">05｜P7：系统验证、可靠性与安全验收方案 V0.2</a><a href="#section-07" data-title="06｜P8：版本发布、量产交付与维护方案 V0.2">06｜P8：版本发布、量产交付与维护方案 V0.2</a><a href="#section-08" data-title="07｜单独集中解决的六组产品取舍（不作为 P 阶段重复审批）">07｜单独集中解决的六组产品取舍（不作为 P 阶段重复审批）</a><a href="#section-09" data-title="08｜一张总表明确 P0–P8 什么时候才算真正结束">08｜一张总表明确 P0–P8 什么时候才算真正结束</a><a href="#section-10" data-title="09｜一次性审批文本与后续执行原则">09｜一次性审批文本与后续执行原则</a><a href="#section-11" data-title="10｜审批范围外的事实清单（给未来工作防止返工）">10｜审批范围外的事实清单（给未来工作防止返工）</a><a href="#section-12" data-title="附录 A｜P4 系统级详细设计合同 V0.2 完整原文（本次审批的设计依据）">附录 A｜P4 系统级详细设计合同 V0.2 完整原文（本次审批的设计依据）</a><a href="#section-13" data-title="BrakeSync｜P4 系统级详细设计合同 V0.2（整合候审稿）">BrakeSync｜P4 系统级详细设计合同 V0.2（整合候审稿）</a><a href="#section-14" data-title="附录 B｜P5 V0.1 已批准阶段计划原文（历史参照）">附录 B｜P5 V0.1 已批准阶段计划原文（历史参照）</a><a href="#section-15" data-title="附录 C｜P6 V0.1 已批准阶段计划原文（历史参照）">附录 C｜P6 V0.1 已批准阶段计划原文（历史参照）</a><a href="#section-16" data-title="附录 D｜P7 V0.1 已批准阶段计划原文（历史参照）">附录 D｜P7 V0.1 已批准阶段计划原文（历史参照）</a><a href="#section-17" data-title="附录 E｜P8 V0.1 已批准阶段计划原文（历史参照）">附录 E｜P8 V0.1 已批准阶段计划原文（历史参照）</a></aside><main class="main"><article class="paper"><div class="hero"><div class="eyebrow">ONE APPROVAL PACK · 2026.11.14</div><h1>BrakeSync｜P0–P8 一次性集中审批包 V0.2</h1>
+<blockquote>
+<p><strong>编制日期：2026-11-14</strong><br />
+<strong>本包唯一待审对象：P4 系统级详细设计合同 V0.2 + P5–P8 统一阶段执行方案 V0.2</strong><br />
+<strong>此前已批准：P0–P2、P3 各专题及 P0–P8 V0.1 阶段计划，不再重新要求逐项批准。</strong><br />
+<strong>状态：整包候审；未据此批准产品数值/安全动作、固件/App 代码实施、实车制动输出或量产发布。</strong></p>
+</blockquote>
+</div><section class="section"><h2 id="section-01">00｜给项目负责人的一页总审阅</h2>
+<p><strong>你的要求已经落实为一个审批节点，不再逐个 P 征求意见。</strong> 这次由你一次性审阅 P4 的八项系统合同及 P5–P8 的实施、集成、验证、发布机制。随后我按照已批准的方案持续开展研究、资料核对、设计细化和管理归档；只有<strong>真正改变产品定义、引入物理危险或需要操作代码/实物</strong>的具体决定才再送审。</p>
+<table>
+<thead>
+<tr>
+  <th>阶段</th>
+  <th>以前已经批准的内容</th>
+  <th>本次需要一起审批的增量</th>
+  <th>当前工作事实（不能伪造）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>P0 项目定位</td>
+  <td>立项目标、用户/AI 责任、产品化原则</td>
+  <td>无，原批准继续有效</td>
+  <td><strong>内容已批准</strong></td>
+</tr>
+<tr>
+  <td>P1 可行性与现状</td>
+  <td>云途 EVB 作为研发平台、资料与风险</td>
+  <td>无，不再把旧代码当可复用资产</td>
+  <td><strong>报告已批准；实物缺口未消</strong></td>
+</tr>
+<tr>
+  <td>P2 系统需求</td>
+  <td>58 条候选需求体系和 OD-01～09 待决管理</td>
+  <td>无；数字/接口仍保持开放</td>
+  <td><strong>需求方向已批准</strong></td>
+</tr>
+<tr>
+  <td>P3 系统架构</td>
+  <td>SF-01～09，PE-01～06，KPI-01～13，HA-01～12，SG-01～08，SSR-01～18，P3–P8 整合</td>
+  <td>无；概念架构已条件性收口</td>
+  <td><strong>已批准概念基线</strong></td>
+</tr>
+<tr>
+  <td><strong>P4 系统详细设计</strong></td>
+  <td>V0.1 基本框架/工作计划</td>
+  <td><strong>DD-01～08 系统行为和责任合同 V0.2</strong></td>
+  <td>设计候选，物理数值与安全动作未冻结</td>
+</tr>
+<tr>
+  <td><strong>P5 开发与模块测试</strong></td>
+  <td>V0.1 实施计划</td>
+  <td><strong>新版无旧代码依赖的实施与测试准入合同</strong></td>
+  <td>NOT_STARTED / NOT_VERIFIED</td>
+</tr>
+<tr>
+  <td><strong>P6 系统集成</strong></td>
+  <td>V0.1 集成计划</td>
+  <td><strong>分阶段联调矩阵和证据准则</strong></td>
+  <td>NOT_STARTED / NOT_VERIFIED</td>
+</tr>
+<tr>
+  <td><strong>P7 系统验证</strong></td>
+  <td>V0.1 验证计划</td>
+  <td><strong>需求追溯、测试等级、安全验证准入</strong></td>
+  <td>NOT_STARTED / NOT_VERIFIED</td>
+</tr>
+<tr>
+  <td><strong>P8 产品发布交付</strong></td>
+  <td>V0.1 交付计划</td>
+  <td><strong>发布分级、产品交付门槛与维护要求</strong></td>
+  <td>NOT_RELEASED</td>
+</tr>
+</tbody>
+</table>
+<p><strong>整包批准的准确含义：</strong> 认可 P4 的系统语义、职责和合同方法，认可 P5–P8 的实施/集成/验证/发布<strong>工作方案及准入标准</strong>；不把没有证据的产品参数、硬件安全动作、编译结果、实测结果或发布结果宣称为完成。</p>
+</section>
+<section class="section"><h2 id="section-02">01｜共同生效的产品与安全底线</h2>
+<ol>
+<li>产品目标是适用于拖挂式房车电控制动系统的电子同步制动控制器，<strong>具体市场、车辆类别、质量/轴数、电制动器及电源范围待核实</strong>。</li>
+<li>主控制器独立承担制动决策；App/LCD 只做用户设置、状态、故障和维护交互，不参与实时控制闭环。</li>
+<li>两类逻辑输入分别为<strong>制动意图</strong>与<strong>运动信息</strong>；设备/通信方式、作用权重和质量指标未冻结。</li>
+<li>用户基础闭环为<strong>重量制动档、制动力等级、状态故障、受控保存和回读</strong>；1–10 级仅作为优先候选，未以 App Mock 或旧代码冻结最终产品档位。</li>
+<li>必须区分制动逻辑请求、物理执行许可、驱动实际输出与轮端真实制动效果。</li>
+<li>当输入失效、物理故障、车辆工况不同，正确失效动作<strong>不能笼统写作“直接切断最安全”</strong>，须经产品危险分析决定。</li>
+<li>当前云途 EVB 仅做无功率、隔离的研发验证。<strong>不允许连接或释放真实拖挂制动功率执行链路。</strong></li>
+<li>旧 GitHub <code>firmware</code>、<code>app</code> 代码当作不存在，不用来定模块边界、任务顺序或工作完成率；直到未来进入 P5 才决定是否清理或参考复用，不在本包承诺。</li>
+<li>Variant、Board 和 Release 独立管理，不能把当前开发板当量产 MCU/PCB 已定。</li>
+</ol>
+</section>
+<section class="section"><h2 id="section-03">02｜本次统一审阅的 P4：DD-01～DD-08</h2>
+<p>下列以已经提供的 <strong>P4 系统级详细设计合同 V0.2</strong> 原文为权威，新稿全文附在本包附录 A。这里只提炼一次性审批时最应关注的技术合同。</p>
+<table>
+<thead>
+<tr>
+  <th>设计合同</th>
+  <th>拟定可固定的系统规则</th>
+  <th>必须保持开放的部分</th>
+  <th>后续验收证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>DD-01 产品包络</td>
+  <td>只宣称目标市场/车辆/制动器经批准且验证的适用范围</td>
+  <td>车型、轴数/质量、供电、安装和认证地域</td>
+  <td>产品适用表与实际制动器资料</td>
+</tr>
+<tr>
+  <td>DD-02 输入信息</td>
+  <td>意图/运动两种信号身份、单位、时效、质量、冲突与诊断分开</td>
+  <td>触发电气形式、传感器、权重、时限</td>
+  <td>源规格+接口实验+故障场景</td>
+</tr>
+<tr>
+  <td>DD-03 执行许可</td>
+  <td>意图→逻辑请求→安全许可→功率执行→轮端作用分五层</td>
+  <td>输出电路、保护路径、电流/温度反馈</td>
+  <td>设计审查、功率台架与故障注入</td>
+</tr>
+<tr>
+  <td>DD-04 状态/故障</td>
+  <td>INIT、INHIBITED、READY、ACTIVE、DEGRADED、FAULT、SERVICE 的语义，及异常事件合同</td>
+  <td>具体转移条件、锁存、恢复与物理故障动作</td>
+  <td>故障响应矩阵、系统场景试验</td>
+</tr>
+<tr>
+  <td>DD-05 量化性能</td>
+  <td>KPI-01～13 的来源、单位、工况、测量方法和分段预算规则</td>
+  <td><strong>所有暂无物理来源的 ms/A/V/°C 数值</strong></td>
+  <td>供应商/车型参数、台架/整机试验</td>
+</tr>
+<tr>
+  <td>DD-06 配置/HMI</td>
+  <td>重量档与等级分离；RECEIVED→VALIDATED→ACCEPTED→EFFECTIVE→PERSISTED→READBACK_CONFIRMED</td>
+  <td>档位数、重量区间、默认值、控制映射、行驶中调参许可</td>
+  <td>事务/断链/掉电/回读测试</td>
+</tr>
+<tr>
+  <td>DD-07 安全追踪</td>
+  <td>HA→SG→SSR→责任子系统→测试条件→客观证据，软硬件责任无空洞</td>
+  <td>风险等级、安全动作、目标市场合规结论</td>
+  <td>HARA/风险分析与实体故障验证</td>
+</tr>
+<tr>
+  <td>DD-08 配置/维护</td>
+  <td>Variant、Board、Release 独立；安装/维修、版本身份和兼容性可追溯</td>
+  <td>首发 SKU、维修/生产细节与发布版本</td>
+  <td>配置矩阵、追溯及维护验收</td>
+</tr>
+</tbody>
+</table>
+<p><strong>P4 通过本次审阅后可形成：<code>SYSTEM_CONTRACT_APPROVED_WITH_OPEN_PRODUCT_DATA</code>。</strong> 它不是 <code>DETAILED_DESIGN_COMPLETE</code>：凡产品安全和执行相关条目，缺实际工况/材料时仍 <code>OPEN/BLOCKED</code>；可先推进无硬件依赖的设计和验证方案。</p>
+</section>
+<section class="section"><h2 id="section-04">03｜P5：新工程研发与模块验证方案 V0.2</h2>
+<p><strong>目标：</strong> 只有在相关系统合同得到确认时，才实施与验证相应的<strong>新工程</strong>。第一步不“恢复旧代码”，更不把旧 Host CI 当成新项目测试证据。当前批准只是执行组织规则，<strong>尚未进入具体代码研究</strong>。</p>
+<h3>03.1 建议工作分流（仅计划，不是本次启动指令）</h3>
+<table>
+<thead>
+<tr>
+  <th>工作流</th>
+  <th>工作对象</th>
+  <th>可先进行的准备</th>
+  <th>开始具体实现之前必需的条件</th>
+  <th>完成证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>W1 共用系统控制</td>
+  <td>输入质量、运动语义、状态、参数、诊断与逻辑请求</td>
+  <td>基于 P4 形成行为测试条件和异常场景</td>
+  <td>对应 DD 语义/边界确认，安全输出隔离方案</td>
+  <td>新源码版本、Host 单元测试、需求对应关系</td>
+</tr>
+<tr>
+  <td>W2 实体开发板接入</td>
+  <td>MCU 基础启动、时基、外设、板级配置</td>
+  <td>确定官方 SDK/板卡 Revision 与工具链来源</td>
+  <td>实物 MCU/PCB、原理图/SDK 版本和可重现 Target 工程</td>
+  <td>Target Build、烧录、原始运行日志<strong>分别记录</strong></td>
+</tr>
+<tr>
+  <td>W3 运动与制动输入</td>
+  <td>真正购买的传感器/模块及制动意图输入链</td>
+  <td>整理实体模块、电气/ICD、供电接线和异常</td>
+  <td>已确认模块身份、接口、标识/帧格式、供电安全</td>
+  <td>原始输入数据、时效/质量/故障测试</td>
+</tr>
+<tr>
+  <td>W4 HMI/通信</td>
+  <td>LCD 与手机 App / BLE 业务会话</td>
+  <td>用户流程与通信状态语义、单一受控 ICD</td>
+  <td>真正模块 GATT/AT/连接依据与业务权限</td>
+  <td>跨端版本一致、实际回执/异常试验</td>
+</tr>
+<tr>
+  <td>W5 执行功率</td>
+  <td>输出驱动、诊断保护与轮端制动器</td>
+  <td>仅研究需求、风险和试验计划</td>
+  <td><strong>产品工况、危害分析、功率/安全硬件设计及单独许可</strong></td>
+  <td>未来专用隔离台架与故障注入；当前禁止</td>
+</tr>
+</tbody>
+</table>
+<h3>03.2 任务执行合同</h3>
+<p>每一项具体软件修改都必须有<strong>文件/分支范围、来源版本、输入资料、允许变更、禁止变更、测试命令、验收证据和回退策略</strong>。AI 不得将“按 P5 计划开发”扩大为全仓库重构或改变制动安全策略；遇到元件或接口资料缺失应停在受影响边界，不杜撰常量。</p>
+<h3>03.3 测试等级不得混淆</h3>
+<ul>
+<li><strong>DESIGN REVIEW</strong>：职责与契约审查，不能证明可执行。</li>
+<li><strong>HOST BUILD / HOST UNIT PASS</strong>：桌面逻辑编译测试，不证明目标芯片功能。</li>
+<li><strong>TARGET BUILD PASS</strong>：指定 MCU/SDK/编译器构建链接，不证明已烧录。</li>
+<li><strong>FLASH / BOARD RUN PASS</strong>：下载和板载运行的分离证据，不证明外接模块成功。</li>
+<li><strong>MODULE TEST PASS</strong>：指定型号/接线的实际数据、错误与恢复用例通过。</li>
+<li><strong>PRODUCT SAFETY PASS</strong>：真实产品工况和物理制动链经受控完整验证；不能由 EVB 代替。</li>
+</ul>
+<p><strong>P5 阶段验收口径：</strong> 范围内模块的批准合同、实现差异、针对正常与异常的测试、精确版本/配置和遗留缺陷齐全；未执行的标记 <code>NOT_RUN</code>。</p>
+</section>
+<section class="section"><h2 id="section-05">04｜P6：系统集成与跨模块联调方案 V0.2</h2>
+<p><strong>目标：</strong> 将分别验证过的模块整合为具有可追溯输入、状态、配置、命令/反馈和异常恢复的系统。软件模拟联调与实体电气/执行集成<strong>两条线分别管理</strong>。</p>
+<table>
+<thead>
+<tr>
+  <th>联调层次</th>
+  <th>至少需要覆盖的端到端情景</th>
+  <th>进入前提</th>
+  <th>退出证明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>I0 合同联调</td>
+  <td>时间戳/新鲜度、类型单位、失效状态、配置事务和错误码一致性</td>
+  <td>P4 对应语义批准</td>
+  <td>合同测试、交互记录、跨端一致性审查</td>
+</tr>
+<tr>
+  <td>I1 控制器 + 输入模块</td>
+  <td>真实制动输入、运动信息；异常/超时/错轴/通讯故障</td>
+  <td>已完成对应模块的独立硬件测试</td>
+  <td>真实采集日志、异常注入与质量状态记录</td>
+</tr>
+<tr>
+  <td>I2 控制器 + HMI</td>
+  <td>配置受理/生效/存储/读回，断链、重连、超时、权限和版本冲突</td>
+  <td>受控 ICD、通信模块真实参数</td>
+  <td>两端日志、版本、异常恢复及结果一致性</td>
+</tr>
+<tr>
+  <td>I3 无功率整机逻辑联调</td>
+  <td>首次设置→正常状态→逻辑请求→故障→恢复</td>
+  <td>I0～I2 且执行输出被物理隔离</td>
+  <td>全链路逻辑日志、工况与故障覆盖率</td>
+</tr>
+<tr>
+  <td>I4 物理执行集成（未来）</td>
+  <td>电气/轮端响应及危险工况下的保护</td>
+  <td>目标产品硬件、危害分析、试验准入和独立授权</td>
+  <td>专用台架记录；EVB 当前不进入</td>
+</tr>
+</tbody>
+</table>
+<p><strong>必须联调的负向场景：</strong> 输入冻结/断线、互相冲突、配置损坏、通信 ACK 但设备未生效、存储中断、复位/掉电、报文重放/过期、部分模块故障、执行反馈与命令不一致（未来硬件阶段）、用户 HMI 误显示。</p>
+<p><strong>P6 退出标准：</strong> 每条联调用例记录版本、接口版本、输入条件、预期、测得结果、缺陷、复测和证据链；模拟验证不得冒称物理制动集成。</p>
+</section>
+<section class="section"><h2 id="section-06">05｜P7：系统验证、可靠性与安全验收方案 V0.2</h2>
+<p><strong>目标：</strong> 以需求和危险场景为主线，证明实际系统是否满足约定要求，而不是根据代码存在或演示效果判断成功。</p>
+<table>
+<thead>
+<tr>
+  <th>验证分层</th>
+  <th>对象</th>
+  <th>最小证据及要求</th>
+  <th>不能替代什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>V0 需求/设计评审</td>
+  <td>P2 系统要求、P3 系统设计、P4 合同</td>
+  <td>SYS/HA/SG/SSR→验证方法；开放值清单</td>
+  <td>实体运行结果</td>
+</tr>
+<tr>
+  <td>V1 软件功能验证</td>
+  <td>系统控制、数据质量、参数、HMI 协议</td>
+  <td>审批过的用例、Host/目标测试和错误注入</td>
+  <td>真实功率保护和道路安全</td>
+</tr>
+<tr>
+  <td>V2 外设/模块验证</td>
+  <td>目标 MCU、实际模块和通信线束</td>
+  <td>电压、时序、通信日志、重启/异常/环境用例</td>
+  <td>轮端制动能力</td>
+</tr>
+<tr>
+  <td>V3 功率与轮端台架验证</td>
+  <td>目标驱动/电磁制动器、连续/峰值电流、温升和断路/短路</td>
+  <td>受审的独立台架方案、真实量测、保护验证</td>
+  <td>未测试车辆/道路工况</td>
+</tr>
+<tr>
+  <td>V4 整车及合规验证</td>
+  <td>明确车型/质量/轴数/市场的拖挂组合</td>
+  <td>车辆制动性能、故障工况、环境/EMC、安装与法规证据</td>
+  <td>其它不在适用包络中的车型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>需求证据主索引：</strong> <code>SYS-xxx → SF-xx/DD-xx → HA/SG/SSR（如安全相关） → 测试 ID → 用例版本与工况 → 实测报告 → 缺陷/复测 → 判定</code>。性能指标 KPI-01～13 必须记录数字来源、工况和测量方法；无阈值则为 <code>OPEN</code>，不能判为 <code>PASS</code>。</p>
+<p><strong>安全验证专门约束：</strong> 初步危险清单绝非 HARA 或 ASIL 已定；不预设“一故障、一动作”，必须评审非预期制动、制动不足、持续制动、左右/轴间不均衡、欠压/复位、显示误导、无线非法配置、线束错误及应急制动边界。测试设备和人员安全许可独立于文档审批。</p>
+<p><strong>P7 阶段验收口径：</strong> 所有本版本范围内已冻结要求都有证据、评审结论和缺陷处置；安全相关的重大未解风险或空白工况不能以条件批准代替产品通过。</p>
+</section>
+<section class="section"><h2 id="section-07">06｜P8：版本发布、量产交付与维护方案 V0.2</h2>
+<p>P8 <strong>不是“GitHub 合并/标签完成”</strong>，而是配置、产品符合性、生产交付和维护体系受控交付。</p>
+<table>
+<thead>
+<tr>
+  <th>发布级别</th>
+  <th>允许的称谓和用途</th>
+  <th>启用前提</th>
+  <th>明确不得宣称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>R0 研发样件</td>
+  <td>无实车执行的研发与接口验证</td>
+  <td>测试对象、软件版本、禁能条件及记录</td>
+  <td>“可上车”“已验证车辆制动”</td>
+</tr>
+<tr>
+  <td>R1 工程样机</td>
+  <td>受控台架/集成试验</td>
+  <td>已通过指定硬件与系统集成审查，试验风险有控制</td>
+  <td>“量产发布”“已适用于所有车型”</td>
+</tr>
+<tr>
+  <td>R2 产品量产发布</td>
+  <td>明确市场、产品型号与适用范围内的正式交付</td>
+  <td>P7 相关验证通过、安全/合规/生产与维护证据齐全，负责人签发</td>
+  <td>没有证据的其它市场/车型或 ASIL 认证</td>
+</tr>
+</tbody>
+</table>
+<p><strong>每个 Release 必须绑定：</strong> 软件源版本、Variant、Board/PCB Rev、MCU/SDK/工具链版本、参数版本、通信 ICD、BOM/装配配置、已通过的用例和缺陷状态，及可复现构建与固件身份；与 App/显示/附件的兼容组合亦需记录。</p>
+<p><strong>产品交付包必须包含：</strong> 用户及安装说明、适用范围与禁止条件、接线/维护注意事项、出厂测试、标定/参数版本、故障诊断与恢复指南、售后升级/变更/召回追溯能力、需求与验证矩阵以及相关法规/风险证据。</p>
+<p><strong>P8 退出标准：</strong> 只有针对确定的产品配置和市场完成发布评审，才能标记 <code>RELEASED</code>。当前为 <code>NOT_RELEASED</code>。</p>
+</section>
+<section class="section"><h2 id="section-08">07｜单独集中解决的六组产品取舍（不作为 P 阶段重复审批）</h2>
+<table>
+<thead>
+<tr>
+  <th>决策组</th>
+  <th>负责人的产品选择</th>
+  <th>研究/供应商应提交的证据</th>
+  <th>主要影响</th>
+  <th>当前</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>C-01 市场与适用车型</td>
+  <td>首发地域、车辆类别、安装方式、使用工况</td>
+  <td>地域标准、典型挂车配置和使用边界</td>
+  <td>DD-01/05/07；P7/8</td>
+  <td>OPEN</td>
+</tr>
+<tr>
+  <td>C-02 制动器与电源</td>
+  <td>制动器类型/规格、轴轮数、供电/线束与应急装置边界</td>
+  <td>制动器额定/峰值、制动系和供电资料</td>
+  <td>DD-03/05/07；真实输出</td>
+  <td>OPEN</td>
+</tr>
+<tr>
+  <td>C-03 制动输入与运动信息</td>
+  <td>制动意图源、运动信息作用、是否依赖某一车端网络</td>
+  <td>车型/模块技术资料、车辆场景</td>
+  <td>DD-02/04/05；控制策略</td>
+  <td>OPEN</td>
+</tr>
+<tr>
+  <td>C-04 产品型号与 HMI</td>
+  <td>LCD、App 的首发组合与 Android/iOS 范围</td>
+  <td>用户场景、BOM/维护/通信需求</td>
+  <td>DD-06/08；P5/6</td>
+  <td>OPEN</td>
+</tr>
+<tr>
+  <td>C-05 用户参数</td>
+  <td>重量档/区间、制动力等级、默认和保存规则</td>
+  <td>车辆包络与标定依据</td>
+  <td>DD-01/05/06</td>
+  <td>OPEN</td>
+</tr>
+<tr>
+  <td>C-06 增强功能</td>
+  <td>手动制动、Boost、倒车、OTA、多配置、侧摆辅助归属</td>
+  <td>产品定位、增量风险/成本分析</td>
+  <td>Variant 与对应安全审查</td>
+  <td>OPEN</td>
+</tr>
+</tbody>
+</table>
+<p><strong>集中决策规则：</strong> 产品取舍可以等证据成熟后<strong>集中提交一次</strong>；没有证据时保持 OPEN，不虚构参数。常规研究和受影响范围外的设计不因全部决策未定而停滞。</p>
+</section>
+<section class="section"><h2 id="section-09">08｜一张总表明确 P0–P8 什么时候才算真正结束</h2>
+<table>
+<thead>
+<tr>
+  <th>阶段</th>
+  <th>文档/计划批准后当前可以承认的状态</th>
+  <th>该阶段真正完成还需要的独立证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>P0</td>
+  <td>立项内容 APPROVED</td>
+  <td>不需重新立项</td>
+</tr>
+<tr>
+  <td>P1</td>
+  <td>现状报告 APPROVED</td>
+  <td>对未决产品与硬件事实补证，不把初审当验证</td>
+</tr>
+<tr>
+  <td>P2</td>
+  <td>需求体系 DIRECTION_APPROVED</td>
+  <td>产品适用/性能/安全数值的分项审定与追踪</td>
+</tr>
+<tr>
+  <td>P3</td>
+  <td>CONCEPT_APPROVED_WITH_OPEN_ITEMS</td>
+  <td>影响物理设计的产品接口、风险、车辆范围补证</td>
+</tr>
+<tr>
+  <td>P4</td>
+  <td>统一审批后 SYSTEM_CONTRACT_APPROVED_WITH_OPEN_ITEMS</td>
+  <td>相关产品性能、故障响应与物理安全合同冻结后才可称 FULLY_BASELINED</td>
+</tr>
+<tr>
+  <td>P5</td>
+  <td>PLAN_APPROVED / NOT_IMPLEMENTED</td>
+  <td>已批准范围内新代码、编译、测试及实板证据</td>
+</tr>
+<tr>
+  <td>P6</td>
+  <td>PLAN_APPROVED / NOT_INTEGRATED</td>
+  <td>端到端集成与故障恢复的实证记录</td>
+</tr>
+<tr>
+  <td>P7</td>
+  <td>PLAN_APPROVED / NOT_VERIFIED</td>
+  <td>需求、性能、安全和适用法规的目标产品验证证据</td>
+</tr>
+<tr>
+  <td>P8</td>
+  <td>PLAN_APPROVED / NOT_RELEASED</td>
+  <td>精确配置组合的产品发布签发与维护交付</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="section"><h2 id="section-10">09｜一次性审批文本与后续执行原则</h2>
+<p><strong>建议本轮唯一一次审批的表述：</strong></p>
+<blockquote>
+<p><strong>批准《BrakeSync P0–P8 一次性集中审批包 V0.2》作为当前有效的系统设计与后续阶段工作基线。认可 P4 DD-01～08 系统合同 V0.2 及 P5–P8 实施、集成、验证、发布方案 V0.2。P0–P3 既有批准继续有效。不把未决产品参数、法规结论或真实制动安全动作视为已确认；不把计划批准当作代码、测试或发布完成。后续不再按 P 阶段逐项向我重复审批，仅就真正需我决策的产品配置、安全准入、实施权限及产品发布作集中审查。</strong></p>
+</blockquote>
+<p><strong>归档与执行：</strong> 负责人批准整包后，本对话负责一次归档至 <code>management</code>、更新项目进度并继续系统研究；不得直接覆盖/删除/复用旧 <code>firmware</code>、<code>app</code> 分支，未来进入具体代码实施时再定清理策略。未经实际产品及独立安全验证，不开启制动输出。</p>
+</section>
+<section class="section"><h2 id="section-11">10｜审批范围外的事实清单（给未来工作防止返工）</h2>
+<ul>
+<li>目前没有正式确定的目标市场、车辆质量/轴数、轮端电制动器类型与电气参数、车端供电范围、制动触发物理来源和运动传感器实际输入合同。</li>
+<li>没有冻结 KPI-03～05/07/09 等时间、电气和保护阈值；上述项目的 <code>TBD</code> <strong>不能视为零、无限制或某个经验典型值</strong>。</li>
+<li>没有适用车型条件下完整 HARA/ASIL 安全论证，也没有产品功率输出设计验证证据。</li>
+<li>现在没有 P5 新工程编译/烧录/实物验证证据，P6–P8 更不能宣称完成。</li>
+<li>本包<strong>不触发</strong>任何真实拖挂制动器的输出或电气功率验证任务。</li>
+</ul>
+<hr />
+</section>
+<section class="section"><h2 id="section-12">附录 A｜P4 系统级详细设计合同 V0.2 完整原文（本次审批的设计依据）</h2>
+<blockquote>
+<p>下文完整收录待审文件正文（仅提升标题层级以适配合订目录）；ZIP 中另附未编辑的原始 Markdown。文内“待审”是原稿形成时的历史状态；整包获批后以整包审批记录为准。</p>
+</blockquote>
+</section>
+<section class="section"><h2 id="section-13">BrakeSync｜P4 系统级详细设计合同 V0.2（整合候审稿）</h2>
+<blockquote>
+<p><strong>编号</strong>：BS-P4-SYSTEM-CONTRACT-002<br />
+<strong>编制日期</strong>：2026-11-14<br />
+<strong>性质</strong>：在已批准 P0–P8 V0.1、P3 功能分配 V0.2、产品适用边界 V0.1、危险初筛 V0.1 及 P3–P8 整合 V0.1 基础上形成的系统级详细设计候审稿。<br />
+<strong>审批状态</strong>：本文件新增加的设计细化仍为 <code>DRAFT_FOR_REVIEW</code>；不自动冻结未决产品参数，也不批准功率输出。<br />
+<strong>范围</strong>：系统的责任、行为、接口、输入质量、配置事务、故障处理、验证与产品配置合同。<strong>不包括 C 代码、SDK、引脚、DMA、中断、手机 App 实现或现有 GitHub 代码。</strong></p>
+</blockquote>
+<h3>0. 本轮可直接采纳的系统事实与边界</h3>
+<p>以下均来自此前已获负责人批准的系统方向，而非从旧代码推导：</p>
+<ul>
+<li>首版产品优先面向<strong>使用电控制动器的拖挂式房车</strong>，具体车辆、市场、质量、轴数、制动器/电源规格尚未选择。</li>
+<li>主控制器独立执行自动同步制动业务；手机和 LCD 用于配置、状态与故障信息，不进入实时制动环路。</li>
+<li>基础用户闭环为：<strong>选择与拖挂质量适配的制动档 → 调整制动力等级 → 确认生效与保存 → 日常自动工作 → 出现异常时检查状态</strong>。</li>
+<li>制动意图与运动信息为两类逻辑输入，物理来源、作用、主辅关系、准确度和接口均未冻结。</li>
+<li>将逻辑制动请求与真实功率执行许可、执行反馈和轮端制动作用明确分开。</li>
+<li>手动独立制动、Boost、倒车专项响应、OTA、多套配置、侧摆辅助不默认属于基础必需功能。</li>
+<li>当前云途 EVB 仅用于隔离验证，<strong>不连接真实制动功率链路</strong>。</li>
+</ul>
+<h4>0.1 信息状态标记</h4>
+<table>
+<thead>
+<tr>
+  <th>标记</th>
+  <th>解释</th>
+  <th>使用约束</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>APPROVED_DIRECTION</code></td>
+  <td>已获批准的系统目标和方向</td>
+  <td>可以作为详细化依据，不替代具体工况证据</td>
+</tr>
+<tr>
+  <td><code>PROPOSED_CONTRACT</code></td>
+  <td>本文件建议的新系统行为/接口细化</td>
+  <td>本轮候审，不得冒充原先已逐项批准</td>
+</tr>
+<tr>
+  <td><code>OPEN</code></td>
+  <td>需负责人选择或补充实物/外部证据</td>
+  <td>不得随意赋予默认数字</td>
+</tr>
+<tr>
+  <td><code>BLOCKED</code></td>
+  <td>缺失信息会导致后续硬件/产品实现存在不可接受的不确定性</td>
+  <td>只阻断受影响工作，不阻断其他系统研究</td>
+</tr>
+<tr>
+  <td><code>NOT_TESTED</code></td>
+  <td>预定的硬件或产品试验尚无证据</td>
+  <td>不得称为通过</td>
+</tr>
+</tbody>
+</table>
+<h3>1. DD-01｜首版产品适用包络合同</h3>
+<h4>1.1 已知包络</h4>
+<table>
+<thead>
+<tr>
+  <th>维度</th>
+  <th>当前内容</th>
+  <th>状态</th>
+  <th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>目标产品</td>
+  <td>拖挂式房车电子同步制动控制器，首版优先电控制动器</td>
+  <td><code>APPROVED_DIRECTION</code></td>
+  <td>控制目标与安全类别</td>
+</tr>
+<tr>
+  <td>控制模式</td>
+  <td>主机独立自动制动，App/LCD 非必需闭环</td>
+  <td><code>APPROVED_DIRECTION</code></td>
+  <td>HMI 故障不等于自动控制能力丧失</td>
+</tr>
+<tr>
+  <td>车辆类别/地域</td>
+  <td>待确定国家/地区、牵引车与挂车类别及安装责任</td>
+  <td><code>OPEN</code></td>
+  <td>法规、线束、电源与应急制动要求</td>
+</tr>
+<tr>
+  <td>拖挂质量/轴数</td>
+  <td>范围、满载/空载、轴/轮端数量未知</td>
+  <td><code>OPEN</code></td>
+  <td>制动档、功率能力、标定、测试矩阵</td>
+</tr>
+<tr>
+  <td>轮端制动器</td>
+  <td>具体电控轮端型号、额定/峰值电流及线圈特性未知</td>
+  <td><code>OPEN</code></td>
+  <td>真实输出和保护设计 <code>BLOCKED</code></td>
+</tr>
+<tr>
+  <td>供电及车端输入</td>
+  <td>标称电压、电压范围、线束、制动触发语义未知</td>
+  <td><code>OPEN</code></td>
+  <td>真实电气与输出设计 <code>BLOCKED</code></td>
+</tr>
+<tr>
+  <td>用户基础设置</td>
+  <td>重量档、制动力调节、状态、故障、保存</td>
+  <td><code>APPROVED_DIRECTION</code></td>
+  <td>用户交互及参数合同</td>
+</tr>
+<tr>
+  <td>增强功能</td>
+  <td>默认不纳入基础必需范围；逐 Variant 论证</td>
+  <td><code>APPROVED_DIRECTION</code></td>
+  <td>不提前扩展本版安全/软件边界</td>
+</tr>
+</tbody>
+</table>
+<p><strong>产品范围合同原则</strong>：仅标记为适用的车辆/制动器/电气环境可以进入目标产品试验矩阵。未给出的质量与电流数值既不自动包含也不自动排除；正式“支持”必须具备源头与验证证据。</p>
+<h3>2. DD-02｜制动意图与运动信息输入合同</h3>
+<h4>2.1 输入数据的系统语义（不定义 MCU 结构体）</h4>
+<table>
+<thead>
+<tr>
+  <th>属性</th>
+  <th>制动意图输入</th>
+  <th>运动信息输入</th>
+  <th>失效处理要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>来源/身份</td>
+  <td>明确当前采用何种车端信号、谁产生</td>
+  <td>明确传感来源、安装位置、固件身份</td>
+  <td>来源冲突或不明时不能作为已验证输入</td>
+</tr>
+<tr>
+  <td>含义</td>
+  <td>是否制动、触发程度或其他已批准语义，尚待确定</td>
+  <td>加速度/减速度的物理单位与方向</td>
+  <td>单位、符号未确定时不得推导控制幅值</td>
+</tr>
+<tr>
+  <td>时间属性</td>
+  <td>采集、传输、判定时间/数据新鲜度</td>
+  <td>采样时间、周期、延迟、新鲜度</td>
+  <td>超期/重复/冻结值必须可区分</td>
+</tr>
+<tr>
+  <td>质量属性</td>
+  <td>无效、冲突、断线、毛刺、极性错误</td>
+  <td>饱和、失准、反向、固定值、通信中断</td>
+  <td>不得把不可信数据当作正常输入</td>
+</tr>
+<tr>
+  <td>诊断</td>
+  <td>原因、发生/恢复条件</td>
+  <td>原因、发生/恢复条件</td>
+  <td>交给故障分类与系统状态规则</td>
+</tr>
+<tr>
+  <td>未决</td>
+  <td>输入物理极性、阈值、滤波和保护</td>
+  <td>运动信息在决策中的权重、主辅关系、安装/量程</td>
+  <td>不为方便开发预设</td>
+</tr>
+</tbody>
+</table>
+<h4>2.2 输入组合矩阵（候选，不决定具体制动力）</h4>
+<table>
+<thead>
+<tr>
+  <th>制动意图</th>
+  <th>运动信息</th>
+  <th>系统必须区分的事实</th>
+  <th>后续必须确认的决定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>有效</td>
+  <td>有效</td>
+  <td>输入同时具备可信来源、方向和时效</td>
+  <td>正常策略允许条件及响应预算</td>
+</tr>
+<tr>
+  <td>有效</td>
+  <td>失效或超时</td>
+  <td>意图仍可识别、运动信息不可用</td>
+  <td>是否允许受限控制、需否警示，须结合危险分析</td>
+</tr>
+<tr>
+  <td>失效或超时</td>
+  <td>有效</td>
+  <td>运动信息不能自动证明驾驶员制动意图</td>
+  <td>是否允许任何自动制动必须专门论证</td>
+</tr>
+<tr>
+  <td>冲突/矛盾</td>
+  <td>任意</td>
+  <td>输入冲突可诊断且不得静默选取不可信值</td>
+  <td>冲突优先规则及适用场景</td>
+</tr>
+<tr>
+  <td>任意</td>
+  <td>单位/安装方向未知</td>
+  <td>数据含义不可信</td>
+  <td>安装校核与使能限制</td>
+</tr>
+<tr>
+  <td>均不可用</td>
+  <td>均不可用</td>
+  <td>不能宣称正常同步制动能力</td>
+  <td>实际故障响应和驾驶告警取决于车辆工况</td>
+</tr>
+</tbody>
+</table>
+<p><strong>硬件依赖</strong>：是否采用 CAN、独立加速度芯片或其他总线，只属于接口实现选择，不属于上述系统数据语义的默认内容。</p>
+<h3>3. DD-03｜逻辑制动请求、执行许可与反馈合同</h3>
+<h4>3.1 必须区分的五个层次</h4>
+<ol>
+<li><strong>制动意图证据</strong>：驾驶员/车端输入是否成立、有效。</li>
+<li><strong>系统逻辑制动请求</strong>：在有效输入/参数/状态条件下提出的逻辑需求；可能受限或拒绝。</li>
+<li><strong>物理执行许可</strong>：由完整系统和硬件安全条件共同决定；不由单个软件标志自证安全。</li>
+<li><strong>执行器命令/物理量</strong>：未来实际功率级的控制量（电流、功率或其他）；当前未冻结。</li>
+<li><strong>可观察的执行结果</strong>：实际驱动状态、输出电流/故障和轮端制动效果；具备哪些反馈须基于真实硬件设计。</li>
+</ol>
+<table>
+<thead>
+<tr>
+  <th>接口语义</th>
+  <th>系统需要表达什么</th>
+  <th>不可作出的推断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>logical_request</code></td>
+  <td>期望制动作用、有效性、来源与生成时刻</td>
+  <td>不等于 PWM、实际电流或轮端力矩</td>
+</tr>
+<tr>
+  <td><code>enable_permission</code></td>
+  <td>已满足哪些允许条件、有哪些禁止理由</td>
+  <td>不等于硬件上电/失控路径已安全</td>
+</tr>
+<tr>
+  <td><code>actuator_status</code></td>
+  <td>电源、驱动允许态及可观测的异常</td>
+  <td>不等于必然拥有电流反馈或轮端闭环</td>
+</tr>
+<tr>
+  <td><code>fault_response</code></td>
+  <td>针对具体危险场景批准的动作/提示/恢复要求</td>
+  <td>不允许无论制动工况都统一写“立即断电”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>开发板强制条件</strong>：在所有本阶段的实验和演示条件下，真实制动功率输出保持 <code>NOT_AUTHORIZED</code>，不得让任何参数命令、通信协议或软件状态改变该条件。</p>
+<h4>3.2 未来输出准入证据门槛</h4>
+<p>必须具备目标制动器/供电和电路规格、功率驱动拓扑、上电/复位/棕断默认电气状态证明、危险分析、失效安全响应、故障注入计划以及独立验证审批。<strong>这些目前均不足，物理输出设计保持 <code>BLOCKED</code>。</strong></p>
+<h3>4. DD-04｜系统状态与故障响应合同</h3>
+<h4>4.1 运行状态（语义，非源码枚举）</h4>
+<table>
+<thead>
+<tr>
+  <th>状态</th>
+  <th>进入原因/判据方向</th>
+  <th>对外可报告内容</th>
+  <th>当前控制边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>INIT</code></td>
+  <td>上电、复位、重新检查</td>
+  <td>初始化中、检查结果、版本与必要输入状态</td>
+  <td>未完成准入，EVB 无功率</td>
+</tr>
+<tr>
+  <td><code>INHIBITED</code></td>
+  <td>未满足基本准入、配置无效或研究平台禁止</td>
+  <td>禁止理由、不可用功能</td>
+  <td>EVB 永久禁止真实功率</td>
+</tr>
+<tr>
+  <td><code>READY</code></td>
+  <td>必要配置/输入和运行准入成立</td>
+  <td>就绪证据、状态更新时间</td>
+  <td>只表明逻辑能力，非物理安全许可</td>
+</tr>
+<tr>
+  <td><code>ACTIVE</code></td>
+  <td>被认可的制动意图与控制条件成立</td>
+  <td>请求状态、输入质量、有效时刻</td>
+  <td>只表明逻辑请求活动</td>
+</tr>
+<tr>
+  <td><code>DEGRADED</code></td>
+  <td>经分析允许受限能力的异常</td>
+  <td>功能限制、故障原因、恢复条件</td>
+  <td>是否存在物理制动输出须独立决定</td>
+</tr>
+<tr>
+  <td><code>FAULT</code></td>
+  <td>已识别且不满足正常运行条件的故障</td>
+  <td>故障标识、告警级别、处置建议</td>
+  <td>不得自动假定某个物理动作最安全</td>
+</tr>
+<tr>
+  <td><code>SERVICE</code></td>
+  <td>经授权安装/维护状态</td>
+  <td>身份、维护目标、操作结果</td>
+  <td>不覆盖 EVB 无功率限制</td>
+</tr>
+</tbody>
+</table>
+<h4>4.2 重点事件→状态/后果矩阵</h4>
+<table>
+<thead>
+<tr>
+  <th>事件</th>
+  <th>先确定的行为</th>
+  <th>是否允许自动恢复</th>
+  <th>物理输出与安全责任</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>上电或系统复位</td>
+  <td>报告 INIT，检查必要配置和输入</td>
+  <td>仅检查完成后按条件进入下一状态</td>
+  <td>上电默认物理状态需硬件证实；EVB 无功率</td>
+</tr>
+<tr>
+  <td>配置不存在或校验失败</td>
+  <td>标记无效并记录原因，不加载不可信标定</td>
+  <td>需经受控恢复/重新确认</td>
+  <td>不得以预设值绕过安全准入</td>
+</tr>
+<tr>
+  <td>输入丢失/过期/矛盾</td>
+  <td>标记相应质量/故障，不再当作正常新鲜输入</td>
+  <td>是否恢复需定义稳定条件</td>
+  <td>真实故障动作须结合制动工况、不能统一拍板</td>
+</tr>
+<tr>
+  <td>App/LCD 断联</td>
+  <td>明确交互离线或状态过期</td>
+  <td>允许按协议重新建立会话</td>
+  <td>主控制实时环路不依赖手机在线</td>
+</tr>
+<tr>
+  <td>参数设置越界/未授权</td>
+  <td>明确拒绝且保持已生效参数不变</td>
+  <td>更正后可重新提交</td>
+  <td>不得以通信 ACK 当作参数生效</td>
+</tr>
+<tr>
+  <td>电气欠压/复位/功率异常</td>
+  <td>记录观测与不能观测的故障边界</td>
+  <td>按硬件保护设计确定</td>
+  <td>保护责任需由硬件与整机联合设计</td>
+</tr>
+<tr>
+  <td>维护请求</td>
+  <td>校验权限和当前工况</td>
+  <td>退出条件需定义</td>
+  <td>不能通过维护模式开启 EVB 实际功率</td>
+</tr>
+</tbody>
+</table>
+<p><strong>尚未冻结</strong>：故障等级、每种异常触发阈值、锁存/自动恢复条件、在不同车速/制动状态下的执行策略。需由实际产品工况和危险分析补齐。</p>
+<h3>5. DD-05｜性能要求与时序预算合同</h3>
+<p>既有 KPI-01～KPI-13 均继续有效。优先从端到端分析分配 KPI-03（制动输入识别）、KPI-04（逻辑请求生成）、KPI-05（物理执行响应），以及 KPI-07（故障检测）、KPI-09/10（电气/供电环境）。</p>
+<p>对于任何性能项，受控表必须包含：<code>指标 ID / 起点事件 / 终点事件 / 单位 / 适用车辆与工况 / 最大或最小目标 / 目标来源 / 测量点与方法 / 误差与统计方法 / 验证证据 / 审批状态</code>。</p>
+<table>
+<thead>
+<tr>
+  <th>对象</th>
+  <th>指标语义</th>
+  <th>现阶段允许完成</th>
+  <th>现阶段不允许补出的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>制动输入→逻辑请求</td>
+  <td>从有效制动意图被物理采集到逻辑请求完成的响应</td>
+  <td>定义事件、分解链路和测量方法</td>
+  <td>无来源的毫秒目标</td>
+</tr>
+<tr>
+  <td>逻辑请求→执行器作用</td>
+  <td>真实输出驱动及轮端作用产生的响应</td>
+  <td>确定功率/制动器依赖和测试台架需求</td>
+  <td>无样件的实际电流/力矩/时延</td>
+</tr>
+<tr>
+  <td>数据新鲜度</td>
+  <td>制动/运动输入从产生至消费的年龄</td>
+  <td>定义过期、冻结、丢包、迟到的区分规则</td>
+  <td>无传感/协议来源的采样率和超时</td>
+</tr>
+<tr>
+  <td>电气能力</td>
+  <td>输入/功率/供电的绝对和连续约束</td>
+  <td>建立需要供应商/车辆证据的项目表</td>
+  <td>无规格的 A、V、°C、安全裕量</td>
+</tr>
+<tr>
+  <td>参数持久化</td>
+  <td>设置接受、生效、可靠保存与恢复</td>
+  <td>事务状态和异常测试场景</td>
+  <td>未确定 NVM/电源条件下的完成时限</td>
+</tr>
+</tbody>
+</table>
+<p>预算计算规则：所有分段延迟须采用<strong>一致的起止条件、最坏工况与包含关系</strong>；不应把均值、典型时间与最坏时间直接相加后宣称上限。性能门槛必须通过产品需求和系统危险分析确定。</p>
+<h3>6. DD-06｜制动档、制动力与 App/LCD 参数事务</h3>
+<h4>6.1 参数对象与约束</h4>
+<table>
+<thead>
+<tr>
+  <th>项目</th>
+  <th>基础用户含义</th>
+  <th>当前可定</th>
+  <th>当前待定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>重量制动档</td>
+  <td>匹配拖挂重量/制动能力配置</td>
+  <td>与制动力微调独立；可查看、确认和保存</td>
+  <td>档数、区间、适用轴数、映射与标定</td>
+</tr>
+<tr>
+  <td>制动力等级</td>
+  <td>当前档内的用户可理解调节</td>
+  <td>不自动改变重量档；修改后应有明确回执</td>
+  <td>1–10 候选是否定版、默认值和控制映射</td>
+</tr>
+<tr>
+  <td>设备状态与故障</td>
+  <td>向用户解释当前设备是否正常和是否在制动</td>
+  <td>设备来源与状态时间要可追踪</td>
+  <td>完整故障目录和严重度</td>
+</tr>
+<tr>
+  <td>恢复默认</td>
+  <td>受控恢复用户设置</td>
+  <td>不应误擦产品安全标定</td>
+  <td>各对象恢复范围及授权条件</td>
+</tr>
+<tr>
+  <td>版本/产品身份</td>
+  <td>判断当前设备与配置是否适配</td>
+  <td>Variant/Board/Release 独立管理</td>
+  <td>量产身份、兼容矩阵与升级策略</td>
+</tr>
+</tbody>
+</table>
+<h4>6.2 配置事务阶段（重要合同）</h4>
+<p>a. <code>RECEIVED</code>：设备确认收到请求，不表示请求合法。<br />
+b. <code>VALIDATED</code>：参数格式、范围、目标对象、版本/权限和允许工况已检查。<br />
+c. <code>ACCEPTED</code>：设备已接受执行意图；若禁止更改应明确拒绝。<br />
+d. <code>EFFECTIVE</code>：实际生效配置已完成切换，具有可查询的生效版本。<br />
+e. <code>PERSISTED</code>：按定义完成可靠保存，可跨上电恢复。<br />
+f. <code>READBACK_CONFIRMED</code>：请求方查到的当前有效/已保存内容与设备权威状态一致。</p>
+<p>这六个阶段<strong>不得合并成简单的“发送成功”</strong>。若通信中断，只能表达“结果未知/需读回”，不能在 App 上假显示成功；重复和过期请求不能造成不可预期的多次变更；在不适宜工况调参的准入策略留待使用安全评审。</p>
+<h4>6.3 用户流程</h4>
+<ul>
+<li>首次：核对设备和适用性 → 选择重量档 → 读取建议的默认制动力（来源待标定） → 用户确认 → 查验生效/保存 → 按正式说明在允许场地检查实际驾驶匹配（未来产品阶段）。</li>
+<li>日常：展示<strong>当前设备确认的重量档/制动力/健康状态</strong>，高频只微调允许项目；无需 App 持续在线。</li>
+<li>异常：优先提示对驾驶判断有意义的故障及状态有效性，明示离线/状态过期和设备故障的区别。</li>
+</ul>
+<h3>7. DD-07｜安全责任与验证追踪合同</h3>
+<h4>7.1 危险—目标—需求—责任—证据</h4>
+<table>
+<thead>
+<tr>
+  <th>风险族</th>
+  <th>已批准初筛编号</th>
+  <th>主要系统责任（候选分配）</th>
+  <th>必须追加的证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>非预期制动、过强制动、上电误输出</td>
+  <td>HA-01/03/07/10 → SG-01/05/06 → SSR-01/04/06/11</td>
+  <td>输入/配置评估、逻辑决策、物理硬件默认状态及独立保护</td>
+  <td>真实车型工况、功率电路分析、启动/复位/输入异常注入</td>
+</tr>
+<tr>
+  <td>应有制动缺失、弱或延迟</td>
+  <td>HA-02/04 → SG-02 → SSR-02/03/05/08</td>
+  <td>输入质量、控制响应、供电/功率/轮端能力、告警</td>
+  <td>车辆/制动器规格、时序预算和台架测量</td>
+</tr>
+<tr>
+  <td>持续制动与热失效</td>
+  <td>HA-05/08 → SG-03/06 → SSR-07/08/09</td>
+  <td>实际输出监测、保护、故障处置</td>
+  <td>短路/开路/卡滞/过温故障研究与台架</td>
+</tr>
+<tr>
+  <td>制动力不均</td>
+  <td>HA-06 → SG-04 → SSR-07/14</td>
+  <td>线束、功率拓扑、轮端安装与诊断</td>
+  <td>实际多轴/轮端电路和维护检查</td>
+</tr>
+<tr>
+  <td>安装、方向与用户设置错误</td>
+  <td>HA-09/10/11 → SG-05/07 → SSR-03/10/11/12/13</td>
+  <td>安装检查、配置校验、通信权限、状态新鲜度</td>
+  <td>安装方向试验、权限/异常交互测试</td>
+</tr>
+<tr>
+  <td>脱挂/应急/驻车及服务</td>
+  <td>HA-12 → SG-08 → SSR-14/15/16</td>
+  <td>整车安装、应急制动/驻车独立性、版本及维护</td>
+  <td>目标市场法规、线束/安装和特种工况</td>
+</tr>
+</tbody>
+</table>
+<p>上表为<strong>初筛追踪的概念性责任分配</strong>，尚不代表完成 FMEA、HARA、ASIL 判定或具有可验证的失效安全策略。SSR-17/18 作为所有条目的工程验证及 EVB 输出禁令，横向适用。</p>
+<h4>7.2 验证责任分层</h4>
+<ul>
+<li><code>SYSTEM_ANALYSIS</code>：用户需求、危害主题、状态/接口逻辑一致性与验证计划可审查。</li>
+<li><code>HOST_LOGIC</code>：未来可在不接实际输出的条件下验证逻辑正确性；本轮不写软件、不宣称结果。</li>
+<li><code>TARGET_BOARD</code>：未来在确定 MCU/开发板及模块条件下验证接口；不等于产品功率和安全能力。</li>
+<li><code>POWER_BENCH</code>：未来对真实功率硬件做保护/故障注入试验，需要单独安全审批。</li>
+<li><code>VEHICLE_PRODUCT</code>：目标车辆及法规适用性和实际制动性能；须独立证据。</li>
+</ul>
+<h3>8. DD-08｜Variant / Board / Release 与维护边界</h3>
+<table>
+<thead>
+<tr>
+  <th>轴</th>
+  <th>允许变化</th>
+  <th>绝对不应被其隐含改变</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>Variant</code></td>
+  <td>LCD/App 交互组合、允许的增强功能、产品参数集合</td>
+  <td>共用的制动输入/诊断/状态含义和安全审查要求</td>
+</tr>
+<tr>
+  <td><code>Board</code></td>
+  <td>MCU、PCB、时钟/电源、电气/外设实现、功率执行硬件</td>
+  <td>产品软件业务语义的权威来源</td>
+</tr>
+<tr>
+  <td><code>Release</code></td>
+  <td>固件与 App 受控版本、参数 schema、协议版本、测试与发布证据</td>
+  <td>适用车辆/硬件能力的未经审查扩张</td>
+</tr>
+</tbody>
+</table>
+<p>安装或维修过程必须能够识别<strong>设备是什么、适用哪种车辆/制动器、使用什么软件/参数版本、哪些诊断结果可信</strong>。尚未确定真实设备身份机制，不虚构制造编码或无线权限方案。</p>
+<h3>9. P4 系统设计工作包状态（当前）</h3>
+<table>
+<thead>
+<tr>
+  <th>DD 编号</th>
+  <th>本稿已定义的内容</th>
+  <th>留待下一步的缺口</th>
+  <th>是否能够作为 P5 物理实现的准入依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>DD-01</td>
+  <td>产品包络维度及适用性声明规则</td>
+  <td>车型/地域/质量/轴数/制动器/供电规格</td>
+  <td>否，关键值 <code>OPEN</code></td>
+</tr>
+<tr>
+  <td>DD-02</td>
+  <td>输入语义与异常组合</td>
+  <td>真实触发源、传感角色、时序/电气与接口</td>
+  <td>否，硬件部分 <code>BLOCKED</code></td>
+</tr>
+<tr>
+  <td>DD-03</td>
+  <td>请求/执行许可/物理反馈责任</td>
+  <td>功率系统拓扑、保护和安全论证</td>
+  <td>否，真实输出 <code>BLOCKED</code></td>
+</tr>
+<tr>
+  <td>DD-04</td>
+  <td>运行状态与重点异常事件</td>
+  <td>逐故障安全动作、阈值和恢复准入</td>
+  <td>部分逻辑合同候选，可供进一步评审</td>
+</tr>
+<tr>
+  <td>DD-05</td>
+  <td>性能 KPI 测量与预算规则</td>
+  <td>可量化目标、来源和工况</td>
+  <td>否，数值未冻结</td>
+</tr>
+<tr>
+  <td>DD-06</td>
+  <td>基础参数与事务/状态合同</td>
+  <td>重量档/等级及真实工况准入、保存策略</td>
+  <td>可供继续业务需求设计，不能直接部署车端设置</td>
+</tr>
+<tr>
+  <td>DD-07</td>
+  <td>危害追踪与验证责任分配</td>
+  <td>正式安全分析、产品实物和危险响应论证</td>
+  <td>否，安全验证未完成</td>
+</tr>
+<tr>
+  <td>DD-08</td>
+  <td>Variant/Board/Release 管理规则</td>
+  <td>首发产品组合、身份/版本机制</td>
+  <td>方向可审，细项待定</td>
+</tr>
+</tbody>
+</table>
+<h3>10. 集中产品决策与证据矩阵（后续仅集中呈报一次）</h3>
+<table>
+<thead>
+<tr>
+  <th>决策序号</th>
+  <th>负责人需要确认的产品问题</th>
+  <th>核实依据</th>
+  <th>对哪些 DD 有影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>PROD-01</td>
+  <td>首发市场/车辆类别/安装方式</td>
+  <td>目标营销/销售和安装定位、当地适用要求</td>
+  <td>01,03,05,07,08</td>
+</tr>
+<tr>
+  <td>PROD-02</td>
+  <td>适用挂车质量、轴数、轮端电制动器类型/规格</td>
+  <td>目标拖挂车型与轮端制动器供应商资料</td>
+  <td>01,03,05,06,07</td>
+</tr>
+<tr>
+  <td>PROD-03</td>
+  <td>车端供电/制动触发/线束和应急制动关系</td>
+  <td>拖挂与牵引车电气规范、具体线路依据</td>
+  <td>02,03,04,07</td>
+</tr>
+<tr>
+  <td>PROD-04</td>
+  <td>运动信息作用：必要闭环输入、辅助，还是诊断</td>
+  <td>产品同步制动原理与危险分析</td>
+  <td>02,04,05,07</td>
+</tr>
+<tr>
+  <td>PROD-05</td>
+  <td>首版 HMI/Variant：LCD/App 并列或独立款、Android/iOS</td>
+  <td>真实市场与产品定义</td>
+  <td>06,08</td>
+</tr>
+<tr>
+  <td>PROD-06</td>
+  <td>制动档数与重量区间、制动力等级范围和默认保存规则</td>
+  <td>产品使用体验 + 制动器/实际标定</td>
+  <td>01,05,06</td>
+</tr>
+<tr>
+  <td>PROD-07</td>
+  <td>手动制动、Boost、倒车响应、OTA、侧摆辅助等归属</td>
+  <td>Variant 产品策略与附加风险论证</td>
+  <td>01,06,07,08</td>
+</tr>
+</tbody>
+</table>
+<p><strong>目前只建议在产品决策准备充分时一次确认</strong>，不因为没有数字就阻断非硬件依赖的系统设计。也不将开发板/SDK 资源当作产品性能边界。</p>
+<h3>11. 本版审阅与下一阶段边界</h3>
+<p>本版已形成 8 项系统级合同的可审阅细化，<strong>建议批准其信息模型、业务状态、事务语义、危险追踪与开放项管理方法作为继续详细设计输入</strong>。不申请冻结尚未由车辆和制动器证据支持的数值；不申请 P4 物理设计 Gate 通过或 P5 代码实施授权。</p>
+<p>审批时应重点检查：主控制器职责、制动输入/运动信息分开、逻辑请求与物理输出分开、不能把“发生故障立刻断电”当作通用答案、配置“发送/接受/生效/保存/读回”状态严格区分、旧代码彻底排除研究基础。</p>
+<p><strong>阶段状态</strong>：<code>P4_SYSTEM_DESIGN_REVIEW_READY_WITH_OPEN_PRODUCT_DATA</code>。实际产品安全设计、P5–P8 仍需在对应条件具备后开展。</p>
+</section>
+<section class="section"><h2 id="section-14">附录 B｜P5 V0.1 已批准阶段计划原文（历史参照）</h2>
+<blockquote>
+<p>仅用于追溯已批准的原阶段计划。任何涉及旧代码/旧构建环境的示例，<strong>由本包 P5～P8 V0.2 新方案替代</strong>；原文件历史事实不作为当前实现证据。</p>
+</blockquote>
+<h3>BrakeSync｜P5 实施开发与模块测试</h3>
+<blockquote>
+<p><strong>项目</strong>：BrakeSync 拖挂式房车同步制动控制系统<br />
+<strong>版本</strong>：V0.1，2026-11-13；<strong>阶段性质</strong>：未来阶段可审阅的工程设计/实施计划，不是实测报告<br />
+<strong>上游</strong>：P0 V0.1、P1 V0.2 已由负责人在项目对话批准；P2 V0.1 尚待批准<br />
+<strong>授权边界</strong>：本文不授权实际制动功率、固件/App 代码变更、GitHub 写入、对外发布或阶段验收<br />
+<strong>证据等级</strong>：<code>FACT</code> 已确认事实；<code>DESIGN-CANDIDATE</code> 可评审设计候选；<code>TBD</code> 待决；<code>TEST-PLAN</code> 待实施测试</p>
+</blockquote>
+<h4>0. 本阶段真正应交付什么</h4>
+<p>P5 是<strong>按已批准设计实施并做单模块验证</strong>。本次预编制的是实施计划和任务合同，<strong>不是实施报告</strong>：没有运行新命令、没有改写任何固件/App 源码，也没有新的烧录、实板或制动试验结果。</p>
+<p>当前已观察到的固定版本：固件 <code>d1f38b250f2c229aeb122985dc0520b969fe971d</code> 的 GitHub Actions <code>firmware-host</code> Configure/Build/Test 成功（run <code>43273051114</code>）；App <code>5b911b5b57352fb1c8d0017faeb4b00ace078eb0</code> 的 <code>app-static</code> Dependencies/Analyze/Test 成功（run <code>43272396940</code>）。这是 <strong>既有 Host/Flutter 检查结果</strong>，不是 P5 工作完成或 Target 编译通过。</p>
+<h4>1. 开发边界和四条工作流</h4>
+<table>
+<thead>
+<tr>
+  <th>工作流</th>
+  <th>可立即按独立授权研究/准备</th>
+  <th>实际修改/实测启动前必须补齐</th>
+  <th>完成证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>ASW 共用核心</td>
+  <td>源码/依赖审计、接口与状态设计、Host 测试计划</td>
+  <td>P2/P3/P4 对应条目获批，控制输入/参数语义一致</td>
+  <td>编译日志、单元测试、代码差异和审查记录</td>
+</tr>
+<tr>
+  <td>BSW/Board 云途接入</td>
+  <td>RevC 原理图/RevA 参考手册差异、SDK 符号研究、纯 I/O 探针方案</td>
+  <td>实物 PCB Revision、MCU 顶标、SDK 版本及电压确认</td>
+  <td>Target 编译、烧录日志、板级外设原始观察</td>
+</tr>
+<tr>
+  <td>蓝牙/加速度模块</td>
+  <td>模块硬件身份核对，CAN/I²C/UART 方案研究</td>
+  <td>模块型号、供电/IO 电平、接口、接线图和协议</td>
+  <td>原始串口/CAN/传感日志、故障/超时用例</td>
+</tr>
+<tr>
+  <td>Flutter App</td>
+  <td>现有 Mock 结构与业务语义审查、UI/仓库接口合同</td>
+  <td>真正 BLE 设备和已批准 BLE-ICD，目标 Android/iOS 范围</td>
+  <td>单元/UI CI；之后实机配对、状态/命令/回执证据</td>
+</tr>
+</tbody>
+</table>
+<p><strong>优先顺序</strong>：沿用户当前研发意图，先确认 CAN/加速度传感器与 BLE 的接入条件，同时形成 ASW/BSW 共用软件框架；可将 Host 纯逻辑设计与硬件资料核实并行，不能让硬件资料缺口拖垮所有软件工作，也不能以“先行”为由开通真实制动输出。</p>
+<h4>2. 可分配的实施包（本次为 TASK-CANDIDATE，不是 Codex 命令）</h4>
+<table>
+<thead>
+<tr>
+  <th>工作包</th>
+  <th>建议输入版本和文件范围</th>
+  <th>实施内容</th>
+  <th>必测与完成判据</th>
+  <th>明确禁止</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>FW-01</code> 依赖与入口核对</td>
+  <td><code>firmware/</code> 当前 HEAD、官方 SDK 文件目录</td>
+  <td>梳理 <code>main</code>、BSW 接口、BoardCfg、目标时钟/中断启动</td>
+  <td>文件与调用关系图、无隐含 SDK API</td>
+  <td>不趁机重构整个仓库</td>
+</tr>
+<tr>
+  <td><code>FW-02</code> 时基与基础 I/O</td>
+  <td><code>board/ytmicro/</code>, <code>src/BSW/Driver/</code></td>
+  <td>在已验证 Board/SDK 上实现计时/GPIO/UART 或其他批准接口</td>
+  <td>Host 错误用例 + 独立 Target 烧录/日志</td>
+  <td>不以伪造 driver 替代真实 SDK</td>
+</tr>
+<tr>
+  <td><code>FW-03</code> CAN 数据通路</td>
+  <td>CAN Driver 与独立 CDD 输入接口</td>
+  <td>确认模块 CAN 物理层和报文合同，区分接收/过滤/错误恢复与 ASW</td>
+  <td>不合法 DLC/ID、超时、Bus-off/重启；真实 CAN 实测</td>
+  <td>不猜测 CAN ID、波特率、消息格式</td>
+</tr>
+<tr>
+  <td><code>FW-04</code> 加速度输入</td>
+  <td>CDD + ASW Motion 合同</td>
+  <td>按实际模块 I²C/SPI/CAN 接入，时间戳/坐标/质量统一</td>
+  <td>芯片/模块身份、数据变化、断线/错数据</td>
+  <td>不把 BMA510 芯片等同 CAN 模块</td>
+</tr>
+<tr>
+  <td><code>FW-05</code> 蓝牙模块</td>
+  <td>UART 基础 + BLE 设备/协议层</td>
+  <td>模块复位/命令或透传、真实设备身份、故障状态与缓冲管理</td>
+  <td>按原厂和现场证据测试收发、超时/断连</td>
+  <td>不猜测 AT/GATT UUID</td>
+</tr>
+<tr>
+  <td><code>FW-06</code> 制动逻辑</td>
+  <td>ASW State/Control/Diagnostics/Parameters</td>
+  <td>按批准需求设计纯逻辑请求与受限状态</td>
+  <td>Host 确定性、坏数据、参数异常、无功率输出</td>
+  <td>不接功率驱动、不激活 MCU 实制动引脚</td>
+</tr>
+<tr>
+  <td><code>APP-01</code> App 真实传输</td>
+  <td><code>app/lib/transport/</code> 与共用 ICD</td>
+  <td>实现与 Mock 严格分离的已批准 BLE 连接和读写</td>
+  <td>模拟异常 + Android/iOS 按批准目标实机测试</td>
+  <td>不单方面定义协议，不冒充 Mock 为真设备</td>
+</tr>
+<tr>
+  <td><code>APP-02</code> 业务状态/配置</td>
+  <td><code>app/lib/domain/</code>, UI, tests</td>
+  <td>规范连接/故障、制动档、等级、提交/回读</td>
+  <td>边界、拒绝、断链、回读与缓存标志</td>
+  <td>不把模拟三档定为正式产品档位</td>
+</tr>
+</tbody>
+</table>
+<p>上表为<strong>候选任务组合</strong>。每个工作包须在执行前单独给出“文件清单、允许改动、禁止事项、上游版本、测试方式和验收人”；不能将整个 P5 文档当成允许 Codex 自主修改全部文件的授权。</p>
+<h4>3. 每项任务的最小受控合同</h4>
+<pre><code class="language-text">任务 ID：
+目标：用一句话描述可观测的完成结果；不是“完善框架”。
+依据：已批准的 SYS 需求 ID / 架构合同 / 详细设计版本。
+源版本：仓库、分支、精确提交 SHA、SDK/工具链版本。
+允许文件：逐个列出；禁止改动：明确列出。
+实施规则：不得自行决策引脚、协议 ID、控制安全策略和产品功能。
+异常处理：遇到资料缺失/不一致须停在安全状态并报告。
+验证：Host 目标与 Target 目标分开，列成功/失败判定。
+交付：diff、修改文件、命令/日志、已做/未做、风险与问题。
+权限：仅已批准的分支及任务，不自动合并、不写 management。
+</code></pre>
+<p><strong>三方协作</strong>：负责人决定产品和验收；本管理 AI 研究决策、审查并编写范围明确的执行指令；Codex 在明确授权下修改文件、编译和测试，完整汇报。固件与 App 专业对话分别负责本领域技术细节和输出实现建议，管理 AI 不替代其逐行审查。</p>
+<h4>4. 启动/运行与代码设计约束</h4>
+<ul>
+<li>MCU 入口保持简洁：启动时钟、Board、OS/轮询/服务、ASW 后进入稳定调度。实际驱动逻辑不应长期塞入 <code>main()</code>。</li>
+<li>中断/DMA 路径按真实云途 SDK 实现；ISR 的最小职责、数据缓冲和上下文并发安全要有审查和测试。</li>
+<li>服务接口应返回具体错误状态，禁止未绑定 Driver 静默成功。</li>
+<li>公开 C API 应表达英文稳定语义，配简洁中文注释；注释重点说明依据、硬件约束、错误边界；复杂框架、重复 HAL、隐式全局状态要受约束。</li>
+<li>当需要处理超时、循环缓冲、错误恢复时，明确容量和溢出行为，不能只验证理想单字节正常路径。</li>
+<li>参数、协议、控制策略共享数据类型不允许因模块方便而隐式修改上游需求。</li>
+</ul>
+<h4>5. 测试顺序及“通过”定义</h4>
+<table>
+<thead>
+<tr>
+  <th>级别</th>
+  <th>能说明什么</th>
+  <th>不能说明什么</th>
+  <th>基准例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>源码/静态审查</td>
+  <td>API/逻辑与风格可被检查</td>
+  <td>能实际运行</td>
+  <td>Driver 头文件审查</td>
+</tr>
+<tr>
+  <td>Host Build PASS</td>
+  <td>当前 Host 编译命令成功</td>
+  <td>Target SDK/链接通过</td>
+  <td>CMake + <code>-Wall -Wextra -Werror</code></td>
+</tr>
+<tr>
+  <td>Host Unit PASS</td>
+  <td>指定输入与桩的逻辑测试成功</td>
+  <td>真实器件接口通</td>
+  <td><code>ctest</code> 原始报告</td>
+</tr>
+<tr>
+  <td>Target Build PASS</td>
+  <td>对精确 MCU/SDK/工具链编译链接成功</td>
+  <td>烧录和实物运行</td>
+  <td>Linker、启动文件等完整构建日志</td>
+</tr>
+<tr>
+  <td>烧录成功</td>
+  <td>程序进入指定器件 Flash/ROM</td>
+  <td>功能正确</td>
+  <td>烧录器、芯片 ID、校验日志</td>
+</tr>
+<tr>
+  <td>实板运行</td>
+  <td>对指定供电与目标硬件观察到运行</td>
+  <td>模块稳定和安全性</td>
+  <td>UART/LED/寄存器/探针记录</td>
+</tr>
+<tr>
+  <td>模块实测通过</td>
+  <td>真实模块在定义工况符合具体合同</td>
+  <td>产品系统验收</td>
+  <td>CAN/IMU/BLE 全链路记录</td>
+</tr>
+<tr>
+  <td>产品级验证</td>
+  <td>指定产品硬件/工况满足批准要求</td>
+  <td>未测试的其他工况</td>
+  <td>未来台架/实车/安全证据链</td>
+</tr>
+</tbody>
+</table>
+<p>可重复构建需要 SDK 和工具链版本、命令、源码 commit、配置、目标 MCU/板卡 Revision 一并存档。历史编译截图不能在 SDK 已变更后冒充当前 Release 证据。</p>
+<h4>6. P5 完成条件（尚未执行）</h4>
+<ul>
+<li>每个纳入本阶段的已授权模块都有经审查的源码差异、需求引用和受控版本；</li>
+<li>至少有对应单元/模块测试并记录失败和跳过项，不用“PASS”掩盖边界未验；</li>
+<li>目标外设的 Target Build/烧录/实物测试分别留痕，未运行的项写 <code>NOT_RUN</code> 而不是 <code>PASS</code>；</li>
+<li>App Mock/实际 BLE 适配清楚隔离，命令未获许可时不能触达真实制动执行；</li>
+<li>共享接口变更已由接口权威处批准，且需要时通知 App 与固件双方；</li>
+<li>输出始终保持独立安全禁能，当前 EVB 绝无真实制动功率链路。</li>
+</ul>
+<p><strong>阶段状态</strong>：<code>PLAN_ONLY / NOT_IMPLEMENTED_IN_THIS_DELIVERY</code>。本阶段交付可作为日后实施任务设计依据，但不代表任何新任务已获批准或完成。</p>
+</section>
+<section class="section"><h2 id="section-15">附录 C｜P6 V0.1 已批准阶段计划原文（历史参照）</h2>
+<blockquote>
+<p>仅用于追溯已批准的原阶段计划。任何涉及旧代码/旧构建环境的示例，<strong>由本包 P5～P8 V0.2 新方案替代</strong>；原文件历史事实不作为当前实现证据。</p>
+</blockquote>
+<h3>BrakeSync｜P6 系统集成与跨模块联调</h3>
+<blockquote>
+<p><strong>项目</strong>：BrakeSync 拖挂式房车同步制动控制系统<br />
+<strong>版本</strong>：V0.1，2026-11-13；<strong>阶段性质</strong>：未来阶段可审阅的工程设计/实施计划，不是实测报告<br />
+<strong>上游</strong>：P0 V0.1、P1 V0.2 已由负责人在项目对话批准；P2 V0.1 尚待批准<br />
+<strong>授权边界</strong>：本文不授权实际制动功率、固件/App 代码变更、GitHub 写入、对外发布或阶段验收<br />
+<strong>证据等级</strong>：<code>FACT</code> 已确认事实；<code>DESIGN-CANDIDATE</code> 可评审设计候选；<code>TBD</code> 待决；<code>TEST-PLAN</code> 待实施测试</p>
+</blockquote>
+<h4>0. 集成目标</h4>
+<p>P6 目标是将<strong>经独立验证的模块</strong>，按固定源版本和已批准接口合同接成可重复运行的组合，并定位跨模块故障。当前提供的是 P6 集成策略、矩阵和评审准则，<strong>不存在本次新增的系统集成测试通过记录</strong>。</p>
+<p>本项目将“开发板通信/算法集成”和“真实产品硬件/执行器集成”严格区分；前者可在当前 EVB 阶段推进，后者需目标产品硬件、真实安全机制和独立授权。不能因为 CAN、BLE、传感器在同一块开发板分别工作，就声称 BrakeSync 制动产品已经集成完成。</p>
+<h4>1. 固定输入与前置条件</h4>
+<ul>
+<li>合同输入：经批准的 <code>SYS-*</code>、ASW/BSW 接口版本、蓝牙 ICD、CAN/加速度输入协议、参数 schema、错误码，若尚未批准必须明确阻塞相应真实联调。</li>
+<li>配置输入：<code>Variant ID</code>、<code>Board ID + PCB Rev + MCU 顶标</code>、<code>Release 候选 ID + 源 SHA</code>、编译器/SDK/配置散列。</li>
+<li>硬件输入：电源/接地/IO 电平、终端电阻/线路、模块接线、实验工具和记录日期。</li>
+<li>安全输入：无实际电磁制动器连接或功率执行通道；程序与实物共同遵守当前 EVB 禁能。</li>
+</ul>
+<h4>2. 系统集成次序</h4>
+<table>
+<thead>
+<tr>
+  <th>序列</th>
+  <th>组合路径</th>
+  <th>集成成功判据候选</th>
+  <th>前置阻塞</th>
+  <th>证据要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>IT-01</code></td>
+  <td>BSW 时间/日志 ↔ ASW 状态</td>
+  <td>初始化/异常/时间样本一致，无未绑定成功</td>
+  <td>时基/BoardCfg 未核实</td>
+  <td>固件日志与 Host/Target 区分</td>
+</tr>
+<tr>
+  <td><code>IT-02</code></td>
+  <td>CAN/传感驱动 ↔ 输入质量 ↔ Motion</td>
+  <td>真实帧/样本标识、单位、时效与故障状态一致</td>
+  <td>实际外购模块协议不明</td>
+  <td>原始 CAN 帧/传感器读数/时间戳</td>
+</tr>
+<tr>
+  <td><code>IT-03</code></td>
+  <td>BrakeInput ↔ Params ↔ BrakeControl</td>
+  <td>有效/无效组合产生预期的<strong>逻辑请求</strong>与受限状态</td>
+  <td>量化控制规则 TBD</td>
+  <td>Host 注入+隔离运行观测</td>
+</tr>
+<tr>
+  <td><code>IT-04</code></td>
+  <td>BLE 设备 ↔ UART ↔ 协议 ↔ 参数服务</td>
+  <td>请求、设备执行结果、持久化、回读可核对</td>
+  <td>BLE-ICD 与模块型号待核实</td>
+  <td>双端抓包、请求/应答关联</td>
+</tr>
+<tr>
+  <td><code>IT-05</code></td>
+  <td>Android/iOS App ↔ 真实 BLE ↔ 设备状态</td>
+  <td>配对、连接、读状态、受许可配置、断连与重连</td>
+  <td>目标手机平台与固件通信合同待定</td>
+  <td>App/固件版本、手机 OS、日志</td>
+</tr>
+<tr>
+  <td><code>IT-06</code></td>
+  <td>故障诊断 ↔ ASW/SystemState ↔ HMI</td>
+  <td>故障出现/锁存/恢复与显示一致</td>
+  <td>故障矩阵尚未冻结</td>
+  <td>注入条件、设备状态和界面证据</td>
+</tr>
+<tr>
+  <td><code>IT-07</code></td>
+  <td>参数存储 ↔ 断电/重启 ↔ HMI</td>
+  <td>已确认配置在正确工况保存并在重启回读</td>
+  <td>真实 NVM 与掉电保护 TBD</td>
+  <td>重启前后读回、CRC/版本错误日志</td>
+</tr>
+<tr>
+  <td><code>IT-08</code></td>
+  <td>EVB 全逻辑链（无功率）</td>
+  <td>支持源头输入到逻辑请求、状态和 App 显示的完整可追踪链路</td>
+  <td>IT-01…07 相应功能成功</td>
+  <td>同源时钟日志和连续可复验用例</td>
+</tr>
+<tr>
+  <td><code>IT-PROD</code></td>
+  <td>未来正式 PCB ↔ 功率执行器</td>
+  <td><strong>仅未来台架/实车安全准入通过后定义</strong></td>
+  <td>OD-04/07，硬件/危险分析未完成</td>
+  <td>不在当前 EVB 集成范围内</td>
+</tr>
+</tbody>
+</table>
+<p>若蓝牙或外部加速度实物未准备好，可以先对 <code>IT-03</code> 做 Host 完整逻辑仿真；该结果不能用于 <code>IT-02</code> 或 <code>IT-05</code> 的实物通过声明。</p>
+<h4>3. 集成故障排查树</h4>
+<pre><code class="language-text">[输入/状态异常]
+    ├── 物理层：供电/电平/接地/连接线/终端
+    ├── 外设层：PinMux/Clock/SDK/IRQ/DMA/队列
+    ├── 设备层：型号/模式/报文/寄存器/原厂协议
+    ├── 传输层：帧序/超时/缓冲/失联/重试
+    ├── 业务层：样本质量/单位/配置/状态/鉴权
+    └── 表现层：App 缓存/状态码/版本兼容
+</code></pre>
+<p>定位时尽可能找到<strong>第一个实际丢失有效语义的位置</strong>，不通过上层强制忽略错误来“修复”底层故障。对真实链路记录发起时间、到达时间、命令 ID、返回错误、接收数据、新鲜度和当前系统状态。</p>
+<h4>4. 必须覆盖的组合边界场景</h4>
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>场景</th>
+  <th>期望与验证重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>IF-01</code></td>
+  <td>CAN 设备断线、总线错误/Bus-off、恢复</td>
+  <td>失效质量可见；恢复有条件，无陈旧样本冒充有效</td>
+</tr>
+<tr>
+  <td><code>IF-02</code></td>
+  <td>加速度方向反转、单位错误、数据抖动、时间戳停滞</td>
+  <td>不产生未定义符号的逻辑制动请求，错误分级可诊断</td>
+</tr>
+<tr>
+  <td><code>IF-03</code></td>
+  <td>UART RX 溢出、分包粘包、数据损坏</td>
+  <td>溢出/校验/超时明确报错，没有部分命令误生效</td>
+</tr>
+<tr>
+  <td><code>IF-04</code></td>
+  <td>BLE 断连、重连、重复命令、恶意/未知设备</td>
+  <td>主控自动控制不依赖手机在线；关键设置不会被重放或伪连接修改</td>
+</tr>
+<tr>
+  <td><code>IF-05</code></td>
+  <td>配置保存失败、写入中断、旧 schema</td>
+  <td>明确已提交/未生效/未保存，不读取损坏参数作为正常</td>
+</tr>
+<tr>
+  <td><code>IF-06</code></td>
+  <td>MCU 复位与外围复位顺序差异</td>
+  <td>受限/未就绪状态符合定义，不出现未授权实际功率</td>
+</tr>
+<tr>
+  <td><code>IF-07</code></td>
+  <td>错误的 Variant/Board/Release 组合</td>
+  <td>构建或启动拒绝、不报告有效版本，便于定位</td>
+</tr>
+<tr>
+  <td><code>IF-08</code></td>
+  <td>App Mock 和真实 BLE 切换</td>
+  <td>UI 明确区分演示数据和真实设备数据，状态不串用</td>
+</tr>
+</tbody>
+</table>
+<h4>5. 共享接口及多分支版本矩阵</h4>
+<table>
+<thead>
+<tr>
+  <th>交互合同</th>
+  <th>权威归属（建议）</th>
+  <th>固件核对</th>
+  <th>App 核对</th>
+  <th>不兼容处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>参数语义 schema</td>
+  <td>共用系统合同、负责人批准</td>
+  <td>C 类型/范围/持久化</td>
+  <td>Dart 类型/范围/展示</td>
+  <td>明确拒绝不兼容版本</td>
+</tr>
+<tr>
+  <td>设备故障代码</td>
+  <td>同一版本化诊断字典</td>
+  <td>发生源/严重度/恢复</td>
+  <td>文本/提示/状态颜色</td>
+  <td>未知故障显示未知而非正常</td>
+</tr>
+<tr>
+  <td>BLE-ICD</td>
+  <td>固件/App 双方共同审查</td>
+  <td>消息解析/授权/回执</td>
+  <td>扫描/配对/请求/超时</td>
+  <td>版本协商/拒绝不支持</td>
+</tr>
+<tr>
+  <td>输入质量/单位</td>
+  <td>ASW 唯一业务合同</td>
+  <td>CAN/I²C/SPI 驱动转化</td>
+  <td>仅必要诊断展示</td>
+  <td>不跨设备静默改变单位</td>
+</tr>
+<tr>
+  <td>Variant/Board/Release</td>
+  <td>项目配置登记</td>
+  <td>编译目标与板级绑定</td>
+  <td>兼容设备版本识别</td>
+  <td>组合错误不允许默默继续</td>
+</tr>
+</tbody>
+</table>
+<p><strong>分支纪律</strong>：管理 AI 只可在得到明确写入授权时写 <code>management</code>，不写 <code>firmware</code> / <code>app</code> / <code>main</code>；Codex 的执行权限由独立任务授权限定。本计划本身<strong>不产生任何跨分支文件变更</strong>。</p>
+<h4>6. 每轮集成日志最小记录格式</h4>
+<pre><code class="language-text">集成批次：IT-xxxx / 日期 / 负责人
+Variant / Board / PCB Rev / MCU / Release 候选：
+firmware SHA / app SHA / SDK / Toolchain / BLE-ICD：
+实物：EVB、模块型号、接线、电源与测试工具：
+执行顺序、命令/刺激、原始观测、期望判据：
+结果：PASS / FAIL / BLOCKED / NOT_RUN（按具体用例）
+关联缺陷：编号、发现步骤、问题归属、修复 SHA、复验结果：
+剩余风险：
+</code></pre>
+<h4>7. P6 退出与真实产品边界</h4>
+<ul>
+<li>已批准的组合范围内，每条必须的跨模块链路都有固定版本和<strong>实测</strong>通过记录；</li>
+<li>共享接口与源版本一致，失败用例没有被隐藏，数据语义与故障行为可重现；</li>
+<li>对不可覆盖的用例明确 <code>BLOCKED/NOT_RUN</code>，并将其带入 P7，而不是宣布系统完成；</li>
+<li>EVB 阶段不得将 <code>IT-08</code> 逻辑链作为功率执行、道路或产品安全验收；</li>
+<li>真实产品硬件集成必须在未来单独受控的硬件和危险分析条件下进行。</li>
+</ul>
+<p><strong>状态：计划完成；P6 集成结果 <code>NOT_RUN</code>，未达到可批准的阶段完成证据。</strong></p>
+</section>
+<section class="section"><h2 id="section-16">附录 D｜P7 V0.1 已批准阶段计划原文（历史参照）</h2>
+<blockquote>
+<p>仅用于追溯已批准的原阶段计划。任何涉及旧代码/旧构建环境的示例，<strong>由本包 P5～P8 V0.2 新方案替代</strong>；原文件历史事实不作为当前实现证据。</p>
+</blockquote>
+<h3>BrakeSync｜P7 系统验证与验收</h3>
+<blockquote>
+<p><strong>项目</strong>：BrakeSync 拖挂式房车同步制动控制系统<br />
+<strong>版本</strong>：V0.1，2026-11-13；<strong>阶段性质</strong>：未来阶段可审阅的工程设计/实施计划，不是实测报告<br />
+<strong>上游</strong>：P0 V0.1、P1 V0.2 已由负责人在项目对话批准；P2 V0.1 尚待批准<br />
+<strong>授权边界</strong>：本文不授权实际制动功率、固件/App 代码变更、GitHub 写入、对外发布或阶段验收<br />
+<strong>证据等级</strong>：<code>FACT</code> 已确认事实；<code>DESIGN-CANDIDATE</code> 可评审设计候选；<code>TBD</code> 待决；<code>TEST-PLAN</code> 待实施测试</p>
+</blockquote>
+<h4>0. 验证必须证明什么</h4>
+<p>P7 不是测试清单越长越好，而是明确<strong>哪个产品/版本/环境已满足哪条批准需求，并用什么原始证据证明</strong>。本文件为验证策略与待执行矩阵，不是产品级验证报告。未确定目标整机 PCB、电磁制动器规格、危险工况、市场法规、量化性能指标之前，不能定义虚假的“量产 PASS”。</p>
+<h4>1. 验证的四类对象和两条完全不同的主线</h4>
+<table>
+<thead>
+<tr>
+  <th>对象</th>
+  <th>环境</th>
+  <th>可证明的边界</th>
+  <th>不可证明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>逻辑模块</td>
+  <td>Host 单元测试与模拟输入</td>
+  <td>数据类型、逻辑分支、拒绝和确定性</td>
+  <td>MCU 寄存器、外部模块响应、真实硬件安全</td>
+</tr>
+<tr>
+  <td>目标外设</td>
+  <td>已确认云途 EVB + 官方 SDK + 外接模块</td>
+  <td>对应特定接线/条件下的真实通信、时序和故障</td>
+  <td>最终产品功率驱动或整车制动性能</td>
+</tr>
+<tr>
+  <td>联机 HMI</td>
+  <td>已确认 App 手机 + 真 BLE 模块 + EVB</td>
+  <td>设备发现、鉴权、状态、受控设置及回执</td>
+  <td>手机实时控制安全闭环、实际制动力</td>
+</tr>
+<tr>
+  <td>整机产品</td>
+  <td>将来的正式 PCB、制动器、供电和受控试验场景</td>
+  <td>才能覆盖热、电流、物理制动和动态工况</td>
+  <td>未覆盖车型/法规/误用场景</td>
+</tr>
+</tbody>
+</table>
+<p><strong>主线 A：EVB 软件/外设验证</strong> 可在现阶段筹备实施；<strong>主线 B：真实功率/台架/车辆安全验证</strong> 暂不具备条件，不得靠 A 的成功把 B 标记为完成。</p>
+<h4>2. 需求追溯—验证矩阵（计划编号，非已有测试通过记录）</h4>
+<table>
+<thead>
+<tr>
+  <th>验证 ID</th>
+  <th>关联需求</th>
+  <th>主要刺激/情境</th>
+  <th>接受判据必须观察到什么</th>
+  <th>环境和当前状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>VT-INIT-01</code></td>
+  <td><code>SYS-INIT-001…003</code></td>
+  <td>上电、初始化失败、未绑定服务</td>
+  <td>未就绪/故障状态可识别，不报告可正常制动</td>
+  <td>Host/EVB <code>NOT_RUN</code></td>
+</tr>
+<tr>
+  <td><code>VT-IN-01</code></td>
+  <td><code>SYS-IN-001…007</code></td>
+  <td>信号丢失、样本过期、传感异常/方向翻转</td>
+  <td>无效样本不进入正常控制，恢复有条件</td>
+  <td>Host/模块实物 <code>NOT_RUN</code></td>
+</tr>
+<tr>
+  <td><code>VT-CTRL-01</code></td>
+  <td><code>SYS-CTRL-001…005</code></td>
+  <td>断开 App、改变合法配置/输入</td>
+  <td>逻辑控制行为确定，主机不依赖手机在线</td>
+  <td>Host/EVB <code>NOT_RUN</code></td>
+</tr>
+<tr>
+  <td><code>VT-CFG-01</code></td>
+  <td><code>SYS-CFG-001…008</code></td>
+  <td>有效/非法参数、写入中断、旧版本</td>
+  <td>档位和等级互不影响，生效与保存结果一致</td>
+  <td>Host/目标 NVM <code>NOT_RUN</code></td>
+</tr>
+<tr>
+  <td><code>VT-HMI-01</code></td>
+  <td><code>SYS-HMI-001…006</code></td>
+  <td>LCD/App 显示、非法操作、断连</td>
+  <td>设备状态一致、清楚区分真实/模拟与失败</td>
+  <td>App/EVB <code>NOT_RUN</code></td>
+</tr>
+<tr>
+  <td><code>VT-BLE-01</code></td>
+  <td><code>SYS-COM-001…004</code>, <code>SYS-SEC-*</code></td>
+  <td>配对、伪设备、重复/乱序/丢包、重连</td>
+  <td>未授权设置不生效，已受理/已提交/已生效准确</td>
+  <td>手机+真 BLE <code>NOT_RUN</code></td>
+</tr>
+<tr>
+  <td><code>VT-DIAG-01</code></td>
+  <td><code>SYS-DIAG-001…004</code></td>
+  <td>故障注入、抖动、锁存和恢复</td>
+  <td>预定故障级别、恢复条件和对外报告可查</td>
+  <td>Host/EVB <code>NOT_RUN</code></td>
+</tr>
+<tr>
+  <td><code>VT-SAFE-EVB-01</code></td>
+  <td><code>SYS-SAFE-001…005</code>, <code>SYS-OUT-003</code></td>
+  <td>复位/异常/外设测试</td>
+  <td>EVB 没有可触发的实际制动功率执行路径</td>
+  <td>源码/实物接线检查 <code>NOT_RUN</code></td>
+</tr>
+<tr>
+  <td><code>VT-PLAT-01</code></td>
+  <td><code>SYS-PLAT-001…004</code>, <code>SYS-LAB-*</code></td>
+  <td>未绑定驱动、不同 Board 目标、SDK/引脚冲突</td>
+  <td>报错与版本清楚，不把虚构外设当成功能</td>
+  <td>Host/Target <code>NOT_RUN</code></td>
+</tr>
+<tr>
+  <td><code>VT-QUAL-01</code></td>
+  <td><code>SYS-QUAL-001…004</code></td>
+  <td>需求/产品配置抽查、构建重现</td>
+  <td>源码/测试/版本映射完整，指标有来源</td>
+  <td>文档/CI/工具链 <code>NOT_RUN</code></td>
+</tr>
+<tr>
+  <td><code>VT-PROD-OUT</code></td>
+  <td><code>SYS-OUT-001/002</code>, <code>SYS-SAFE-*</code></td>
+  <td>真正执行器、电气/热/故障/道路工况</td>
+  <td>仅在未来 HARA/设计/试验批准后确定</td>
+  <td><strong>BLOCKED：无正式 PCB/安全准入</strong></td>
+</tr>
+</tbody>
+</table>
+<p>不得因已有 <code>firmware-host</code> 或 <code>app-static</code> 绿灯就把上述新编号的目标测试写为 PASS；这些用例尚未按这份矩阵在指定目标环境执行。</p>
+<h4>3. 测试设计应包含的精确信息</h4>
+<p>每条用例至少写明：<strong>需求 ID、测试版本、进入状态、设备配置、输入/操作步骤、预期可观测结果、采样与计量方法、故障注入方法、完成准则、数据文件、缺陷/复验链接</strong>。如果某个阈值（超时、最大延迟、PWM/电流、控制精度）还没有确定来源，填写 <code>TBD</code> 并列为阻塞，不靠工程师随手选择一个“看起来合理”的数字。</p>
+<h4>4. 失效与安全验证重点</h4>
+<h5>4.1 当前 EVB 阶段</h5>
+<ul>
+<li>端口未绑定或模块缺失时，系统不能将空数据判成“传感器有效”；</li>
+<li>输入源丢失、停更、校验失败或时钟异常时不产生未经批准的逻辑有效请求；</li>
+<li>状态机上电/复位/错误/恢复路径可被独立测试，而不是只覆盖正常主循环；</li>
+<li>蓝牙断连不会中断主控的独立控制职责，也不允许手机因断连/重放错误设置；</li>
+<li>参数断电/写失败后的预期生效值和故障状态明确；</li>
+<li>固件/接线/调试指令不具备实际制动功率使能能力；这条需要软件与硬件独立审查。</li>
+</ul>
+<h5>4.2 未来真实产品阶段（本次禁止宣称已覆盖）</h5>
+<p>真实产品必须在确定电磁制动器类型/数量、载荷、车速、附着、温度、供电、执行器驱动拓扑之后，识别危险和相应故障响应。故障可能需要受控降级而非简单关断；必须基于具体工况、法规定义和风险分析决定。应覆盖上电瞬态、掉电/欠压、MCU 死机、看门狗、驱动短路/开路/粘连、器件热失控、传感器异常、用户误设置、线路接触不良等，保留可重复的试验结果。</p>
+<p>ISO 26262、Automotive SPICE、MISRA C 仅作为当前适用性研究与过程借鉴，不可宣称认证通过或任何 ASIL 等级。是否适用特定产品须按目标区域和用途调查。</p>
+<h4>5. 验证覆盖与度量规则</h4>
+<ul>
+<li><strong>需求覆盖</strong> = 有确定验证计划的批准需求 / 适用的已批准需求（计划覆盖）；</li>
+<li><strong>已执行覆盖</strong> = 至少完成一次适用测试的需求 / 适用的已批准需求；</li>
+<li><strong>通过覆盖</strong> = 证据显示全部必须判据通过的适用需求 / 适用的已批准需求。</li>
+</ul>
+<p>以上是建议度量定义，不能通过分母剔除难测需求来虚增覆盖率。若一个需求需要 Host 与目标板联合证明，两种环境证据缺一不可；不可简单加总重复。</p>
+<p>结果用 <code>PASS / FAIL / BLOCKED / NOT_RUN / NOT_APPLICABLE</code>，<code>NOT_APPLICABLE</code> 必须说明产品 Variant、理由和批准依据。发现缺陷需要保留失败原始日志和复验版本，不能用新绿灯覆盖历史失败。</p>
+<h4>6. 验证资产和设备账本</h4>
+<table>
+<thead>
+<tr>
+  <th>资产</th>
+  <th>最小记录</th>
+  <th>当前状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>固件构建</td>
+  <td>SHA、编译器、SDK、链接脚本、目标芯片、配置散列</td>
+  <td>Host 有既有成功记录；新 Target 未确认</td>
+</tr>
+<tr>
+  <td>EVB</td>
+  <td>实物型号、PCB Rev、MCU 顶标、供电跳线、PinMux</td>
+  <td>型号已确认，其余待核</td>
+</tr>
+<tr>
+  <td>外接模块</td>
+  <td>铭牌、固件、模块板级电气、接线、协议</td>
+  <td>实物在手，具体型号接口待核</td>
+</tr>
+<tr>
+  <td>手机</td>
+  <td>设备型号、系统版本、App SHA、BLE 协议版本</td>
+  <td>测试矩阵待确立</td>
+</tr>
+<tr>
+  <td>未来产品样件</td>
+  <td>PCB Rev、BOM、硬件安全关断、执行器与电气/热分析</td>
+  <td>尚无最终 PCB，不能标记完成</td>
+</tr>
+</tbody>
+</table>
+<h4>7. 验证评审与 P7 退出</h4>
+<ol>
+<li>对指定有效需求版本建立双向追踪，测试结果必须指向精确产品配置和源版本；</li>
+<li>正常、边界、故障与恢复场景均有执行证据，无法执行的项明确阻塞和补证条件；</li>
+<li>目标环境真实满足所批准的验收标准，无不可接受未关闭危险或无依据风险接受；</li>
+<li>对尚未实现的物理制动输出测试，不得把 EVB 验证代替台架/实车测试；</li>
+<li>必须经负责人对<strong>具体产品版本、目标场景及残余风险</strong>做独立验收，不能用“继续”替代。</li>
+</ol>
+<p><strong>当前 P7 状态：<code>VERIFICATION_PLAN_ONLY</code>，没有通过 P7 评审或产品级安全验收。</strong></p>
+</section>
+<section class="section"><h2 id="section-17">附录 E｜P8 V0.1 已批准阶段计划原文（历史参照）</h2>
+<blockquote>
+<p>仅用于追溯已批准的原阶段计划。任何涉及旧代码/旧构建环境的示例，<strong>由本包 P5～P8 V0.2 新方案替代</strong>；原文件历史事实不作为当前实现证据。</p>
+</blockquote>
+<h3>BrakeSync｜P8 发布交付与维护交接</h3>
+<blockquote>
+<p><strong>项目</strong>：BrakeSync 拖挂式房车同步制动控制系统<br />
+<strong>版本</strong>：V0.1，2026-11-13；<strong>阶段性质</strong>：未来阶段可审阅的工程设计/实施计划，不是实测报告<br />
+<strong>上游</strong>：P0 V0.1、P1 V0.2 已由负责人在项目对话批准；P2 V0.1 尚待批准<br />
+<strong>授权边界</strong>：本文不授权实际制动功率、固件/App 代码变更、GitHub 写入、对外发布或阶段验收<br />
+<strong>证据等级</strong>：<code>FACT</code> 已确认事实；<code>DESIGN-CANDIDATE</code> 可评审设计候选；<code>TBD</code> 待决；<code>TEST-PLAN</code> 待实施测试</p>
+</blockquote>
+<h4>0. 发布不是代码合并</h4>
+<p>P8 的对象是<strong>经过真实验收的确定产品/研发交付包</strong>，而不是某一分支存在文件。当前 BrakeSync 尚无可交付量产制动产品、目标整机 PCB 和系统级通过证据。本文件给出开发板研究包与未来产品发布的严格分级、发布内容、审批和维护交接流程；<strong>不代表当前任何正式产品发布已批准</strong>。</p>
+<h4>1. 发布对象分级</h4>
+<table>
+<thead>
+<tr>
+  <th>类别</th>
+  <th>交付对象</th>
+  <th>可以被承认的范围</th>
+  <th>必须标注的限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>EVB-RESEARCH</code></td>
+  <td>开发板研究/通信功能包</td>
+  <td>同一板+模块组合的 SDK 适配、CAN/BLE/传感器演示与独立测试</td>
+  <td>不是实际制动器；真实功率输出禁止；仅按实测子项称通过</td>
+</tr>
+<tr>
+  <td><code>FW-INTERNAL</code></td>
+  <td>Host/Target 软件里程碑</td>
+  <td>可追溯 C 源码、SDK、接口、测试和已知问题</td>
+  <td>未经完整产品验证，不得作为装车软件</td>
+</tr>
+<tr>
+  <td><code>APP-INTERNAL</code></td>
+  <td>手机 App 内部测试版</td>
+  <td>指定手机系统/协议下功能和异常测试</td>
+  <td>Mock 与真实设备清楚区分，不许虚构已联调</td>
+</tr>
+<tr>
+  <td><code>SYSTEM-PROTOTYPE</code></td>
+  <td>未来完整样机</td>
+  <td>指定硬件/BOM/固件/App 组合及指定台架能力</td>
+  <td>不等于量产/道路许可，残余风险明确</td>
+</tr>
+<tr>
+  <td><code>PRODUCT-RELEASE</code></td>
+  <td>目标市场正式产品</td>
+  <td>具体型号、配置、使用场景、已核准验收和法规/安全符合性证据</td>
+  <td>当前<strong>不具备发布条件</strong></td>
+</tr>
+</tbody>
+</table>
+<p>发布 <code>EVB-RESEARCH</code> 也需要明确授权和版本登记；它不能解除功率输出禁令。</p>
+<h4>2. Release 组合定义（必须可重现）</h4>
+<pre><code class="language-text">Release ID：BS-&lt;版本标识&gt;  （命名规范待批准）
+Variant ID / 配置 hash：
+Board ID / PCB Rev / MCU part / SDK：
+firmware Git SHA / App Git SHA / 共享 ICD 版本：
+构建命令 / 工具链 / 依赖锁文件 / 编译产物 SHA-256：
+测试环境与结果链接：Host、Target、BLE/CAN、集成、安全：
+批准的需求/设计版本：
+阻塞缺陷和已接受剩余风险：
+发布对象、操作说明、已授权批准人和日期：
+</code></pre>
+<p><code>Variant</code>、<code>Board</code>、<code>Release</code> 三者独立记录；不得将开发板硬件资料写进所有产品 Variant，也不得仅因发布号增加就认为软硬件兼容。</p>
+<h4>3. 交付包清单（与具体范围匹配）</h4>
+<table>
+<thead>
+<tr>
+  <th>条目</th>
+  <th>EVB 研究包</th>
+  <th>未来正式产品包</th>
+  <th>准入原则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>源码与变更摘要</td>
+  <td>必须</td>
+  <td>必须</td>
+  <td>SHA、差异、许可记录明确</td>
+</tr>
+<tr>
+  <td>编译工具链/SDK 及依赖版本</td>
+  <td>必须</td>
+  <td>必须</td>
+  <td>不在公开仓库上传未经授权 SDK/手册</td>
+</tr>
+<tr>
+  <td>Board/Variant/Release 清单</td>
+  <td>必须</td>
+  <td>必须</td>
+  <td>实物 Rev 和配置可核对</td>
+</tr>
+<tr>
+  <td>原始 CI/模块测试记录</td>
+  <td>必须</td>
+  <td>必须</td>
+  <td>测试范围与结论一致</td>
+</tr>
+<tr>
+  <td>目标烧录、运行与模块日志</td>
+  <td>适用时必须</td>
+  <td>必须</td>
+  <td>Host 不替代 Target</td>
+</tr>
+<tr>
+  <td>完整安全分析与实际执行器测试</td>
+  <td>不适用真实功率（保持禁止）</td>
+  <td>必须按适用风险/标准要求完成</td>
+  <td>缺失阻断真实产品发布</td>
+</tr>
+<tr>
+  <td>BLE-ICD、通信和参数兼容矩阵</td>
+  <td>适用时必须</td>
+  <td>若有通信则必须</td>
+  <td>固件/App 同源合同</td>
+</tr>
+<tr>
+  <td>安装、使用、诊断、故障提示说明</td>
+  <td>研究用途明确标识</td>
+  <td>必须</td>
+  <td>不虚构操作和车辆适配范围</td>
+</tr>
+<tr>
+  <td>维护/回滚/故障升级通路</td>
+  <td>需要基本恢复信息</td>
+  <td>必须</td>
+  <td>不能使危险输出绕过安全状态</td>
+</tr>
+</tbody>
+</table>
+<h4>4. 发布与维护交接</h4>
+<ol>
+<li><strong>冻结候选范围</strong>：填写具体产品/研究对象、受控源版本、用户和目标硬件；</li>
+<li><strong>审查证据</strong>：编译、测试、实物、风险和缺陷逐项对应实际记录；</li>
+<li><strong>确认分发权限</strong>：第三方芯片手册、云途保密文档、SDK、开源许可证和其他资料必须按授权传播；</li>
+<li><strong>评审兼容性</strong>：固件/App 协议、参数存储版本、硬件修订和迁移/回滚依据；</li>
+<li><strong>单独获得正式发布批准</strong>：本 AI 不能代表负责人签发；</li>
+<li><strong>记录交付和接收</strong>：发布包 SHA、交付范围、接收人、遗留风险、缺陷反馈机制；</li>
+<li><strong>进入维护闭环</strong>：监控故障，需求/设计受影响时做局部变更分析和回归，不反复推翻有效基线。</li>
+</ol>
+<h4>5. 常见阻断事项</h4>
+<table>
+<thead>
+<tr>
+  <th>阻断情形</th>
+  <th>正确处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>CI 成功但没有 Target Build</td>
+  <td>只承认 CI 成功，不发布需 Target 的固件</td>
+</tr>
+<tr>
+  <td>烧录成功但 CAN/蓝牙不稳定</td>
+  <td>保留实测失败与复现步骤；相关模块不验收</td>
+</tr>
+<tr>
+  <td>蓝牙协议双方实现不一致</td>
+  <td>退回统一 ICD，不让一端偷偷改变协议</td>
+</tr>
+<tr>
+  <td>已有试验板但没有故障安全通路</td>
+  <td>不宣布实际制动功能可以装车</td>
+</tr>
+<tr>
+  <td>仅依据历史六档/Mock 三档推出最终产品映射</td>
+  <td>停止量产配置冻结，取得产品/标定决定</td>
+</tr>
+<tr>
+  <td>供应商资料带 Confidential 标记而仓库为 public</td>
+  <td>索引/校验值可登记，PDF/SDK 原件须按许可存储</td>
+</tr>
+<tr>
+  <td>找不到发布包的准确 SHA/构建依赖</td>
+  <td>禁止发放“不可复现的正式版本”</td>
+</tr>
+</tbody>
+</table>
+<h4>6. P8 完成审查清单</h4>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>发布对象确切定义，不混淆研究演示与产品交付。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>需求、架构、代码、构建、实物验证和验收相互可追溯。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>对外法规、安装和实际安全条件已经有适用依据和正式结论。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>出厂配置、维护诊断、更新、回滚和问题响应归属明确。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>版本、文件校验、授权签发和交付记录可复验。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>所有应当阻断发布的高风险问题已按规则解决；剩余风险有合法批准。</li>
+</ul>
+<p><strong>当前 P8 状态：<code>RELEASE_PLAN_ONLY</code>，不存在产品 Release 批准。本计划本身不允许将 EVB 研究成果用于道路制动。</strong></p>
+</section><footer>本页为离线完整文件。原文与历史计划按章节收录；批准设计/计划不等于产品实测或发布。</footer></article></main></div><a class="goTop" href="#section-01">返回审批摘要</a><script>
+const search=document.querySelector('#filter');const links=[...document.querySelectorAll('.side a[data-title]')];
+search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();links.forEach(a=>a.style.display=a.dataset.title.toLowerCase().includes(q)?'block':'none')});
+const obs=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){let found=links.find(a=>a.getAttribute('href')==='#'+e.target.id);if(found){links.forEach(a=>a.classList.remove('active'));found.classList.add('active')}}}},{rootMargin:'-15% 0px -77% 0px'});
+for(const e of document.querySelectorAll('h2[id]'))obs.observe(e);
+</script></body></html>

@@ -78,6 +78,16 @@
       "scope": "批准 P3 条件性概念收口及 SF-01..09 的 P4 交接、DD-01..08 系统详细设计交付范围、P5–P8 阶段准入和证据要求、产品集中决策清单、附录 A 系统行为合同首稿作为继续细化的设计输入。未批准未决产品数值、具体物理安全动作、代码/SDK 研究或实施、制动功率输出；P4–P8 实际未完成。",
       "evidence": "2026-11-14 项目负责人在对话中对整合稿回复‘批准’",
       "original": "baselines/2026-11-14_P3P8_CONSOLIDATION_V0.1/P3-P8_系统设计收口与实施前准备_V0.1_批准原文.md"
+    },
+    {
+      "id": "DEC-P0P8-CENTRAL-V02-20261114",
+      "date": "2026-11-14",
+      "status": "APPROVED_CONSOLIDATED_PLANS_WITH_OPEN_PRODUCT_DATA",
+      "subject": "BrakeSync P0–P8 一次性集中审批包 V0.2",
+      "scope": "正式批准 P4 DD-01..DD-08 系统级行为/责任合同 V0.2，以及 P5–P8 新工程实施、I0..I4 集成、V0..V4 验证、R0..R2 发布准备与准入/证据管理方案 V0.2；此前 P0..P3 已批不重复。C-01..C-06 实体产品关键决策、型号/市场/安全动作/数值/协议等依证据开放。不得将批准计划视为实施/试验/产品验收通过，不授权功率制动、具体代码操作或产品发布。旧 firmware/app 代码不纳入研发基线。",
+      "evidence": "2026-11-14 项目负责人对完整集中审批包回复‘批准’。",
+      "approved_original": "baselines/2026-11-14_P0-P8_CENTRAL_APPROVAL_V0.2/P0-P8_集中审批包_V0.2_原文.md",
+      "approval_record": "baselines/2026-11-14_P0-P8_CENTRAL_APPROVAL_V0.2/APPROVAL.md"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
