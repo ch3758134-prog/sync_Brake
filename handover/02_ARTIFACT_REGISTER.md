@@ -51,7 +51,14 @@
 | CM-GAP-001 | 缺口闭环台账 | [05_MISSING_AND_EXCEPTION_LOG.md](./05_MISSING_AND_EXCEPTION_LOG.md) | 所有不在 GitHub 的材料可追责 | 存在 OPEN 项 |
 | HOST-EV-001 | GCC/Clang Host 门禁记录 | [evidence](./evidence/) | Host 编译与单测试套件的原始输出 | 仅 Host，非 MISRA/Target/实板 |
 
-## D. 登记准入与更新规则
+## D. 全仓文件快照与开放工作项
+
+- [GitHub 文件逐项快照](./06_REPOSITORY_FILE_SNAPSHOT.md)：本次核验的每个 blob SHA/尺寸/路径。
+- [Issue #1：固件模板归档](https://github.com/ch3758134-prog/sync_Brake/issues/1)（OPEN；唯一人类责任人 @ch3758134-prog）。
+- [Issue #2：供应商受限资料](https://github.com/ch3758134-prog/sync_Brake/issues/2)（OPEN；唯一人类责任人 @ch3758134-prog）。
+- Host GCC/Clang 日志已按 **Git Blob SHA 与原本地日志一致** 核验，不视为 Target/MISRA PASS。
+
+## E. 登记准入与更新规则
 
 1. 任何新文件产生时**同一任务内**登记：唯一 ID、文件名、GitHub 路径、版本、来源版本、Git SHA/校验和、责任人、编制人、接收人、批准状态和证据级别。
 2. 二进制测试证据可存放 GitHub 受控附件、受批准的制品仓库或受访问控制的供应商资料区；GitHub 中必须留下不可混淆的定位信息与 SHA-256。**只记录本地路径不算已交付。**

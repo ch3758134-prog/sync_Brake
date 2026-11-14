@@ -13,6 +13,7 @@
 - [项目决策记录](../.project-control/decisions.json)：批准记录及开放事项。
 - [文档、制品与任务交接控制规程](./01_DOCUMENT_CONTROL.md)。
 - [交付物登记总账](./02_ARTIFACT_REGISTER.md)。
+- [全仓 GitHub 文件核对快照](./06_REPOSITORY_FILE_SNAPSHOT.md)。
 - [SW-00/SW-01 单项交接包](./03_SW00_SW01_HANDOFF.md)。
 - [外部/供应商原件控制登记](./04_EXTERNAL_REFERENCE_REGISTER.md)。
 - [未交付/未上库缺口清单](./05_MISSING_AND_EXCEPTION_LOG.md)。

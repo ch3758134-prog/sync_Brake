@@ -14,6 +14,8 @@
 >
 > **源代码边界**：未向 `firmware` / `app` / `main` 写入任何代码。已在当前对话提供新的 C11 模板 ZIP，并在独立 Host 环境构建测试，**不是 ARM 目标构建**。旧代码不作为新基线。
 
+**未移交完成的具体工作**：[Issue #1 模板原件归档](https://github.com/ch3758134-prog/sync_Brake/issues/1)、[Issue #2 供应商原件受控保管](https://github.com/ch3758134-prog/sync_Brake/issues/2)；负责人/接收人均为项目负责人，AI 在具体权限内执行。二者不等同当前 SW-01 Target 完成。
+
 ## 当前先执行的任务
 
 | ID | 具体动作 | 验收 | 状态 |
