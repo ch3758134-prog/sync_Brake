@@ -1,5 +1,7 @@
 # BrakeSync｜当前执行工作台：嵌入式软件开发主线（2026-11-14）
 
+> **SW-00 新事实**：负责人已使用 **Keil + ST-Link** 对云途开发板做初步烧录尝试；该路径优先保持，待补 MDK、编译器、ST-Link、Flash Algorithm、SDK 和板卡版本证据，不能据此认定烧录或运行通过。见 [SW-00/SW-01 交接单](../handover/03_SW00_SW01_HANDOFF.md)。
+
 > **受控交付和交接入口**：[handover/00_INDEX.md](../handover/00_INDEX.md)。所有交付物必须有GitHub路径、责任人、签收和验证证据；未入库/受限原件按缺口台账 `OPEN` 追踪。当前管理文件已归档不代表固件代码、Target工程或受限供应商原件已移交。  
 
 
@@ -20,8 +22,8 @@
 
 | ID | 具体动作 | 验收 | 状态 |
 |---|---|---|---|
-| SW-00 | 核实实板 EVB PCB Rev/MCU 顶标、完整 YCT/SDK、编译器、调试器、实物模块/连线 | 工具和硬件身份的证据清单 | OPEN |
-| SW-01 | **全新 YCT 生成 Target 工程**、ARM Build、下载、断点和最小启动 | 可重复 Target Build / Flash / Runtime，各阶段有独立原始证据 | NOT_RUN |
+| SW-00 | 已知 Keil + ST-Link 初步烧录尝试；核实实板 Rev/MCU、Keil MDK/Arm Compiler、ST-Link 固件、官方 SDK、设备包和下载算法 | 可复现的版本/线束/操作及证据 | PARTIAL |
+| SW-01 | 以 **Keil + ST-Link** 为当前首选实际路径重新建立官方 SDK 支持的干净 Target 工程，必要时用 YCT 生成导出 | 可重复 Target Build / Flash Verify / Reset / Debug，各阶段独立证据 | NOT_VERIFIED |
 | SW-02 | Clock、GPIO、单调时间基准与异常路径 | 独立驱动文件、测量/波形及正常/错误用例 | NOT_RUN |
 | SW-03 | UART DMA（中断、环形/缓冲管理、超时/丢帧） | DMA TX/RX 实测、异常恢复 | NOT_RUN |
 | SW-04 | CAN（双节点、接收中断、滤波、Bus-off） | 实测 CAN 收发与错误处理 | NOT_RUN |

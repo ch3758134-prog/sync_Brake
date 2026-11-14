@@ -6,7 +6,9 @@
 **技术方案及审查执行（R）**：ChatGPT  
 **未来目标工程文件执行者（R）**：Codex（待具体任务授权）  
 **实物操作、工具确认及接收验收（A/Receiver）**：项目负责人  
-**交接当前状态**：`PREPARED / NOT_ACCEPTED / SW00_OPEN / SW01_NOT_RUN`
+**交接当前状态**：`PREPARED / NOT_ACCEPTED / SW00_PARTIAL / SW01_NOT_VERIFIED`
+
+> **负责人新增的直接工程事实（2026-11-14）**：云途开发板已有初步上手与烧录尝试；使用 **Keil（MDK）+ ST-Link**。这是已知的实际工具组合，不再假设必须先改用 GCC/YCT 或其他调试器。**当前仅已确认“尝试使用该组合”，尚未收到成功的 Target Build、Flash Verify、运行/断点和日志证据**，不能标记 SW-01 PASS。
 
 ## 已可在 GitHub 取得的输入
 
@@ -22,17 +24,17 @@
 |---|---|---|---|
 | 目标 EVB | 实物板号、PCB Rev、MCU 丝印、板级原理图版本 | OPEN；不得从文件名推定实际焊接版本 | 项目负责人提供实物核对 |
 | YCT 与 SDK | 官方合法安装包/版本、文档与源码、校验值 | OPEN；历史 SDK 片段不构成完整 SDK | 项目负责人提供；ChatGPT 核对 |
-| 工具链 | IDE、编译器版本/许可、调试器、烧录软件、操作系统 | OPEN | 项目负责人 |
-| 最小 Build | 全新官方生成的 Target 工程、启动文件、链接脚本、受控配置 | NOT_RUN | Codex 需单独任务授权 |
-| 实板入口 | 供电/USB/Debug 安全接线、UART 日志、最小启动 | NOT_RUN | 项目负责人实测 |
+| 工具链 | 已知 **Keil（MDK）+ ST-Link** 用于初步烧录尝试；待确定 MDK 具体版本、Arm Compiler 版本、ST-Link 具体型号及固件版本、驱动、烧录算法/设备包和 OS | PARTIAL / 用户已说明工具组合，版本待核对 | 项目负责人 |
+| 最小 Build | 用 Keil（既有尝试路径）建立**全新**可重现 Target 工程，核对官方启动/链接、设备支持包及 Flash Download algorithm；YCT/SDK 来源单独核实 | NOT_VERIFIED；历史开发尝试不能代替新基线 | Codex 需单独任务授权；用户提供工具与板上证据 |
+| 实板入口 | ST-Link 与 MCU 的 SWD/JTAG 连线、供电/Vref/GND、识别/下载/校验截图或日志、UART/断点/最小启动 | ATTEMPT_REPORTED；成功与否未提供证据 | 项目负责人实测 |
 | 外部模块 | 传感器与蓝牙的供应商型号/资料/修订与接线 | OPEN | 项目负责人提供、ChatGPT 核对 |
 
 ## SW-01 验收不能缺少的证据
 
-- [ ] `TARGET_PROJECT_ID`、Board、Variant、SDK/YCT 版本、工具链版本完整。
+- [ ] `TARGET_PROJECT_ID`、Board、Variant、官方 SDK/YCT/Keil 工程来源、Keil MDK/Arm Compiler/ST-Link 固件和目标 Flash Algorithm 等版本完整。
 - [ ] 全新官方 SDK 工程的生成方法、差异配置和可重复构建命令有记录。
 - [ ] Target Build PASS 有可重复的构建日志和版本 SHA；Host PASS 不能替代。
-- [ ] 烧录与调试分别有工具版本、串口/断点、目标设备证据。
+- [ ] 用 **Keil + ST-Link** 分别提供 Target 编译、烧录校验、复位运行和单步/断点的原始证据；不能由“尝试下载”推定已 PASS。
 - [ ] 时钟、GPIO、时间基准逐步进入独立驱动任务，正常/异常/恢复测试可追踪。
 - [ ] 正式 PCB/制动功率硬件仍未授权输出，开发板保持物理输出隔离。
 - [ ] 全部代码修改由明确的 Codex 任务授权；当前管理分支仅交接文件，不向 `firmware` 写入候选模板。
@@ -45,7 +47,7 @@
 | 接收人 | 项目负责人 |
 | GitHub 基线与质量规范 | 可取得、已批准 |
 | 模板/Host 证据归档 | 见缺口台账；未全部闭环前不得标记 complete |
-| SW-00 完成 | NO |
-| SW-01 Target Build / Flash / Runtime | NOT_RUN |
+| SW-00 完成 | PARTIAL：已知 Keil + ST-Link 的使用尝试；版本、板号、SDK 与连接证据仍 OPEN |
+| SW-01 Target Build / Flash / Runtime | NOT_VERIFIED（已有历史烧录尝试，但尚无受控新工程与成功证据） |
 | 实物安全准入 | BLOCKED |
 | 正式签收 | **PENDING**；须实物/工具和 Target 证据补齐后由负责人确认 |

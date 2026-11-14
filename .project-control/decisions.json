@@ -155,6 +155,15 @@
       "index": "handover/00_INDEX.md",
       "register": "handover/02_ARTIFACT_REGISTER.md",
       "gaps": "handover/05_MISSING_AND_EXCEPTION_LOG.md"
+    },
+    {
+      "id": "FACT-SW00-KEIL-STLINK-20261114",
+      "date": "2026-11-14",
+      "status": "ENGINEERING_FACT_USER_REPORTED_PARTIAL",
+      "subject": "云途开发板已尝试 Keil 与 ST-Link 烧录",
+      "scope": "开发板存在初步 Keil+ST-Link 使用和烧录尝试；这是现有优先环境，不应强行切换 GCC/YCT。未提供具体 Keil/Arm Compiler/ST-Link/板卡/SDK 版本及 Target Build/烧录校验/运行证据，不得将其标记为已验证成功。SW-00 改 PARTIAL，SW-01 保留未核验。",
+      "evidence": "2026-11-14 负责人：现在云途的开发板有初步使用尝试的，是使用keil和stlink进行烧录的",
+      "handover": "handover/03_SW00_SW01_HANDOFF.md"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
