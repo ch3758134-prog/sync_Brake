@@ -1,0 +1,57 @@
+=== BrakeSync Host Strict Gate ===
+cmake version 3.31.6
+cc (Debian 14.2.0-19) 14.2.0
+Preset CMake variables:
+
+  BUILD_TESTING="ON"
+  CMAKE_BUILD_TYPE="Debug"
+
+-- The C compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features - done
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /mnt/data/BrakeSync_全新固件工程模板_V0.2_严格质量门禁/build/host-debug-strict
+[1/6] Building C object CMakeFiles/brakesync_host_smoke.dir/examples/host_smoke.c.o
+[2/6] Building C object CMakeFiles/brakesync_core.dir/src/asw/control_core.c.o
+[3/6] Building C object CMakeFiles/test_control_core.dir/tests/test_control_core.c.o
+[4/6] Linking C static library libbrakesync_core.a
+[5/6] Linking C executable test_control_core
+[6/6] Linking C executable brakesync_host_smoke
+Test project /mnt/data/BrakeSync_全新固件工程模板_V0.2_严格质量门禁/build/host-debug-strict
+    Start 1: core_inhibit_contract
+1/1 Test #1: core_inhibit_contract ............   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.00 sec
+Preset CMake variables:
+
+  BUILD_TESTING="ON"
+  CMAKE_BUILD_TYPE="Release"
+
+-- The C compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features - done
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /mnt/data/BrakeSync_全新固件工程模板_V0.2_严格质量门禁/build/host-release-strict
+[1/6] Building C object CMakeFiles/brakesync_core.dir/src/asw/control_core.c.o
+[2/6] Building C object CMakeFiles/brakesync_host_smoke.dir/examples/host_smoke.c.o
+[3/6] Building C object CMakeFiles/test_control_core.dir/tests/test_control_core.c.o
+[4/6] Linking C static library libbrakesync_core.a
+[5/6] Linking C executable brakesync_host_smoke
+[6/6] Linking C executable test_control_core
+Test project /mnt/data/BrakeSync_全新固件工程模板_V0.2_严格质量门禁/build/host-release-strict
+    Start 1: core_inhibit_contract
+1/1 Test #1: core_inhibit_contract ............   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.00 sec
+=== Host strict builds and test suites: PASS ===
+NOT CHECKED: MISRA, Target build, Hardware, Safety compliance, Brake actuation

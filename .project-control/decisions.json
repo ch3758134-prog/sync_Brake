@@ -144,6 +144,17 @@
       "evidence": "2026-11-14 负责人在完整规范V1.0和新模板V0.2交付后回复‘可以，批准’。",
       "approved_original": "baselines/2026-11-14_SW_STD_V1.0/BS-SW-STD-001_V1.0_批准原文.md",
       "approval_record": "baselines/2026-11-14_SW_STD_V1.0/APPROVAL.md"
+    },
+    {
+      "id": "DEC-CM-HANDOVER-20261114",
+      "date": "2026-11-14",
+      "status": "OWNER_DIRECTIVE_ACTIVE",
+      "subject": "BrakeSync 全部研发交付物纳入 GitHub 可追踪资产与责任交接制度",
+      "scope": "项目研发材料统一以 GitHub 的受控文件及授权第三方资料位置为权威，建立交付物注册、单一人类负责人、编制/执行责任、接收与验收记录、校验值、缺失登记及每任务验收流程；GitHub为公开仓库，第三方原件必须审查许可，不得无授权公开。管理分支作为文档/交接唯一入口，旧固件与App源代码仍不进入有效基线，Host-only本地模板不得冒充量产Target工程。未真正上传或未签收项维持 OPEN。",
+      "evidence": "2026-11-14 负责人指令：相关的文档什么的，都应该在github上，就像真实企业开发中，相关资料要负责到人进行交付或者交接啊，不能漏材料啊",
+      "index": "handover/00_INDEX.md",
+      "register": "handover/02_ARTIFACT_REGISTER.md",
+      "gaps": "handover/05_MISSING_AND_EXCEPTION_LOG.md"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
