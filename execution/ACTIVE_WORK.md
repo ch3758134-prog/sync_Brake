@@ -1,5 +1,7 @@
 # BrakeSync｜当前执行工作台：嵌入式软件开发主线（2026-11-14）
 
+> **质量要求新指令（2026-11-14）**：负责人要求全面严格按照汽车电子安全相关软件工程标准，不再“简化”。[BS-SW-STD-001 V1.0 受控工作稿](./QUALITY/BS-SW-STD-001_V1.0_WORKING.md) 已建立。当前本地新模板 V0.2 的 GCC/Clang Host 严格编译和 CTest 通过；MISRA C:2025 专业检查、Target/硬件及产品安全仍为 `NOT_RUN/BLOCKED`。不修改旧 firmware/app。  
+>
 > **正式总体基线**：BS-P0P8-BASELINE-003 / V0.3；三版产品顺序为 V1 真实功能测试、V2 LCD 产品交付、V3 App。正式 PCB 未完成，但不阻止开发板驱动和 Host/Target 软件开发。
 >
 > **当前软件任务工作稿**：[嵌入式软件开发路线与驱动实施任务 V0.1](./SOFTWARE_DEVELOPMENT_EXECUTION_V0.1_WORKING.md)。这是一份执行准备和任务拆解工作稿，未获具体源码修改授权。

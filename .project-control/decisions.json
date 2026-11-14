@@ -124,6 +124,16 @@
       "evidence": "2026-11-14 用户对《BrakeSync P0–P8 统一研发方案 V0.3（三版产品路线修订稿）》回复“批准”",
       "approved_original": "baselines/2026-11-14_P0P8_V0.3/P0-P8_统一研发方案_V0.3_批准原文.md",
       "approval_record": "baselines/2026-11-14_P0P8_V0.3/APPROVAL.md"
+    },
+    {
+      "id": "DEC-AUTOMOTIVE-SW-QUALITY-20261114",
+      "date": "2026-11-14",
+      "status": "OWNER_DIRECTIVE_ACTIVE_WITH_VERIFICATION_GATES",
+      "subject": "BrakeSync 固件全面严格参照汽车电子安全相关软件标准",
+      "scope": "全新固件/驱动/设备/ASW/测试/构建自首批源码起建立 MISRA C:2025、ISO 26262:2018、Automotive SPICE 4.1、ISO/SAE 21434:2021 和适用更新工程原则的要求、设计/追踪/审查/静态分析/测试和工具基线。项目操作规范文档为 WORKING 受控候选，具体规则实施以标准合法授权、工具覆盖和独立审查为准；禁止声称 MISRA/ASPICE/ASIL 已合规，禁止因 Host Build PASS 授权 Target/功率输出；禁止以简化流程降低要求。三版 V1/V2/V3 路线不变。",
+      "evidence": "2026-11-14 负责人在软件开发路线之后明确提出‘全面整体严格参照车标级的代码规范，不要考虑什么简化什么的’",
+      "spec": "execution/QUALITY/BS-SW-STD-001_V1.0_WORKING.md",
+      "source_template_local": "BrakeSync_全新固件工程模板_V0.2_严格质量门禁.zip (not uploaded to firmware)"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
