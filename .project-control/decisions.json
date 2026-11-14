@@ -60,6 +60,15 @@
       "scope": "批准 PE-01..PE-06，OP/EX 工况目录、KPI-01..KPI-13 指标字典和取值方法、产品证据包 E-* 与后续系统工作验收标准；优先面向电控制动器的拖挂式房车为首版产品方向，不冻结质量/轴数、电流、电压、目标市场、时间性能、控制映射、法规符合性或真实制动输出准入。",
       "evidence": "2026-11-13 用户在项目管理对话对该完整候审稿回复：批准吧",
       "approved_original": "baselines/2026-11-13_P3_ENVELOPE_V0.1/P3_产品适用边界与性能需求_V0.1_批准原文.md"
+    },
+    {
+      "id": "DEC-P3-SAFE-SCREEN-20261114",
+      "date": "2026-11-14",
+      "status": "APPROVED_AS_PRELIMINARY_SCREENING",
+      "subject": "P3 系统危险场景与安全需求初筛 V0.1",
+      "scope": "批准 HA-01～HA-12 危险主题目录、SG-01～SG-08 安全目标候选、SSR-01～SSR-18 系统安全需求候选及后续证据和工作顺序；仅作为进一步安全工程研究输入，未执行 HARA、未评级 ASIL、未冻结故障动作或安全性能数值、未许可真实制动输出。",
+      "evidence": "2026-11-14 用户于本对话说：批准，P部分赶快吧",
+      "approval_record": "baselines/2026-11-14_P3_SAFETY_SCREEN_V0.1/APPROVAL.md"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
