@@ -46,7 +46,7 @@
 | 提交人 | ChatGPT：仅交付规则、输入和清单 |
 | 接收人 | 项目负责人 |
 | GitHub 基线与质量规范 | 可取得、已批准 |
-| 模板/Host 证据归档 | 见缺口台账；未全部闭环前不得标记 complete |
+| 模板/Host 证据归档 | [V0.1/V0.2 原始 ZIP 已入库](./artifacts/MANIFEST.md)；Host 日志亦已入库；接收方校验及正式 Target 工程仍待办 |
 | SW-00 完成 | PARTIAL：已知 Keil + ST-Link 的使用尝试；版本、板号、SDK 与连接证据仍 OPEN |
 | SW-01 Target Build / Flash / Runtime | NOT_VERIFIED（已有历史烧录尝试，但尚无受控新工程与成功证据） |
 | 实物安全准入 | BLOCKED |

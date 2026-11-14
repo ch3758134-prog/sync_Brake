@@ -6,8 +6,8 @@
 
 | 缺口 ID | 资料/原始字节 | SHA-256 | 原因与状态 | 责任方 / 解除条件 |
 |---|---|---|---|---|
-| GAP-001 | 固件新模板 V0.1 `.zip`，10,620B | `7a24069ba7c86b…` | 本地候选，未在当前 Git Tree 找到同一 Blob；SUPERSEDED / ARCHIVE_NEEDED | [Issue #1](https://github.com/ch3758134-prog/sync_Brake/issues/1)；责任人项目负责人，执行者为后续授权的 Codex；ChatGPT 审查和校验 |
-| GAP-002 | 固件新模板 V0.2 严格质量门禁 `.zip`，29,467B | `4147c0a026f5de…` | 尚无同一 Blob；HOST-ONLY / ARCHIVE_NEEDED；不可变为正式 `firmware` | [Issue #1](https://github.com/ch3758134-prog/sync_Brake/issues/1)；责任人项目负责人，上传及验收证据未齐 |
+| GAP-001 | 固件新模板 V0.1 `.zip`，10,620B | `7a24069ba7c86b…` | **GITHUB_ARCHIVED / HISTORICAL_HOST_ONLY**；原文件字节已入 [制品库](./artifacts/MANIFEST.md)；接收确认待办 | [Issue #1](https://github.com/ch3758134-prog/sync_Brake/issues/1)；ChatGPT 已执行上传/校验；项目负责人接收确认 OPEN（Issue #1） |
+| GAP-002 | 固件新模板 V0.2 严格质量门禁 `.zip`，29,467B | `4147c0a026f5de…` | **GITHUB_ARCHIVED / HOST_ONLY**；原 ZIP 字节已入 [制品库](./artifacts/MANIFEST.md)，不属于 Target 固件工程；接收确认待办 | [Issue #1](https://github.com/ch3758134-prog/sync_Brake/issues/1)；ChatGPT 已执行上传/校验；项目负责人接收确认 OPEN（Issue #1） |
 | GAP-003 | GCC Host 质量门禁原始日志，2,591B | `9ae0ba2ae4e24c60fb5414cb1e8e4c75924f6efe5e9a22e78c50b6e090364c98` | **GITHUB_ARCHIVED / HOST_ONLY**：[GCC14 原始输出](./evidence/GCC14_Host_Strict_V0.2.txt)，仍非 Target/MISRA 证据 | ChatGPT 已归档；接收人为项目负责人 |
 | GAP-004 | Clang Host 原始日志，1,266B | `ed08995607fa859c58cd4e898fb9efc58758c7d62ae7983b7810e2a5752d029d` | **GITHUB_ARCHIVED / HOST_ONLY**：[Clang17 原始输出](./evidence/Clang17_Host_Strict_V0.2.txt) | ChatGPT 已归档；接收人为项目负责人 |
 | GAP-005 | P1 供应商硬件原始资料 ZIP，5,740,049B | `cf80832d4b662b…` | `RESTRICTED`：公开库，未核实原版再分发许可 | [Issue #2](https://github.com/ch3758134-prog/sync_Brake/issues/2)；责任人项目负责人，确定合法私有位置并验收 |

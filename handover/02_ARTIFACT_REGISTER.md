@@ -44,6 +44,7 @@
 
 | 编号 | 交付物 | 受控位置 | 交付目标 | 当前状态 |
 |---|---|---|---|---|
+| SW-TPL-001 | V0.1/V0.2 固件候选模板原始 ZIP | [归档清单](./artifacts/MANIFEST.md) | 历史 Host-only 模板完整性与未来 SW-01 输入界定 | 已入 GitHub，接收确认待办 |
 | CM-001 | 文件控制与交接规程 | [01_DOCUMENT_CONTROL.md](./01_DOCUMENT_CONTROL.md) | 单一所有者、双向交接证据 | 制度生效，具体交付仍逐项验收 |
 | CM-002 | 全仓资料登记账本 | 本文件 | 防止遗漏、版本追溯 | 已建立 |
 | SW-HO-001 | SW-00/SW-01 开发环境及固件 Target 交接单 | [03_SW00_SW01_HANDOFF.md](./03_SW00_SW01_HANDOFF.md) | 工具、资料和完成门槛 | OPEN / 未签收 Target |
