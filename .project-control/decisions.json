@@ -134,6 +134,16 @@
       "evidence": "2026-11-14 负责人在软件开发路线之后明确提出‘全面整体严格参照车标级的代码规范，不要考虑什么简化什么的’",
       "spec": "execution/QUALITY/BS-SW-STD-001_V1.0_WORKING.md",
       "source_template_local": "BrakeSync_全新固件工程模板_V0.2_严格质量门禁.zip (not uploaded to firmware)"
+    },
+    {
+      "id": "DEC-SW-STD-001-V10-APPROVED-20261114",
+      "date": "2026-11-14",
+      "status": "APPROVED_AS_MANDATORY_PROCESS_BASELINE",
+      "subject": "BrakeSync BS-SW-STD-001 汽车电子软件工程与C编码强制规范 V1.0",
+      "scope": "批准规范V1.0作为后续新固件、驱动、设备层、ASW、测试与构建工作的强制质量门槛；批准继续按SW-00环境事实核验→SW-01全新官方YCT/SDK目标工程→后续驱动开发的路径组织工作。项目严格对标MISRA C:2025、ISO 26262:2018、Automotive SPICE 4.1、ISO/SAE 21434:2021等适用规范，但未完成专业规则检查、HARA/ASIL及独立验收，不得声称车规认证/规范合规。Host PASS仅限Host。本次不授权修改firmware/app/main任何具体源码，也不授权真实制动功率输出。只交付Markdown。",
+      "evidence": "2026-11-14 负责人在完整规范V1.0和新模板V0.2交付后回复‘可以，批准’。",
+      "approved_original": "baselines/2026-11-14_SW_STD_V1.0/BS-SW-STD-001_V1.0_批准原文.md",
+      "approval_record": "baselines/2026-11-14_SW_STD_V1.0/APPROVAL.md"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
