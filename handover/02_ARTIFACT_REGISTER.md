@@ -79,6 +79,12 @@
 
 两份V0.1已获[有条件批准](../baselines/2026-11-14_P4_SYSTEM_DESIGN_V0.1/APPROVAL.md)，原文Git提交与Blob均锁定；**不等于P4整体完成、PCB原理图完成或实板验证通过**。PCB原理图由项目负责人后续提供，当前未收到；先前软件详细设计稿保留为PARKED。
 
+## D4. P4关键物理方案研究批准材料
+
+| Artifact-ID | 材料位置/版本 | 批准性质 | 责任人 | 编制/归档执行 | 接收/审查 | 原件完整性与开放项 |
+|---|---|---|---|---|---|---|
+| BS-P4-OPTIONS-001 | [批准原文](../baselines/2026-11-14_P4_PHYSICAL_OPTIONS_V0.1/BS-P4-OPTIONS-001_V0.1_批准原文.md) · [审批记录](../baselines/2026-11-14_P4_PHYSICAL_OPTIONS_V0.1/APPROVAL.md) · V0.1 | `APPROVED_AS_P4_RESEARCH_AND_DECISION_INPUT` | 项目负责人 | ChatGPT | 项目负责人已批准 | SHA-256 `998fc3324a7951c4547d4b6c73a849286c977007881a38a447e8dcf4f280224a`；TRIG/MOT/PWR均未定型，PCB原理图待提供，SAFE证据未完成 |
+
 ## E. 登记准入与更新规则
 
 1. 任何新文件产生时**同一任务内**登记：唯一 ID、文件名、GitHub 路径、版本、来源版本、Git SHA/校验和、责任人、编制人、接收人、批准状态和证据级别。

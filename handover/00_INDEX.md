@@ -7,6 +7,8 @@
 
 ## 当前权威入口
 
+- [P4关键物理方案比较与产品决策输入 V0.1 批准记录](../baselines/2026-11-14_P4_PHYSICAL_OPTIONS_V0.1/APPROVAL.md)：TRIG/MOT/PWR候选及SAFE-01～07验证依据，**不含实际器件选型批准**。
+
 - [P4整机架构和PCB设计输入 V0.1 有条件批准记录](../baselines/2026-11-14_P4_SYSTEM_DESIGN_V0.1/APPROVAL.md)：包括固定版本和真实PCB后续提供的约束。
 - [P0–P8 研发方案 V0.3 批准记录](../baselines/2026-11-14_P0P8_V0.3/APPROVAL.md)：V1 真实功能测试 → V2 LCD 交付 → V3 App。
 - [汽车电子软件工程与 C 编码规范 V1.0 批准记录](../baselines/2026-11-14_SW_STD_V1.0/APPROVAL.md)：编码、质量门禁和验证要求。

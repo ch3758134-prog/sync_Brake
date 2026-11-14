@@ -184,6 +184,18 @@
       ],
       "approval_record": "baselines/2026-11-14_P4_SYSTEM_DESIGN_V0.1/APPROVAL.md",
       "evidence": "2026-11-14项目负责人：可以，pcb的实际原理图我后面拿到之后会给你，批准了"
+    },
+    {
+      "id": "DEC-P4-PHYSICAL-OPTIONS-V01-20261114",
+      "date": "2026-11-14",
+      "status": "APPROVED_AS_P4_RESEARCH_AND_DECISION_INPUT",
+      "subject": "BS-P4-OPTIONS-001 V0.1 关键物理方案比较与产品决策输入获批准",
+      "scope": "批准TRIG-A～D、MOT-A～C、PWR-A～C方案比较方向，SAFE-01～07能力/证据清单、DEC-HW-01～07集中决策准备；不批准具体器件方案、功率拓扑、数值、安全故障后实体动作，也不授权Target软件/PCB/功率实测。实际PCB原理图由负责人后续提供，当前未收到。",
+      "approved_original": "baselines/2026-11-14_P4_PHYSICAL_OPTIONS_V0.1/BS-P4-OPTIONS-001_V0.1_批准原文.md",
+      "approval_record": "baselines/2026-11-14_P4_PHYSICAL_OPTIONS_V0.1/APPROVAL.md",
+      "sha256": "998fc3324a7951c4547d4b6c73a849286c977007881a38a447e8dcf4f280224a",
+      "git_blob_sha": "458370e98df5cf78f50f2c170bbf1d66c6a1dde2",
+      "evidence": "2026-11-14 项目负责人明确回复：批准"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",
