@@ -4,7 +4,7 @@
 >
 > **负责人最新阶段澄清**：Keil+ST-Link 仅为已有初步开发尝试的信息；**现在尚未到环境正式核验、Target工程创建和驱动编码阶段**。不要擅自推进 SW-00/SW-01，也不要把已知尝试当做编译/烧录/运行成功。
 >
-> **本轮工作**：实施前的软件体系细化：[`BS-SW-PREDEV-001 V0.1`](./software_predevelopment/00_SOFTWARE_ARCHITECTURE_PREP_V0.1_WORKING.md) 与[逐驱动交接工作包](./software_predevelopment/01_DRIVER_MODULE_HANDOFF_V0.1_WORKING.md)；均为 **WORKING / DESIGN_ONLY**，不覆盖正式已批准文档。
+> **本轮工作**：实施前软件体系、驱动任务、五类接口和需求测试追踪；[模块设计](./software_predevelopment/00_SOFTWARE_ARCHITECTURE_PREP_V0.1_WORKING.md)、[驱动交接](./software_predevelopment/01_DRIVER_MODULE_HANDOFF_V0.1_WORKING.md)、[五类接口合同](./software_predevelopment/02_FIVE_SOFTWARE_INTERFACE_CONTRACTS_V0.1_WORKING.md)、[SSR与34项测试追踪](./software_predevelopment/03_REQUIREMENT_INTERFACE_TEST_TRACE_V0.1_WORKING.md)。四份均为 **WORKING / DESIGN_ONLY**，不覆盖正式基线。
 >
 > **受控档案和交接**：[handover/00_INDEX.md](../handover/00_INDEX.md)；所有资料、环境信息、工作包和证据须进入 GitHub 受控清单，缺失/版权受限在 [缺口登记](../handover/05_MISSING_AND_EXCEPTION_LOG.md) 追踪。
 
@@ -25,9 +25,9 @@
 | ID | 任务 | 交付物 | 责任/状态 |
 |---|---|---|---|
 | PRE-01 | 三版共用软件模块及依赖 | 本轮模块/接口设计工作稿 | ChatGPT编制、负责人复核 / WORKING |
-| PRE-02 | SW-ICD-01..05 数据质量与控制边界细化 | 上下游契约、无效输入与状态用例 | ChatGPT / WORKING |
-| PRE-03 | 驱动与设备协议逐项任务及测试计划 | 本轮详细交接工作包 | ChatGPT编制、负责人复核 / WORKING |
-| PRE-04 | MCU/硬件及产品决策证据清单 | PCB/传感/车辆/故障动作 OPEN 项 | 负责人提供事实；ChatGPT研究 |
+| PRE-02 | SW-ICD-01..05 数据质量与控制边界细化 | 五接口详细合同、跨接口负向场景 | ChatGPT已提交/WORKING；负责人未签收 |
+| PRE-03 | 驱动与设备协议逐项任务及测试计划 | 分驱动交接 + SSR-01～18→34项计划测试追踪 | ChatGPT已提交/WORKING，测试均NOT_RUN |
+| PRE-04 | MCU/硬件及产品决策证据清单 | PCB/传感/车辆/故障动作 OPEN 项及追踪文件第7节缺口 | 负责人提供事实；ChatGPT研究 / OPEN |
 | PRE-05 | 三版软件发布范围与LCD功能矩阵 | V1实测、V2 LCD、V3 App要求追踪 | ChatGPT / 后续 |
 | PRE-06 | 工具/工程导入与质量门禁清单 | 供未来SW-00/01使用的入场证据要求 | ChatGPT / 仅计划 |
 | PRE-07 | 材料归档、移交、外部资料许可闭环 | GitHub清单与受控位置 | ChatGPT/负责人，各自职责 |
