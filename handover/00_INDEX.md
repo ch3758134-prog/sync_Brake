@@ -9,7 +9,7 @@
 
 - [P0–P8 研发方案 V0.3 批准记录](../baselines/2026-11-14_P0P8_V0.3/APPROVAL.md)：V1 真实功能测试 → V2 LCD 交付 → V3 App。
 - [汽车电子软件工程与 C 编码规范 V1.0 批准记录](../baselines/2026-11-14_SW_STD_V1.0/APPROVAL.md)：编码、质量门禁和验证要求。
-- [当前研发工作台](../execution/ACTIVE_WORK.md)：当前只推进软件设计；SW-00/01和驱动实施列为未来任务。
+- [当前研发工作台](../execution/ACTIVE_WORK.md)：当前处于 **P4整机系统架构/软硬件分配/PCB输入设计**，非软件开发。
 - [项目决策记录](../.project-control/decisions.json)：批准记录及开放事项。
 - [文档、制品与任务交接控制规程](./01_DOCUMENT_CONTROL.md)。
 - [交付物登记总账](./02_ARTIFACT_REGISTER.md)。
@@ -19,13 +19,19 @@
 - [外部/供应商原件控制登记](./04_EXTERNAL_REFERENCE_REGISTER.md)。
 - [未交付/未上库缺口清单](./05_MISSING_AND_EXCEPTION_LOG.md)。
 
-## 软件开发前的当前工作包（未批准详细实现）
+## 当前P4系统设计（本轮新增，未冻结）
+
+- [BS-P4-SYS-ARCH-001：整机架构与SF-01～09软硬件责任分配](../execution/P4_system_architecture/00_SYSTEM_ARCHITECTURE_AND_ALLOCATION_V0.1_WORKING.md)。
+- [BS-P4-PCB-INPUT-001：PCB-01～13输入及真实功率准入阻断](../execution/P4_system_architecture/01_PCB_INTERFACE_AND_READINESS_V0.1_WORKING.md)。
+- **当前两份均为工作稿**；实际电气负载、量化指标、产品故障安全动作未冻结。
+
+## 软件开发前的当前工作包（先期存档，暂不继续深化）
 
 - [BS-SW-PREDEV-001 V0.1：软件模块、接口和交接总体设计](../execution/software_predevelopment/00_SOFTWARE_ARCHITECTURE_PREP_V0.1_WORKING.md)。
 - [BS-SW-HO-PLAN-001 V0.1：驱动细分与未来工作包](../execution/software_predevelopment/01_DRIVER_MODULE_HANDOFF_V0.1_WORKING.md)。
 - [BS-SW-ICD-001 V0.1：五类关键接口合同](../execution/software_predevelopment/02_FIVE_SOFTWARE_INTERFACE_CONTRACTS_V0.1_WORKING.md)。
 - [BS-SW-TRACE-001 V0.1：SSR-01～18需求追踪及SWTC-01～34测试目录](../execution/software_predevelopment/03_REQUIREMENT_INTERFACE_TEST_TRACE_V0.1_WORKING.md)。
-- 目前只完成设计，不执行Keil环境核验或代码编写，详见[当前执行工作台](../execution/ACTIVE_WORK.md)。
+- 这些软件材料保留供后续P5及软件详细设计参考；现阶段以整机系统设计为主，不执行Keil环境核验或代码编写。
 
 ## 关键说明
 

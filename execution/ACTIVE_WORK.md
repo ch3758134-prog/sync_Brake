@@ -1,43 +1,48 @@
 # BrakeSync｜当前执行工作台（2026-11-14）
 
-> **正式基线**：[P0–P8 V0.3](../baselines/2026-11-14_P0P8_V0.3/APPROVAL.md)，[软件质量强制规范 V1.0](../baselines/2026-11-14_SW_STD_V1.0/APPROVAL.md)。版本顺序保持 **V1 真实功能测试 → V2 LCD 产品交付 → V3 App**。
+> **当前项目阶段：P4 系统总体设计与软硬件工程实施准备。** P0–P8 是研发阶段，不是全部已经完成；V1 测试版→V2 LCD交付版→V3 App版是另一个独立的产品版本维度。
 >
-> **负责人最新阶段澄清**：Keil+ST-Link 仅为已有初步开发尝试的信息；**现在尚未到环境正式核验、Target工程创建和驱动编码阶段**。不要擅自推进 SW-00/SW-01，也不要把已知尝试当做编译/烧录/运行成功。
+> **当前正式批准方案**：[P0–P8 V0.3](../baselines/2026-11-14_P0P8_V0.3/APPROVAL.md)，[汽车电子软件工程质量规范 V1.0](../baselines/2026-11-14_SW_STD_V1.0/APPROVAL.md)；产品级量化指标、故障动作与PCB定型仍需真实证据。
 >
-> **本轮工作**：实施前软件体系、驱动任务、五类接口和需求测试追踪；[模块设计](./software_predevelopment/00_SOFTWARE_ARCHITECTURE_PREP_V0.1_WORKING.md)、[驱动交接](./software_predevelopment/01_DRIVER_MODULE_HANDOFF_V0.1_WORKING.md)、[五类接口合同](./software_predevelopment/02_FIVE_SOFTWARE_INTERFACE_CONTRACTS_V0.1_WORKING.md)、[SSR与34项测试追踪](./software_predevelopment/03_REQUIREMENT_INTERFACE_TEST_TRACE_V0.1_WORKING.md)。四份均为 **WORKING / DESIGN_ONLY**，不覆盖正式基线。
+> **当前 P4 交付（WORKING/待负责人系统级评审）**：[整机功能架构和软硬件分配 V0.1](./P4_system_architecture/00_SYSTEM_ARCHITECTURE_AND_ALLOCATION_V0.1_WORKING.md) 与 [PCB设计输入及准入矩阵 V0.1](./P4_system_architecture/01_PCB_INTERFACE_AND_READINESS_V0.1_WORKING.md)。
 >
-> **受控档案和交接**：[handover/00_INDEX.md](../handover/00_INDEX.md)；所有资料、环境信息、工作包和证据须进入 GitHub 受控清单，缺失/版权受限在 [缺口登记](../handover/05_MISSING_AND_EXCEPTION_LOG.md) 追踪。
+> **不要提前进入软件实施**：Keil + ST-Link 是负责人此前初步使用尝试的已知信息，不代表当前已开始SW-00/01。早前 [软件实施前设计文档](./software_predevelopment/00_SOFTWARE_ARCHITECTURE_PREP_V0.1_WORKING.md)及其深入接口/测试工作稿作为**后续参考（PARKED / NOT_APPROVED_AS_IMPLEMENTATION）**保留，不主导当前系统阶段。
 
-## 当前状态
+## 一、项目真实进度
 
-| 工作面 | 当前实际状态 | 现在允许 |
+| 阶段/产品 | 当前结论 | 下一必备证据 |
 |---|---|---|
-| 产品与安全需求 | 产品参数、真实制动器、危险动作仍有开放项 | 系统需求、故障与接口研究 |
-| 软件架构/模块合同 | 已有 P4 系统合同，本轮细化至 ASW/BSW/Driver/Device 模块 | 设计、模块图、接口和任务验收计划 |
-| 软件编码与工具环境 | Keil+ST-Link 有初步尝试；新 Host 模板仅 Host 测试 | 仅登记已知事实和未来SW-00验收要求 |
-| 正式 Target 工程 | 尚未形成本轮受控 Target 工程/验证结果 | 暂不启动创建/烧录 |
-| MCU驱动与设备联调 | 未开始本轮受控实际开发 | 仅设计文件与未来测试用例 |
-| 正式产品PCB | 未完成 | PCB输入、功率保护与测试接口需求 |
-| 实际制动功率与车辆测试 | 尚无硬件/安全准入 | **禁止接实际制动功率链** |
+| P0～P2 | 研发路线、需求方向已批准；定量产品事实未齐 | 市场、目标车辆、制动器与供电等实物证据 |
+| P3 | 系统概念及危险场景初筛批准，条件性收口 | 正式产品危害分析和受控功能/物理边界 |
+| **P4** | **当前进行系统级架构/软硬件责任/PCB设计输入**，新稿待审 | 负责人核实实体产品事实，进行系统审查并逐项闭环 |
+| P5 | 尚未正式进入本轮新工程、驱动、PCB实现 | P4输出及具体工程授权，SW-00/01客观核验 |
+| P6～P8 | 集成/验证/发布计划已批准但实际未实施 | 每一版本真实构建、实测、验证、发布证据 |
+| V1 | 真实基础功能测试版尚未完成 | 真实模块/受控功率台架按安全准入逐步验证 |
+| V2 | LCD首个产品交付版尚未开始完成实现 | LCD功能矩阵、正式PCB/产品与测试 |
+| V3 | App版排在V2后 | 继承共用核心、无线/应用安全与回归 |
 
-## 下一批设计任务（当前）
+## 二、当前正在推进的系统工程任务
 
-| ID | 任务 | 交付物 | 责任/状态 |
-|---|---|---|---|
-| PRE-01 | 三版共用软件模块及依赖 | 本轮模块/接口设计工作稿 | ChatGPT编制、负责人复核 / WORKING |
-| PRE-02 | SW-ICD-01..05 数据质量与控制边界细化 | 五接口详细合同、跨接口负向场景 | ChatGPT已提交/WORKING；负责人未签收 |
-| PRE-03 | 驱动与设备协议逐项任务及测试计划 | 分驱动交接 + SSR-01～18→34项计划测试追踪 | ChatGPT已提交/WORKING，测试均NOT_RUN |
-| PRE-04 | MCU/硬件及产品决策证据清单 | PCB/传感/车辆/故障动作 OPEN 项及追踪文件第7节缺口 | 负责人提供事实；ChatGPT研究 / OPEN |
-| PRE-05 | 三版软件发布范围与LCD功能矩阵 | V1实测、V2 LCD、V3 App要求追踪 | ChatGPT / 后续 |
-| PRE-06 | 工具/工程导入与质量门禁清单 | 供未来SW-00/01使用的入场证据要求 | ChatGPT / 仅计划 |
-| PRE-07 | 材料归档、移交、外部资料许可闭环 | GitHub清单与受控位置 | ChatGPT/负责人，各自职责 |
+| ID | P4 当前任务 | 已形成的输出 | 仍缺关键材料 | 责任/状态 |
+|---|---|---|---|---|
+| P4-SYS-01 | 整机外部边界、功能链与安全职责 | [系统架构](./P4_system_architecture/00_SYSTEM_ARCHITECTURE_AND_ALLOCATION_V0.1_WORKING.md) | 车端供电/信号、制动器与使用场景 | ChatGPT编制；项目负责人待复核 / WORKING |
+| P4-SYS-02 | SF-01～09 硬件/软件/外部/测试责任分配 | 同上（第2节） | 实物拓扑与故障检测能力 | WORKING |
+| P4-HW-01 | PCB-01～13 设计输入、硬件接口与工艺测点 | [PCB准入矩阵](./P4_system_architecture/01_PCB_INTERFACE_AND_READINESS_V0.1_WORKING.md) | E-PROD/E-BRAKE/E-ELEC/E-MOTION/E-SAFE/E-HMI | WORKING；功率相关BLOCKED |
+| P4-PROD-01 | C-01～C-06 集中产品取舍 | 已有一致性清单 | 首发市场/车型/轮端/供电/输入及V2 LCD实物方案 | OPEN，负责人集中决定 |
+| P4-SAFE-01 | 失效后真实功率动作与保护责任的系统分析准备 | HA/SG/SSR初筛+本轮硬件责任划分 | 正式危害分析、硬件FMEA/故障注入与适用车辆 | OPEN/BLOCKED |
+| P4-VAL-01 | V1测试版的实物验证层次及专用台架输入 | P4/V1验证路径已规划 | 实物硬件/台架安全准入、测量方案 | PLANNED，不是测试通过 |
+| CM-01 | 工程资料受控归档、交接、版权/缺口 | [唯一资料入口](../handover/00_INDEX.md)和[总账](../handover/02_ARTIFACT_REGISTER.md) | 外部授权材料等OPEN项 | 继续跟踪 |
 
-## 进入实际开发时才启动的任务
+## 三、当前暂停而不是删除的工作
 
-`SW-00 开发环境核验 → SW-01 全新Keil/官方SDK Target工程 → Clock/GPIO/Timer → UART DMA/CAN → 真实设备协议 → ASW制动控制 → V1无功率联调 → 独立审批的功率台架`。
+- `SW-00/SW-01` 环境核验、全新Keil工程、Target编译、烧录、GPIO/CAN/UART DMA驱动：**未获本轮开工授权**，按未来受控任务进行。
+- `execution/software_predevelopment/` 的软件模块、接口及测试追踪材料：**存档待将来软件系统设计使用**，不因存在文件就宣称P5启动或软件详细设计已冻结。
+- 现有旧固件/App源码不进入正式新项目基线，也不作为当前研究或修改范围。
 
-这些当前为 **PLANNED/NOT_RUN**；不能为了填表声称已进行 Target Build、烧录或硬件实测。
+## 四、硬性约束
 
-## 交付与安全原则
-
-所有代码项目需按照 `BS-SW-STD-001 V1.0` 严格过程受控；旧固件/App不作为基线，Codex不在未获具体源码任务授权时工作。当前管理分支允许归档工作稿，不能把规划文档误作为产品认证或实际制动许可。
+1. 研发 EVB 不接真实拖挂制动功率；任何有关实际输出的工作必须独立硬件/安全/台架准入。
+2. 故障不能武断统一“立即清零”，需按目标车辆与工况做危险分析。
+3. 不虚构 PCB引脚、功率电流、通信参数、车辆质量、响应时限或安全认证。
+4. 阶段分开标记：方案批准≠设计冻结≠代码完成≠Host/Target Build≠烧录≠实物验证≠产品发布。
+5. 每次设计文件交付均纳入GitHub `management` 资料索引/总账，保留负责人、编制者、版本及签收状态；第三方原件受公开仓库许可约束。

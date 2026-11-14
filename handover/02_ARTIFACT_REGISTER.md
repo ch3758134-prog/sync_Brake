@@ -70,6 +70,15 @@
 
 四项软件实施前设计文件均属 `WORKING`；接口合同和测试追踪尚未获得详细实现批准。后续须补充完整需求到具体工作包/验收用例的追踪、数值和故障动作依据；本轮未取得详细设计的正式签收。
 
+## D3. P4系统总体设计本轮交付（当前主线）
+
+| Artifact-ID | 文件及受控位置 | 版本 | 状态 | 责任人(A) | 编制/归档执行(R) | 接收/评审 | 验收证据和后续缺口 |
+|---|---|---|---|---|---|---|---|
+| BS-P4-SYS-ARCH-001 | [整机架构与软硬件责任分配](../execution/P4_system_architecture/00_SYSTEM_ARCHITECTURE_AND_ALLOCATION_V0.1_WORKING.md) | V0.1 | DESIGN_WORKING/NOT_APPROVED_AS_FINAL_ARCHITECTURE | 项目负责人 | ChatGPT | 项目负责人（未签收） | SF-01～09分配表、系统接口和P4 G01～08门槛；车型/安全等OPEN |
+| BS-P4-PCB-INPUT-001 | [PCB设计输入与准入矩阵](../execution/P4_system_architecture/01_PCB_INTERFACE_AND_READINESS_V0.1_WORKING.md) | V0.1 | DESIGN_WORKING/PCB_NOT_BUILT | 项目负责人 | ChatGPT | 项目负责人（未签收） | PCB-01～13对应设计文件/测试口与实体证据缺口；真实功率BLOCKED |
+
+两份文件归档于 `management`，**不等于负责人已批准其全部新设计结论，也不等于正式PCB或软件已完成**。先前软件实施前设计文件继续保留但暂时 `PARKED`。
+
 ## E. 登记准入与更新规则
 
 1. 任何新文件产生时**同一任务内**登记：唯一 ID、文件名、GitHub 路径、版本、来源版本、Git SHA/校验和、责任人、编制人、接收人、批准状态和证据级别。
