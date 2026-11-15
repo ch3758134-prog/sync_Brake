@@ -23,6 +23,8 @@
 
 > **新增获批P4研究输入**：[BS-P4-OPTIONS-001 V0.1](../baselines/2026-11-14_P4_PHYSICAL_OPTIONS_V0.1/APPROVAL.md)（TRIG/MOT/PWR方案比较及SAFE-01～07证据要求）。仅批准方案比较方向与集中决策清单，硬件选型仍OPEN；负责人后续提供真实PCB原理图。
 
+> **新增批准 P4 设计输入**：[BS-P4-EXT-ICD-001 V0.1](../baselines/2026-11-14_P4_EXTERNAL_INTERFACE_V0.1/APPROVAL.md)：`SYS-IF-01～08`外部接口合同、失效观测盲区、真实资料交接、`SCH-01～08`图纸审查模板。仅批准设计范围，真实PCB原理图仍待负责人后续提供。
+
 ## 二、当前正在推进的系统工程任务
 
 | ID | P4 当前任务 | 已形成的输出 | 仍缺关键材料 | 责任/状态 |

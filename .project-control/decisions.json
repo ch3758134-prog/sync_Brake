@@ -196,6 +196,18 @@
       "sha256": "998fc3324a7951c4547d4b6c73a849286c977007881a38a447e8dcf4f280224a",
       "git_blob_sha": "458370e98df5cf78f50f2c170bbf1d66c6a1dde2",
       "evidence": "2026-11-14 项目负责人明确回复：批准"
+    },
+    {
+      "id": "DEC-P4-EXT-ICD-V01-20261114",
+      "date": "2026-11-14",
+      "status": "APPROVED_AS_P4_SYSTEM_INTERFACE_AND_EVIDENCE_INPUT",
+      "subject": "BS-P4-EXT-ICD-001 V0.1整车外部接口与设计证据闭环合同批准",
+      "scope": "批准SYS-IF-01～08系统接口证据合同，八类失效观测盲区，E-PROD/E-ELEC/E-BRAKE/E-MOTION/E-SAFE/E-INT/E-HMI材料签收及SCH-01～08未来PCB审查模板；并不批准真实接口参数、实际硬件功率方案、HARA/ASIL或任何实物实验。P4仍进行；实际PCB原理图由负责人以后提供，当前未收到。",
+      "approval_record": "baselines/2026-11-14_P4_EXTERNAL_INTERFACE_V0.1/APPROVAL.md",
+      "approved_original": "baselines/2026-11-14_P4_EXTERNAL_INTERFACE_V0.1/BS-P4-EXT-ICD-001_V0.1_批准原文.md",
+      "sha256": "1c0e18235af211bbad2c52bc84f3c20b826dfa9f6275674674fc6b8b7c7adcec",
+      "git_blob_sha": "1363c857251f382dd63ecc573f3b5094dd2f8ec5",
+      "evidence": "2026-11-14 项目负责人明确回复：批准吧"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",

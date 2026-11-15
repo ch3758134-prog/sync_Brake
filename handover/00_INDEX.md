@@ -7,6 +7,8 @@
 
 ## 当前权威入口
 
+- [BS-P4-EXT-ICD-001 V0.1 已批准：整车外部接口与证据闭环合同](../baselines/2026-11-14_P4_EXTERNAL_INTERFACE_V0.1/APPROVAL.md)：8类系统接口、材料签收标准与图纸审查模板；实际接口/原理图仍待核验。
+
 - [P4关键物理方案比较与产品决策输入 V0.1 批准记录](../baselines/2026-11-14_P4_PHYSICAL_OPTIONS_V0.1/APPROVAL.md)：TRIG/MOT/PWR候选及SAFE-01～07验证依据，**不含实际器件选型批准**。
 
 - [P4整机架构和PCB设计输入 V0.1 有条件批准记录](../baselines/2026-11-14_P4_SYSTEM_DESIGN_V0.1/APPROVAL.md)：包括固定版本和真实PCB后续提供的约束。
