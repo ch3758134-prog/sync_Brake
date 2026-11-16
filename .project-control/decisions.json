@@ -219,6 +219,17 @@
       "approval_record": "baselines/2026-11-15_P4_FAULT_CHAIN_V0.1/APPROVAL.md",
       "approved_original": "baselines/2026-11-15_P4_FAULT_CHAIN_V0.1/BS-P4-FAULT-CHAIN-001_V0.1_批准原文.md",
       "blob_sha": "bb26f329fe18479c5a7ef0335d06776f8f47d522"
+    },
+    {
+      "id": "DEC-P4-STAGE-REVIEW-20261115",
+      "date": "2026-11-15",
+      "status": "APPROVED_AS_STAGE_REVIEW_WITH_ITERATIVE_DESIGN_POLICY",
+      "subject": "BrakeSync P4 阶段总览与设计审阅版（2026-11-15）",
+      "scope": "批准 P4 已批准材料的阅读总览与阶段进度判断、非功率 SW-00/01 优先推进方向，并确认后续按实测证据可受控修订已批准技术方案；不代表 P4 实体工程全部结项、不冻结 OPEN 物理参数、不授权制动真实功率输出，亦不直接指定具体文件/分支操作。",
+      "evidence": "负责人回复“批准吧，还是实测我更能把握，后续实测我会不断回头问你重新确定怕批准的内容的”",
+      "approval_record": "baselines/2026-11-15_P4_STAGE_REVIEW/APPROVAL.md",
+      "approved_original": "baselines/2026-11-15_P4_STAGE_REVIEW/P4_阶段总览与设计审阅版_2026-11-15_批准原文.md",
+      "blob_sha": "b9528af9312cae99456c9773a56439b5c8924735"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",

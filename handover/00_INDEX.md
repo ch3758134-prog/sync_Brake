@@ -7,6 +7,8 @@
 
 ## 当前权威入口
 
+- [P4 阶段总览与设计审阅版（2026-11-15）批准记录](../baselines/2026-11-15_P4_STAGE_REVIEW/APPROVAL.md)：按已批准原始资料综合 DD-01～08/PCB/SYS-IF/安全/验证与实际进展，并明确实测驱动后续方案修订；P4 未整体验收。
+
 - [BS-P4-FAULT-CHAIN-001 V0.1 批准记录](../baselines/2026-11-15_P4_FAULT_CHAIN_V0.1/APPROVAL.md)：FC-01～12、SP-01～08、TV-01～18 系统故障传播/保护职责/测试计划；实体动作和真实测试均未批准或执行。
 
 - [BS-P4-EXT-ICD-001 V0.1 已批准：整车外部接口与证据闭环合同](../baselines/2026-11-14_P4_EXTERNAL_INTERFACE_V0.1/APPROVAL.md)：8类系统接口、材料签收标准与图纸审查模板；实际接口/原理图仍待核验。
