@@ -208,6 +208,17 @@
       "sha256": "1c0e18235af211bbad2c52bc84f3c20b826dfa9f6275674674fc6b8b7c7adcec",
       "git_blob_sha": "1363c857251f382dd63ecc573f3b5094dd2f8ec5",
       "evidence": "2026-11-14 项目负责人明确回复：批准吧"
+    },
+    {
+      "id": "DEC-P4-FAULT-CHAIN-20261115",
+      "date": "2026-11-15",
+      "status": "APPROVED_AS_P4_DESIGN_AND_TEST_PLAN_ONLY",
+      "subject": "P4 失效传播、保护责任与验证闭环 V0.1",
+      "scope": "批准 J-01..J-04 研究结论、FC-01..12 故障链、SP-01..08 保护职责、TV-01..18 分级测试计划；具体物理动作和各项实体安全与故障注入测试仍 TBD/NOT_RUN。不授予真实制动功率输出或特定代码写入权限。",
+      "evidence": "项目负责人在 2026-11-15 回复“批准，我想赶快去开始写代码实测了，说明一下现在项目推进进度吧”",
+      "approval_record": "baselines/2026-11-15_P4_FAULT_CHAIN_V0.1/APPROVAL.md",
+      "approved_original": "baselines/2026-11-15_P4_FAULT_CHAIN_V0.1/BS-P4-FAULT-CHAIN-001_V0.1_批准原文.md",
+      "blob_sha": "bb26f329fe18479c5a7ef0335d06776f8f47d522"
     }
   ],
   "owner_instruction_index": ".project-control/OWNER_DIRECTIVES.md",

@@ -93,6 +93,12 @@
 
 **说明**：本审批不意味着真实 PCB 原理图已经收到或验收，更不代表实际执行与车辆制动功能完成。
 
+## D6. P4 故障传播与保护责任验证闭环（批准于 2026-11-15）
+
+| Artifact ID | 原文 / 批准记录 | 版本 | 状态 | 原文 Git Blob | 责任人 | 编制/归档 | 后续证据缺口 |
+|---|---|---|---|---|---|---|---|
+| BS-P4-FAULT-CHAIN-001 | [批准原文](../baselines/2026-11-15_P4_FAULT_CHAIN_V0.1/BS-P4-FAULT-CHAIN-001_V0.1_批准原文.md) · [审批记录](../baselines/2026-11-15_P4_FAULT_CHAIN_V0.1/APPROVAL.md) | V0.1 | APPROVED_AS_P4_DESIGN_AND_TEST_PLAN_ONLY | `bb26f329fe18479c5a7ef0335d06776f8f47d522` | 项目负责人 | ChatGPT | FC/SP/TV为设计/计划，所有真实功率与产品级测试未执行；器件/车端/PCB来源和安全准入仍 OPEN/BLOCKED |
+
 ## E. 登记准入与更新规则
 
 1. 任何新文件产生时**同一任务内**登记：唯一 ID、文件名、GitHub 路径、版本、来源版本、Git SHA/校验和、责任人、编制人、接收人、批准状态和证据级别。
