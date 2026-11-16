@@ -2,14 +2,21 @@ name: firmware-host
 on:
   push:
     branches: [firmware]
-  workflow_dispatch:
+  pull_request:
+    branches: [firmware]
 jobs:
   host:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [gcc, clang]
     steps:
       - uses: actions/checkout@v4
       - name: Configure
-        run: cmake -S firmware -B build/firmware -DBUILD_TESTING=ON
+        env:
+          CC: ${{ matrix.compiler }}
+        run: cmake -S firmware -B build/firmware -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON
       - name: Build
         run: cmake --build build/firmware --parallel
       - name: Test

@@ -1,0 +1,20 @@
+# Local build products and IDE-user settings
+/build/
+/out/
+/firmware/build/
+/firmware/target/**/Objects/
+/firmware/target/**/Listings/
+*.uvguix.*
+*.uvoptx
+*.dep
+*.d
+*.o
+*.obj
+*.elf
+*.axf
+*.map
+*.hex
+*.bin
+# Vendor SDK is resolved locally under license; never embed private material.
+**/sdk_local/
+**/.sdk/

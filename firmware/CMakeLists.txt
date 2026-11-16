@@ -1,30 +1,34 @@
 cmake_minimum_required(VERSION 3.16)
-project(BrakeSyncFirmwareHost C)
+project(BrakeSyncHost LANGUAGES C)
+
+# This file is HOST ONLY. Do not use it to claim YTM32 target support.
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
-add_library(brakesync_core STATIC
-  src/BSW/Driver/Port.c
-  src/BSW/Driver/Gpio.c
-  src/BSW/Driver/Can.c
-  src/BSW/Driver/Timer.c
-  src/BSW/Driver/Uart.c
-  src/BSW/Driver/I2c.c
-  src/BSW/Cdd/Bma510.c
-  src/BSW/Cdd/Wlt8016.c
-  src/ASW/BrakeSystem.c
+set(CMAKE_C_EXTENSIONS OFF)
+
+add_library(brakesync_can STATIC
+    bsw/drivers/can_bus.c
 )
-target_include_directories(brakesync_core PUBLIC
-  include src/BSW/Cdd src/ASW
+target_include_directories(brakesync_can PUBLIC bsw/drivers)
+
+add_library(brakesync_motion STATIC
+    asw/motion_sample.c
 )
-if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
-  target_compile_options(brakesync_core PRIVATE -Wall -Wextra -Werror -Wpedantic)
-endif()
+target_include_directories(brakesync_motion PUBLIC asw)
+
+foreach(target brakesync_can brakesync_motion)
+    if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+        target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic -Werror)
+    endif()
+endforeach()
+
 include(CTest)
 if(BUILD_TESTING)
-  add_executable(test_bma510 tests/host/test_bma510.c)
-  target_link_libraries(test_bma510 PRIVATE brakesync_core)
-  add_test(NAME bma510 COMMAND test_bma510)
-  add_executable(test_driver tests/host/test_driver.c)
-  target_link_libraries(test_driver PRIVATE brakesync_core)
-  add_test(NAME driver COMMAND test_driver)
+    add_executable(test_can_bus tests/host/test_can_bus.c)
+    target_link_libraries(test_can_bus PRIVATE brakesync_can)
+    add_test(NAME can_bus_host COMMAND test_can_bus)
+
+    add_executable(test_motion_sample tests/host/test_motion_sample.c)
+    target_link_libraries(test_motion_sample PRIVATE brakesync_motion)
+    add_test(NAME motion_sample_host COMMAND test_motion_sample)
 endif()
