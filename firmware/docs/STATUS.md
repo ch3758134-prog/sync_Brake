@@ -5,7 +5,7 @@
 | 新版仓库文件树 | CREATED | 当前 `firmware` 分支 HEAD |
 | 代码风格 CAN 样板 | HOST_SAMPLE | `bsw/drivers/can_bus.c`，非 Target 适配 |
 | 运动数据质量样板 | HOST_SAMPLE | `asw/motion_sample.c` |
-| GCC/Clang Host 构建及测试 | CI_PENDING | 以新提交 GitHub Actions 的实际结论为准 |
+| GCC/Clang Host 构建及测试 | **PASS** | [GitHub Actions #43829061774](https://github.com/ch3758134-prog/sync_Brake/actions/runs/43829061774)：GCC、Clang 的 Configure / Build / Test 全部成功；只证明当前 Host 检查 |
 | 用户已有 LED 实测 | OWNER_REPORTED | 本地工程未在本次可访问文件中取得 |
 | 云途 Keil Target 工程 | NOT_IMPORTED | 缺少原始已实测工程文件 |
 | SDK/PinMux/Clock/CAN IRQ 集成 | NOT_IMPLEMENTED | 不能猜测芯片和 SDK |
