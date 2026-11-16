@@ -1,20 +1,23 @@
-# Local build products and IDE-user settings
+# Host and Target outputs
 /build/
 /out/
 /firmware/build/
+/firmware/target/**/KEIL/Objects/
+/firmware/target/**/KEIL/Listings/
 /firmware/target/**/Objects/
 /firmware/target/**/Listings/
 *.uvguix.*
-*.uvoptx
 *.dep
 *.d
 *.o
 *.obj
-*.elf
 *.axf
+*.elf
 *.map
 *.hex
 *.bin
-# Vendor SDK is resolved locally under license; never embed private material.
+*.srec
+# Keil debugger options in BrakeSync.uvoptx are intentionally kept for initial ST-Link selection.
+# Local vendor SDK outside this official source snapshot
 **/sdk_local/
 **/.sdk/

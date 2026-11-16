@@ -1,0 +1,227 @@
+/*
+ * Copyright 2020-2026 Yuntu Microelectronics Co., Ltd.
+ * All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ * 
+ * @file yt_linker.scf
+ * @brief 
+ * 
+ */
+
+
+
+
+LR_TEXT_0 AlignExpr(0x0, 8)
+{
+
+
+
+
+        IVT_start AlignExpr(0x0,4) ALIGN 4 FIXED EMPTY 0
+        {
+        }
+
+        isr_vector_region_start +0 FIXED EMPTY 0
+        {
+        }
+        isr_vector_region +0 NOCOMPRESS
+        {
+                .ANY (.isr_vector)
+        }
+        isr_vector_region_end +0 FIXED EMPTY 0
+        {
+        }
+        IVT_end +0 FIXED EMPTY 0
+        {
+        }
+
+
+
+
+        TEXT_start 0xc0 FIXED EMPTY 0
+        {
+        }
+
+        text_region_start +0 FIXED EMPTY 0
+        {
+        }
+        text_region +0 NOCOMPRESS
+        {
+                .ANY (.text*)
+        }
+        text_region_end +0 FIXED EMPTY 0
+        {
+        }
+
+        rodata_region_start +0 FIXED EMPTY 0
+        {
+        }
+        rodata_region +0 NOCOMPRESS
+        {
+                .ANY (.rodata*)
+        }
+        rodata_region_end +0 FIXED EMPTY 0
+        {
+        }
+
+        i_region_start +0 FIXED EMPTY 0
+        {
+        }
+        i_region +0 NOCOMPRESS
+        {
+                .ANY (i*)
+        }
+        i_region_end +0 FIXED EMPTY 0
+        {
+        }
+        TEXT_end +0 ALIGN 4 FIXED EMPTY 0
+        {
+        }
+
+
+
+
+        ARM_start AlignExpr(0xc0 + ImageLimit(TEXT_end) - ImageBase(TEXT_start), 4) FIXED EMPTY 0
+        {
+        }
+
+        ARM.exidx_region_start +0 FIXED EMPTY 0
+        {
+        }
+        ARM.exidx_region +0 NOCOMPRESS
+        {
+                .ANY (.ARM.exidx*)
+        }
+        ARM.exidx_region_end +0 FIXED EMPTY 0
+        {
+        }
+        ARM_end +0 ALIGN 4 FIXED EMPTY 0
+        {
+        }
+
+
+
+
+        CODE_RAM_start AlignExpr(0x200000c0,8) ALIGN 8  EMPTY 0
+        {
+        }
+
+        code_ram_region_start +0  EMPTY 0
+        {
+        }
+        code_ram_region +0 NOCOMPRESS
+        {
+                .ANY (.code_ram)
+        }
+        code_ram_region_end +0  EMPTY 0
+        {
+        }
+        CODE_RAM_end +0 ALIGN 4  EMPTY 0
+        {
+        }
+
+
+
+
+        IVT_RAM_start AlignExpr(0x20000000,1024)  EMPTY 0
+        {
+        }
+        IVT_RAM AlignExpr(0x20000000,1024) EMPTY 0xC0
+        {
+        }
+        IVT_RAM_end +0  EMPTY 0
+        {
+        }
+
+
+
+
+        STACK_start AlignExpr(0x20003c00,8)  EMPTY 0
+        {
+        }
+        STACK AlignExpr(0x20003c00,8) EMPTY 1024
+        {
+        }
+        STACK_end +0  EMPTY 0
+        {
+        }
+
+
+
+
+        DATA_RAM_start AlignExpr(ImageLimit(CODE_RAM_end),8) ALIGN 8  EMPTY 0
+        {
+        }
+
+        data_region_start +0  EMPTY 0
+        {
+        }
+        data_region +0 NOCOMPRESS
+        {
+                .ANY (.data*)
+        }
+        data_region_end +0  EMPTY 0
+        {
+        }
+        DATA_RAM_end +0 ALIGN 4  EMPTY 0
+        {
+        }
+
+
+
+
+        BSS_start ImageLimit(DATA_RAM_end)  EMPTY 0
+        {
+        }
+
+        bss_region_start +0  EMPTY 0
+        {
+        }
+        bss_region +0 NOCOMPRESS UNINIT
+        {
+                .ANY (.bss*)
+                .ANY (+ZI)
+        }
+        bss_region_end +0  EMPTY 0
+        {
+        }
+        BSS_end AlignExpr(+0,4)  EMPTY 0
+        {
+        }
+}
+ScatterAssert(LoadBase(LR_TEXT_0) >= 0x0)
+ScatterAssert(LoadLimit(LR_TEXT_0) <= 0x20000)
+ScatterAssert(LoadBase(IVT_start) >= 0x0)
+ScatterAssert(LoadLimit(IVT_end) <= (0x0 + 192))
+ScatterAssert(LoadBase(TEXT_start) >= 0xc0)
+ScatterAssert(LoadLimit(TEXT_end) <= (0xc0 + 0x1FF40))
+ScatterAssert(LoadBase(ARM_start) >= 0xc0)
+ScatterAssert(LoadLimit(ARM_end) <= (0xc0 + 0x1FF40))
+ScatterAssert(LoadBase(CODE_RAM_start) >= 0xc0)
+ScatterAssert(LoadLimit(CODE_RAM_end) <= (0xc0 + 0x1FF40))
+ScatterAssert(LoadBase(DATA_RAM_start) >= 0xc0)
+ScatterAssert(LoadLimit(DATA_RAM_end) <= (0xc0 + 0x1FF40))
+
+; Check execution addresses independently of Flash load-region lengths.
+ScatterAssert(ImageBase(IVT_start) >= 0)
+ScatterAssert(ImageLimit(IVT_end) <= (0 + 192))
+ScatterAssert((ImageLimit(IVT_end) - ImageBase(IVT_start)) <= 192)
+ScatterAssert(ImageBase(TEXT_start) >= 192)
+ScatterAssert(ImageLimit(TEXT_end) <= (192 + 0x1FF40))
+ScatterAssert(ImageBase(ARM_start) >= 192)
+ScatterAssert(ImageLimit(ARM_end) <= (192 + 0x1FF40))
+ScatterAssert(ImageBase(BSS_start) >= 0x200000C0)
+ScatterAssert(ImageLimit(BSS_end) <= (0x200000C0 + 0x3B40))
+ScatterAssert(ImageBase(CODE_RAM_start) >= 0x200000C0)
+ScatterAssert(ImageLimit(CODE_RAM_end) <= (0x200000C0 + 0x3B40))
+ScatterAssert((LoadLimit(CODE_RAM_end) - LoadBase(CODE_RAM_start)) == (ImageLimit(CODE_RAM_end) - ImageBase(CODE_RAM_start)))
+ScatterAssert(ImageBase(DATA_RAM_start) >= 0x200000C0)
+ScatterAssert(ImageLimit(DATA_RAM_end) <= (0x200000C0 + 0x3B40))
+ScatterAssert((LoadLimit(DATA_RAM_end) - LoadBase(DATA_RAM_start)) == (ImageLimit(DATA_RAM_end) - ImageBase(DATA_RAM_start)))
+ScatterAssert(ImageBase(STACK_start) >= 0x20003c00)
+ScatterAssert(ImageLimit(STACK_end) <= (0x20003c00 + 1024))
+ScatterAssert((ImageLimit(STACK_end) - ImageBase(STACK_start)) <= 1024)
+ScatterAssert(ImageBase(IVT_RAM_start) >= 0x20000000)
+ScatterAssert(ImageLimit(IVT_RAM_end) <= (0x20000000 + 0xC0))
+ScatterAssert((ImageLimit(IVT_RAM_end) - ImageBase(IVT_RAM_start)) <= 0xC0)
