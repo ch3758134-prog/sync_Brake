@@ -5,7 +5,7 @@ int main(void)
 {
     if (board_support_init() != BOARD_STATUS_OK)
     {
-        /* 初始化失败时不启动应用，等待连接调试器检查。 */
+        /* Board 初始化失败：停止后续应用启动，不释放制动功率。 */
         for (;;)
         {
         }

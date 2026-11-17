@@ -1,11 +1,9 @@
-# 固件配置边界
+# Board / Variant / Release 分离管理
 
-三者独立管理，不组成固定流水线：
+- Board：MCU、板 Rev、真实 Clock/PinMux、收发器和物理线路，当前只有 YTM32B1LE05 EVB 测试配置。
+- Variant：V1 功能测试、V2 LCD、V3 App 等功能形态，共用核心制动算法。
+- Release：软件版本/精确 Board-Variant 组合/生成工具和构建证据。
 
-- **Board**：目标 MCU、PCB Rev、PinMux、时钟、CAN 控制器和实际外设连接。
-- **Variant**：产品能力和功能开关；V1 测试、V2 LCD、V3 App 不复制制动算法。
-- **Release**：可追踪的固件发布身份、配置组合、构建产物和兼容性信息。
+这三个维度独立，不把 SDK/板级配置当作产品标定参数。
 
-当前不冻结 CAN 波特率、传感器协议、轮端功率、控制周期或配置标定值；配置必须有实际硬件/产品依据。
-
-所有开发板构建保持 **NO_BRAKE_POWER**，不提供任何可更改为真实功率使能的开关。
+**当前 Keil Target 只用于 EVB_NO_BRAKE_POWER 调试**，不得连接拖挂制动器。不会创建临时宏允许启用真实功率。

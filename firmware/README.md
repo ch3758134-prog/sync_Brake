@@ -1,26 +1,39 @@
-# BrakeSync 固件 V0.1｜真实 Keil Target 工程已纳入
+# BrakeSync 固件｜ASW / BSW / MCAL / CDD / Services / Board
 
-## 目标工程
+本次按负责人批准的分层重新组织了源树、Keil 文件引用和 SDK 路径。**不是重命名 Demo 就视为产品固件**。
 
-**Keil 可打开文件**：`target/ytm32b1le0/KEIL/BrakeSync.uvprojx`。
+## 当前可运行范围
 
-源码自带示例所用的启动、链接、Clock/PinMux、PINS/DMA/UART/OSIF/CMSIS 等源。Keil 工程内 89 个相对文件路径已全部核对存在。
+当前 Keil Target 仍是 **YTM32B1LE05 EVB 的无制动功率 Bring-up**，包含：
+- MCU 官方 GPIO 示例 SDK、CMSIS、OSIF、启动、链接和 YCT 配置。
+- Board 初始化、MCAL 毫秒时基薄适配、Services 时间服务。
+- 独立 Target 测试：LED PTD7 心跳及 PTE0/PTE1 按键中断、PTD6 反馈。
+- Host 单测：运动采样、时间服务以及已归档的 CAN 接口样板（后者不属于正式 MCAL 驱动）。
 
-- 核验芯片：`YTM32B1LE05`，原示例使用 `YTMicro.YTM32B1LE0_DFP.1.4.0` 和 ArmClang 6.24；设备 Pack / Flash 算法仍须本机安装。
-- 新增 `app/main.c`、`app/app.c`、`board/board_support.c`，用于 PTD7 心跳、SW1/SW2 GPIO 中断和 PTD6 指示。
-- **由于当前环境没有 Keil 和开发板，新工程 Target Build、烧录及实板结果仍为 `NOT_RUN`。** 原示例成功日志不等于新工程成功。
-- **无真实制动功率**；Keil 目标不链接 Host 测试 CAN 假实现，也没有任何制动输出。
-
-操作步骤、许可信息及限制：[Target 工程说明](target/ytm32b1le0/README.md)。
-
-## Host 模块
-
-当前 `bsw/drivers/can_bus.[ch]` 是编码风格与接口 **Host 样板**，尚未实现云途 CAN 控制器。`asw/motion_sample.[ch]` 提供纯 C 数据质量检查样例。
-
-```sh
-cmake -S firmware -B build/firmware -DBUILD_TESTING=ON
-cmake --build build/firmware
-ctest --test-dir build/firmware --output-on-failure
+```text
+firmware/app/
+firmware/asw/
+firmware/bsw/mcal/{include,ytm32b1le0/sdk}/
+firmware/bsw/cdd/
+firmware/bsw/services/
+firmware/bsw/board/ytm32b1le0/
+firmware/config/
+firmware/target/ytm32b1le0/KEIL/BrakeSync.uvprojx
+firmware/tests/{host,target}/
+firmware/{qa,docs}/
 ```
 
-Host 测试结果与 Target 实测必须分开记录，不以 Host PASS 证明真实 CAN。严格执行 `BS-SW-STD-001 V1.0`；本分支未宣称已取得 MISRA / ISO 26262 合规评定。
+## Keil 本机验收
+
+1. 在 `firmware` 分支打开 `firmware/target/ytm32b1le0/KEIL/BrakeSync.uvprojx`。
+2. 核对 YTM32B1LE05、ArmClang 6.24、YTMicro.YTM32B1LE0_DFP 1.4.0 和真实下载器/Flash 算法。
+3. 先 Rebuild 并保存完整 Build Output；编译通过后负责人再下载、复位、验证 GPIO。
+4. 本仓库 CI 只执行 Host 测试和 Keil 文件/链接元数据检查；**没有实际 Keil 编译/烧录能力**。
+
+本次原官方 GPIO 示例中的 SDK 仅为子集，没有完整 CAN、Flash、WDG 等全部驱动。未验证的外设不加模拟 Target 实现。
+
+## 设计/质量
+
+[批准的架构边界](docs/ARCHITECTURE.md) · [研发及验证状态](docs/STATUS.md) · [Keil 工程说明](target/ytm32b1le0/README.md)
+
+产品制动 ASW、功率硬件、ASIL/功能安全评价尚未完成；当前不允许接任何实际拖挂制动功率链。

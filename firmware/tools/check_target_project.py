@@ -1,55 +1,70 @@
 #!/usr/bin/env python3
-"""Read-only structural validation of BrakeSync's Keil project (not a Target build)."""
-from __future__ import annotations
-
+"""Keil/architecture metadata checks, NOT a Target compile or safety validation."""
 from pathlib import Path
-from xml.etree import ElementTree
+from xml.etree import ElementTree as ET
 import sys
 
-firmware_root = Path(__file__).resolve().parents[1]
-target_dir = firmware_root / "target" / "ytm32b1le0"
-project_dir = target_dir / "KEIL"
-project_file = project_dir / "BrakeSync.uvprojx"
-project = ElementTree.parse(project_file)
+firmware = Path(__file__).resolve().parents[1]
+project_dir = firmware / "target" / "ytm32b1le0" / "KEIL"
+proj = ET.parse(project_dir / "BrakeSync.uvprojx")
+board = firmware / "bsw" / "board" / "ytm32b1le0"
+sdk = firmware / "bsw" / "mcal" / "ytm32b1le0" / "sdk"
 
-def fail(text: str) -> None:
-    print("FAIL:", text, file=sys.stderr)
+def fail(message: str) -> None:
+    print("FAIL:", message, file=sys.stderr)
     sys.exit(1)
 
-if project.findtext(".//TargetName") != "BrakeSync":
+if proj.findtext(".//TargetName") != "BrakeSync":
     fail("unexpected TargetName")
-if project.findtext(".//TargetCommonOption/Device") != "YTM32B1LE05":
-    fail("unexpected device")
-if project.findtext(".//TargetCommonOption/OutputName") != "BrakeSync":
-    fail("unexpected output file name")
+if proj.findtext(".//TargetCommonOption/Device") != "YTM32B1LE05":
+    fail("unexpected Target MCU")
+if proj.findtext(".//TargetCommonOption/OutputName") != "BrakeSync":
+    fail("unexpected OutputName")
 
-files: list[Path] = []
-for node in project.findall(".//Group/Files/File/FilePath"):
+sources = []
+for node in proj.findall(".//Group/Files/File/FilePath"):
     if not node.text:
-        fail("empty Keil file reference")
-    ref = (project_dir / node.text.replace("\\", "/")).resolve()
-    if not ref.is_relative_to(firmware_root.resolve()):
-        fail(f"file path escapes firmware directory: {node.text}")
-    if not ref.is_file():
-        fail(f"missing project source: {node.text}")
-    files.append(ref)
+        fail("empty Keil project source path")
+    path = (project_dir / node.text.replace("\\", "/")).resolve()
+    if not path.is_relative_to(firmware.resolve()):
+        fail(f"source escapes firmware: {node.text}")
+    if not path.is_file():
+        fail(f"missing source: {node.text}")
+    if path.is_relative_to((firmware / "tests" / "host").resolve()):
+        fail(f"Host mock is linked into Keil: {node.text}")
+    sources.append(path)
 
-for node in project.findall(".//TargetArmAds/Cads/VariousControls/IncludePath"):
+if len(sources) != len(set(sources)):
+    fail("duplicate Keil source references")
+
+for node in proj.findall(".//TargetArmAds/Cads/VariousControls/IncludePath"):
     for inc in (node.text or "").split(";"):
         if inc.strip():
             path = (project_dir / inc.replace("\\", "/")).resolve()
             if not path.is_dir():
                 fail(f"missing include directory: {inc}")
 
-required = [firmware_root / "app" / "main.c",
-            firmware_root / "app" / "app.c",
-            target_dir / "board" / "board_support.c"]
+scatter = proj.findtext(".//TargetArmAds/LDads/ScatterFile")
+if not scatter or not (project_dir / scatter.replace("\\", "/")).resolve().is_file():
+    fail("scatter file is missing")
+
+required = [
+    firmware / "app" / "main.c",
+    firmware / "app" / "app.c",
+    board / "board_support.c",
+    firmware / "bsw" / "mcal" / "ytm32b1le0" / "mcal_time.c",
+    firmware / "bsw" / "services" / "time_service.c",
+    firmware / "tests" / "target" / "gpio_bringup.c",
+]
 for item in required:
-    if item not in files:
-        fail(f"not compiled by Keil project: {item}")
+    if item.resolve() not in sources:
+        fail(f"missing configured source: {item}")
 
-if len(files) != len(set(files)):
-    fail("duplicate Keil source entries")
+if not any(path.is_relative_to(sdk.resolve()) for path in sources):
+    fail("Keil project does not include vendor MCU SDK")
 
-print(f"PASS: {len(files)} file references, include paths and target metadata verified")
-print("NOTE: This is NOT a Keil Target compile/Flash test")
+if not (board / "generated" / "Gpio_Interrupt_Demo.yct").is_file():
+    fail("original YCT config missing")
+
+print(f"PASS: Keil project metadata, {len(sources)} source paths, includes and scatter")
+print("NOTE: no Keil compile, download or brake hardware test was run")

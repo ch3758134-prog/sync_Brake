@@ -1,9 +1,7 @@
-# BrakeSync — firmware branch
+# BrakeSync
 
-本分支为 BrakeSync 电子同步制动控制器固件。**当前仅支持无实际制动功率的软件/开发板验证，不可用于车辆。**
+拖挂式房车电子同步制动控制研发项目。分支 `main`、`firmware`、`app` 和 `management` 并行，互不自动合并。
 
-- **YTM32B1LE05 Keil Target**：[打开工程说明](firmware/target/ytm32b1le0/README.md)；工程文件：`firmware/target/ytm32b1le0/KEIL/BrakeSync.uvprojx`。
-- **Host C 测试**：[固件总入口](firmware/README.md)；与目标硬件代码分开构建。
-- **当前证据**：[实施状态](firmware/docs/STATUS.md)。
+本分支采用负责人批准的 `ASW / BSW (MCAL / CDD / Services / Board)` 轻量化分层，见 [固件工程](firmware/README.md)。
 
-`main`、`app`、`management` 为平行分支，不在本次固件工程改造范围内。
+**当前仅有 YTM32B1LE05 EVB 无制动功率 Target**。SDK 的 CAN/Flash/WDG 等完整驱动尚未具备，不能将目录重建视为汽车功能安全认证通过。

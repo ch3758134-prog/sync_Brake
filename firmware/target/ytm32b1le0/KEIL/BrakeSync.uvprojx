@@ -337,7 +337,7 @@
               <MiscControls />
               <Define>YTM32B1LE0,CPU_YTM32B1LE0,</Define>
               <Undefine />
-              <IncludePath>../board;../platform/drivers/src/clock/YTM32B1Lx;../platform/drivers/src/pins;../platform/drivers/src/dma;../platform/drivers/src/uart;../platform/drivers/inc;../platform/devices/common;../platform/devices;../platform/devices/YTM32B1LE0/include;../platform/devices/YTM32B1LE0/startup;../CMSIS/Core/Include;../rtos/osif;../../../app</IncludePath>
+              <IncludePath>../../../bsw/board/ytm32b1le0/generated;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/pins;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/dma;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/uart;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/inc;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/common;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/startup;../../../bsw/mcal/ytm32b1le0/sdk/CMSIS/Core/Include;../../../bsw/mcal/ytm32b1le0/sdk/rtos/osif;../../../app;../../../bsw/board/ytm32b1le0;../../../bsw/services;../../../bsw/mcal/include;../../../tests/target</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -355,7 +355,7 @@
               <MiscControls />
               <Define />
               <Undefine />
-              <IncludePath>../board;../platform/drivers/src/clock/YTM32B1Lx;../platform/drivers/src/pins;../platform/drivers/src/dma;../platform/drivers/src/uart;../platform/drivers/inc;../platform/devices/common;../platform/devices;../platform/devices/YTM32B1LE0/include;../platform/devices/YTM32B1LE0/startup;../CMSIS/Core/Include;../rtos/osif;../../../app</IncludePath>
+              <IncludePath>../../../bsw/board/ytm32b1le0/generated;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/pins;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/dma;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/uart;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/inc;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/common;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/startup;../../../bsw/mcal/ytm32b1le0/sdk/CMSIS/Core/Include;../../../bsw/mcal/ytm32b1le0/sdk/rtos/osif;../../../app;../../../bsw/board/ytm32b1le0;../../../bsw/services;../../../bsw/mcal/include;../../../tests/target</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -368,7 +368,7 @@
             <TextAddressRange>0x00000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
             <pXoBase />
-            <ScatterFile>../board/yt_linker.scf</ScatterFile>
+            <ScatterFile>../../../bsw/board/ytm32b1le0/generated/yt_linker.scf</ScatterFile>
             <IncludeLibs />
             <IncludeLibsPath />
             <Misc>--entry Reset_Handler --no_startup --diag_suppress=L6314W,L6221E,L6329W --keep=*(.isr_vector) </Misc>
@@ -379,7 +379,7 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>app</GroupName>
+          <GroupName>BrakeSync_App</GroupName>
           <Files>
             <File>
               <FileName>main.c</FileName>
@@ -389,282 +389,282 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>board</GroupName>
+          <GroupName>Board_YCT_Generated</GroupName>
           <Files>
             <File>
               <FileName>clock_config.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\board\clock_config.c</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\clock_config.c</FilePath>
             </File>
             <File>
               <FileName>clock_config.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\board\clock_config.h</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\clock_config.h</FilePath>
             </File>
             <File>
               <FileName>pin_mux.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\board\pin_mux.c</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\pin_mux.c</FilePath>
             </File>
             <File>
               <FileName>pin_mux.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\board\pin_mux.h</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\pin_mux.h</FilePath>
             </File>
             <File>
               <FileName>RamInit0.S</FileName>
               <FileType>2</FileType>
-              <FilePath>..\board\RamInit0.S</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\RamInit0.S</FilePath>
             </File>
             <File>
               <FileName>RamInit1.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\board\RamInit1.c</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\RamInit1.c</FilePath>
             </File>
             <File>
               <FileName>RamInit2.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\board\RamInit2.c</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\RamInit2.c</FilePath>
             </File>
             <File>
               <FileName>startup.S</FileName>
               <FileType>2</FileType>
-              <FilePath>..\board\startup.S</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\startup.S</FilePath>
             </File>
             <File>
               <FileName>vector.S</FileName>
               <FileType>2</FileType>
-              <FilePath>..\board\vector.S</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\vector.S</FilePath>
             </File>
             <File>
               <FileName>vector_table_copy.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\board\vector_table_copy.c</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\vector_table_copy.c</FilePath>
             </File>
             <File>
               <FileName>interrupt_config.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\board\interrupt_config.c</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\interrupt_config.c</FilePath>
             </File>
             <File>
               <FileName>interrupt_config.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\board\interrupt_config.h</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\interrupt_config.h</FilePath>
             </File>
             <File>
               <FileName>dma_config.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\board\dma_config.c</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\dma_config.c</FilePath>
             </File>
             <File>
               <FileName>dma_config.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\board\dma_config.h</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\dma_config.h</FilePath>
             </File>
             <File>
               <FileName>uart_config.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\board\uart_config.c</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\uart_config.c</FilePath>
             </File>
             <File>
               <FileName>uart_config.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\board\uart_config.h</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\uart_config.h</FilePath>
             </File>
             <File>
               <FileName>sdk_project_config.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\board\sdk_project_config.h</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\sdk_project_config.h</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>platform</GroupName>
+          <GroupName>Vendor_SDK_MCAL</GroupName>
           <Files>
             <File>
               <FileName>cfmu_hw_access.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\src\clock\YTM32B1Lx\cfmu_hw_access.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\clock\YTM32B1Lx\cfmu_hw_access.h</FilePath>
             </File>
             <File>
               <FileName>clock_YTM32B1Lx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\platform\drivers\src\clock\YTM32B1Lx\clock_YTM32B1Lx.c</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\clock\YTM32B1Lx\clock_YTM32B1Lx.c</FilePath>
             </File>
             <File>
               <FileName>clock_YTM32B1Lx.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\src\clock\YTM32B1Lx\clock_YTM32B1Lx.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\clock\YTM32B1Lx\clock_YTM32B1Lx.h</FilePath>
             </File>
             <File>
               <FileName>cmu_hw_access.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\src\clock\YTM32B1Lx\cmu_hw_access.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\clock\YTM32B1Lx\cmu_hw_access.h</FilePath>
             </File>
             <File>
               <FileName>ipc_hw_access.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\src\clock\YTM32B1Lx\ipc_hw_access.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\clock\YTM32B1Lx\ipc_hw_access.h</FilePath>
             </File>
             <File>
               <FileName>scu_hw_access.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\src\clock\YTM32B1Lx\scu_hw_access.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\clock\YTM32B1Lx\scu_hw_access.h</FilePath>
             </File>
             <File>
               <FileName>clock.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\inc\clock.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\inc\clock.h</FilePath>
             </File>
             <File>
               <FileName>clock_manager.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\inc\clock_manager.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\inc\clock_manager.h</FilePath>
             </File>
             <File>
               <FileName>pins_driver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\platform\drivers\src\pins\pins_driver.c</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\pins\pins_driver.c</FilePath>
             </File>
             <File>
               <FileName>pins_gpio_hw_access.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\src\pins\pins_gpio_hw_access.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\pins\pins_gpio_hw_access.h</FilePath>
             </File>
             <File>
               <FileName>pins_port_hw_access.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\platform\drivers\src\pins\pins_port_hw_access.c</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\pins\pins_port_hw_access.c</FilePath>
             </File>
             <File>
               <FileName>pins_port_hw_access.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\src\pins\pins_port_hw_access.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\pins\pins_port_hw_access.h</FilePath>
             </File>
             <File>
               <FileName>pins_driver.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\inc\pins_driver.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\inc\pins_driver.h</FilePath>
             </File>
             <File>
               <FileName>core_common.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\devices\common\core_common.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\devices\common\core_common.h</FilePath>
             </File>
             <File>
               <FileName>callbacks.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\devices\callbacks.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\devices\callbacks.h</FilePath>
             </File>
             <File>
               <FileName>devassert.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\devices\devassert.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\devices\devassert.h</FilePath>
             </File>
             <File>
               <FileName>device_registers.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\devices\device_registers.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\devices\device_registers.h</FilePath>
             </File>
             <File>
               <FileName>floats.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\devices\floats.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\devices\floats.h</FilePath>
             </File>
             <File>
               <FileName>status.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\devices\status.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\devices\status.h</FilePath>
             </File>
             <File>
               <FileName>YTM32B1LE0.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\devices\YTM32B1LE0\include\YTM32B1LE0.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\devices\YTM32B1LE0\include\YTM32B1LE0.h</FilePath>
             </File>
             <File>
               <FileName>YTM32B1LE0_features.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\devices\YTM32B1LE0\include\YTM32B1LE0_features.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\devices\YTM32B1LE0\include\YTM32B1LE0_features.h</FilePath>
             </File>
             <File>
               <FileName>system_YTM32B1LE0.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\platform\devices\YTM32B1LE0\startup\system_YTM32B1LE0.c</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\devices\YTM32B1LE0\startup\system_YTM32B1LE0.c</FilePath>
             </File>
             <File>
               <FileName>system_YTM32B1LE0.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\devices\YTM32B1LE0\startup\system_YTM32B1LE0.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\devices\YTM32B1LE0\startup\system_YTM32B1LE0.h</FilePath>
             </File>
             <File>
               <FileName>interrupt_manager.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\inc\interrupt_manager.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\inc\interrupt_manager.h</FilePath>
             </File>
             <File>
               <FileName>interrupt_manager.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\platform\drivers\src\interrupt\interrupt_manager.c</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\interrupt\interrupt_manager.c</FilePath>
             </File>
             <File>
               <FileName>dma_driver.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\inc\dma_driver.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\inc\dma_driver.h</FilePath>
             </File>
             <File>
               <FileName>dma_driver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\platform\drivers\src\dma\dma_driver.c</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\dma\dma_driver.c</FilePath>
             </File>
             <File>
               <FileName>dma_hw_access.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\platform\drivers\src\dma\dma_hw_access.c</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\dma\dma_hw_access.c</FilePath>
             </File>
             <File>
               <FileName>dma_hw_access.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\src\dma\dma_hw_access.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\dma\dma_hw_access.h</FilePath>
             </File>
             <File>
               <FileName>dma_irq.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\platform\drivers\src\dma\dma_irq.c</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\dma\dma_irq.c</FilePath>
             </File>
             <File>
               <FileName>dma_irq.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\src\dma\dma_irq.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\dma\dma_irq.h</FilePath>
             </File>
             <File>
               <FileName>uart_driver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\platform\drivers\src\uart\uart_driver.c</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\uart\uart_driver.c</FilePath>
             </File>
             <File>
               <FileName>uart_irq.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\platform\drivers\src\uart\uart_irq.c</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\uart\uart_irq.c</FilePath>
             </File>
             <File>
               <FileName>uart_irq.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\src\uart\uart_irq.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\uart\uart_irq.h</FilePath>
             </File>
             <File>
               <FileName>uart_hw_access.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\src\uart\uart_hw_access.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\uart\uart_hw_access.h</FilePath>
             </File>
             <File>
               <FileName>uart_hw_access.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\platform\drivers\src\uart\uart_hw_access.c</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\src\uart\uart_hw_access.c</FilePath>
             </File>
             <File>
               <FileName>uart_driver.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\platform\drivers\inc\uart_driver.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\drivers\inc\uart_driver.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -674,142 +674,142 @@
             <File>
               <FileName>cachel1_armv7.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\cachel1_armv7.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\cachel1_armv7.h</FilePath>
             </File>
             <File>
               <FileName>cmsis_armcc.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\cmsis_armcc.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\cmsis_armcc.h</FilePath>
             </File>
             <File>
               <FileName>cmsis_armclang.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\cmsis_armclang.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\cmsis_armclang.h</FilePath>
             </File>
             <File>
               <FileName>cmsis_armclang_ltm.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\cmsis_armclang_ltm.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\cmsis_armclang_ltm.h</FilePath>
             </File>
             <File>
               <FileName>cmsis_ccarm.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\cmsis_ccarm.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\cmsis_ccarm.h</FilePath>
             </File>
             <File>
               <FileName>cmsis_compiler.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\cmsis_compiler.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\cmsis_compiler.h</FilePath>
             </File>
             <File>
               <FileName>cmsis_gcc.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\cmsis_gcc.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\cmsis_gcc.h</FilePath>
             </File>
             <File>
               <FileName>cmsis_iccarm.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\cmsis_iccarm.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\cmsis_iccarm.h</FilePath>
             </File>
             <File>
               <FileName>cmsis_version.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\cmsis_version.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\cmsis_version.h</FilePath>
             </File>
             <File>
               <FileName>core_armv81mml.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_armv81mml.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_armv81mml.h</FilePath>
             </File>
             <File>
               <FileName>core_armv8mbl.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_armv8mbl.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_armv8mbl.h</FilePath>
             </File>
             <File>
               <FileName>core_armv8mml.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_armv8mml.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_armv8mml.h</FilePath>
             </File>
             <File>
               <FileName>core_cm0.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_cm0.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_cm0.h</FilePath>
             </File>
             <File>
               <FileName>core_cm0plus.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_cm0plus.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_cm0plus.h</FilePath>
             </File>
             <File>
               <FileName>core_cm1.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_cm1.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_cm1.h</FilePath>
             </File>
             <File>
               <FileName>core_cm23.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_cm23.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_cm23.h</FilePath>
             </File>
             <File>
               <FileName>core_cm3.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_cm3.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_cm3.h</FilePath>
             </File>
             <File>
               <FileName>core_cm33.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_cm33.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_cm33.h</FilePath>
             </File>
             <File>
               <FileName>core_cm35p.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_cm35p.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_cm35p.h</FilePath>
             </File>
             <File>
               <FileName>core_cm4.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_cm4.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_cm4.h</FilePath>
             </File>
             <File>
               <FileName>core_cm55.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_cm55.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_cm55.h</FilePath>
             </File>
             <File>
               <FileName>core_cm7.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_cm7.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_cm7.h</FilePath>
             </File>
             <File>
               <FileName>core_sc000.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_sc000.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_sc000.h</FilePath>
             </File>
             <File>
               <FileName>core_sc300.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\core_sc300.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\core_sc300.h</FilePath>
             </File>
             <File>
               <FileName>mpu_armv7.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\mpu_armv7.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\mpu_armv7.h</FilePath>
             </File>
             <File>
               <FileName>mpu_armv8.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\mpu_armv8.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\mpu_armv8.h</FilePath>
             </File>
             <File>
               <FileName>pmu_armv8.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\pmu_armv8.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\pmu_armv8.h</FilePath>
             </File>
             <File>
               <FileName>tz_context.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\CMSIS\Core\Include\tz_context.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\CMSIS\Core\Include\tz_context.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -819,12 +819,12 @@
             <File>
               <FileName>osif.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\rtos\osif\osif.h</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\rtos\osif\osif.h</FilePath>
             </File>
             <File>
               <FileName>osif_baremetal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\rtos\osif\osif_baremetal.c</FilePath>
+              <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\rtos\osif\osif_baremetal.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -849,13 +849,31 @@
             <File>
               <FileName>board_support.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\board\board_support.c</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\board_support.c</FilePath>
             </File>
             <File>
               <FileName>board_support.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\board\board_support.h</FilePath>
+              <FilePath>..\..\..\bsw\board\ytm32b1le0\board_support.h</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>BrakeSync_MCAL_adapter</GroupName>
+          <Files>
+            <File><FileName>mcal_time.c</FileName><FileType>1</FileType><FilePath>..\..\..\bsw\mcal\ytm32b1le0\mcal_time.c</FilePath></File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>BrakeSync_Services</GroupName>
+          <Files>
+            <File><FileName>time_service.c</FileName><FileType>1</FileType><FilePath>..\..\..\bsw\services\time_service.c</FilePath></File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>EVB_NoPower_Test</GroupName>
+          <Files>
+            <File><FileName>gpio_bringup.c</FileName><FileType>1</FileType><FilePath>..\..\..\tests\target\gpio_bringup.c</FilePath></File>
           </Files>
         </Group>
       </Groups>

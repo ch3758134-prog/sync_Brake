@@ -1,7 +1,9 @@
-# 官方工程来源及第三方代码声明
+# 云途 SDK / CMSIS 来源
 
-- 来源：用户提供 `Gpio_Interrupt_Demo.zip`（官方示例）；保留了示例的 CMSIS、YTMicro SDK 子集、启动、链接和生成配置。
-- 原示例软件要求：SDK `YTM32B1LE0_1_4_0` 或更高、Keil MDK 5.36+；原 Keil 文件目标：`YTM32B1LE05`、`YTMicro.YTM32B1LE0_DFP.1.4.0`、ArmClang 6.24。
-- 云途 SDK 文件大多标识 `SPDX-License-Identifier: BSD-3-Clause`；Arm CMSIS 标识 `SPDX-License-Identifier: Apache-2.0`。除本项目新增文件外，上游源码保持原始版权声明。
-- `platform/devices/YTM32B1LE0/include/YTM32B1LE0.h` 包含 YTMicro 著作权声明，但文件内未发现 SPDX/单独授权文本。**这不构成对该文件公开再分发权的法律确认。** 仓库所有者需依据实际 SDK 软件授权条款进一步确认其传播范围。若限制公开，转为受控本地 SDK 依赖并记录重建方式。
-- 第三方源码不是 BrakeSync 自研 ASW/BSW 的合规证明。原版 SDK 与后续修改应单独纳入版本、适用性及安全审查。
+来源：用户提供 `Gpio_Interrupt_Demo.zip`，原官方示例中的 YTMicro SDK **子集**、CMSIS、OSIF、YCT 配置、板级启动链接文件。
+
+- 原 Demo 所用目标是 YTM32B1LE05，Keil 历史记录 ArmClang 6.24、YTMicro.YTM32B1LE0_DFP.1.4.0；不能推出完整 SDK 版本包含全部外设。
+- 厂商 MCU SDK 原始文件现位于 `firmware/bsw/mcal/ytm32b1le0/sdk`；搬迁保留 Git blob SHA，便于来源和版本溯源。
+- YCT 生成配置和板级启动链接文件位于 `firmware/bsw/board/ytm32b1le0/generated`。
+- 现有来源声明包括 BSD-3-Clause 与 CMSIS Apache-2.0。个别 MCU 设备头文件无明确再分发条款：仓库公开发布的授权仍需由所有者核对正式 SDK 许可证，不可根据文件存在默认已获许可。
+- SDK 未经功能安全工具资格化、独立审查或产品级实际测试；本项目自研层也尚未通过相应评定。
