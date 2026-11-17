@@ -60,13 +60,28 @@ for name in ["app/main.c", "app/app.c", "asw/motion_sample.c",
              "bsw/services/time_service.c",
              "startup/ytm32b1le0/startup.S",
              "startup/ytm32b1le0/vector.S",
-             "startup/ytm32b1le0/system_YTM32B1LE0.c",
+             "bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/startup/system_YTM32B1LE0.c",
              "tests/target/gpio_bringup.c"]:
     if (firmware / name).resolve() not in refs:
         fail(f"mandatory source not referenced: {name}")
 
 if not (firmware / "bsw/board/ytm32b1le0/generated/Gpio_Interrupt_Demo.yct").is_file():
     fail("original Board YCT reference missing")
+
+# 校验厂商内部 #include 也必须可通过 Keil include search path 找到。
+# 该依赖曾在迁移 system_YTM32B1LE0.h 后造成 21 个 Target 编译错误。
+vendor_devices = (firmware / "bsw/mcal/ytm32b1le0/sdk/platform/devices").resolve()
+vendor_header = vendor_devices / "device_registers.h"
+required_header = "YTM32B1LE0/startup/system_YTM32B1LE0.h"
+if not vendor_header.is_file() or required_header not in vendor_header.read_text(encoding="utf-8"):
+    fail("unexpected vendor device_registers.h include contract")
+include_roots = [
+    (project_dir / entry.replace("\\", "/")).resolve()
+    for node in project.findall(".//TargetArmAds/Cads/VariousControls/IncludePath")
+    for entry in (node.text or "").split(";") if entry.strip()
+]
+if not any((root / required_header).is_file() for root in include_roots):
+    fail(f"vendor header include cannot resolve: {required_header}")
 
 print(f"PASS: {len(refs)} source references, directories, scatter and target metadata")
 print("NOTE: This does not run Keil, flash or board tests")

@@ -13,7 +13,7 @@ firmware/
   config/ docs/ qa/
 ```
 
-当前 YTM32B1LE05 开发板以用户给出的官方 GPIO 示例为可驱动芯片的已知参考，SDK 是示例自带的官方源代码子集，并非完整 CAN 等外设 SDK 软件包。MCAL 保留官方 SDK；芯片 `system_YTM32B1LE0.[ch]` 和 YCT 启动/向量/Scatter 原件内容不改，整理至 `startup/`，便于查找与维护。
+当前 YTM32B1LE05 开发板以用户给出的官方 GPIO 示例为可驱动芯片的已知参考，SDK 是示例自带的官方源代码子集，并非完整 CAN 等外设 SDK 软件包。MCAL 保留官方 SDK 的原有内部目录结构，包括 `platform/devices/YTM32B1LE0/startup/system_YTM32B1LE0.[ch]`（厂商内部 `#include` 依赖该路径）；YCT 生成的启动汇编、向量、RAM 初始化和 Scatter 原件集中放在独立 `startup/`，文件内容不改。
 
 打开 `firmware/target/ytm32b1le0/KEIL/BrakeSync.uvprojx`；核对 YTM32B1LE05、ArmClang 6.24、Device Pack 1.4.0、下载器和 Flash Algorithm。本机 Keil 实际编译与烧录不由 GitHub CI 代替。
 

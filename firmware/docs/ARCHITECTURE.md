@@ -11,7 +11,7 @@ firmware/
 │   ├── cdd/               BMA510 / CAN IMU / WLT8016 专用设备
 │   ├── services/          通用时基、可靠存储、系统健康
 │   └── board/             板级 Clock/PinMux/外设配置
-├── startup/ytm32b1le0/   Reset、Vector、RAM init、SystemInit、Scatter
+├── startup/ytm32b1le0/   Reset、Vector、RAM init、Scatter
 ├── tests/
 │   ├── host/              不使用 MCU 的单元测试
 │   └── target/            开发板无制动功率自测

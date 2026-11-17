@@ -19,3 +19,7 @@
 禁止把 Host 或结构检查结果当作目标实测通过。
 
 本次新增将现有 `asw/motion_sample.c` 纳入 Keil 编译文件列表，仅增加可浏览/编译的现有模块，不代表已实现制动闭环控制；Target Build 待本机验证。
+
+## 本次实际 Target Build 反馈及修复
+
+负责人提供的 `ae76b90` 版本 Keil ArmClang 6.24 Rebuild 结果为 **21 errors / Target not created**，共同根因是 `device_registers.h:50` 无法找到 SDK 的 `YTM32B1LE0/startup/system_YTM32B1LE0.h`。这是此前物理目录迁移造成的回归，不是源文件自身错误。本次将 `system_YTM32B1LE0.[ch]` 原样移回 SDK 原路径，并增加 SDK 内部头文件可解析性检查。**当前新提交 Target Rebuild 仍 NOT_RUN**；验证完成前不得宣称已修好全部编译错误。

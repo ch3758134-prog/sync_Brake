@@ -9,3 +9,5 @@
 - 不将此 MCAL 文件夹称作已通过 AUTOSAR MCAL 一致性或安全资格化的组件。
 
 厂商文件应可对照上游哈希；不得为了编译通过擅自修改底层寄存器实现。
+
+- 厂商 SDK `device_registers.h` 使用相对 SDK 根的 `YTM32B1LE0/startup/system_YTM32B1LE0.h`，因此 `platform/devices/YTM32B1LE0/startup/system_YTM32B1LE0.[ch]` 必须保持原厂路径；不要仅因它名为 startup 就搬出 SDK。

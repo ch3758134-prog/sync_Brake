@@ -10,3 +10,7 @@
 - PTD7 心跳、PTE0/PTE1 → PTD6 IRQ 测试结果与本次 Keil 新工程编译均为 NOT_RUN
 
 Keil Group 仅按物理源码目录分组，不承担软件架构职责。
+
+### SDK 头文件回归修复
+
+本次恢复 `system_YTM32B1LE0.[ch]` 到云途 SDK 的 `platform/devices/YTM32B1LE0/startup/` 路径，以满足 `device_registers.h` 的原始 include。Keil 编译器配置、Flash 算法及调试器参数不变。前一次本机编译失败的 21 个错误均引用这个头文件；需再次执行 Rebuild 确认，不将 GitHub 路径检查视为真实编译。
