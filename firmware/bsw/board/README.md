@@ -1,7 +1,7 @@
-# Board｜板级配置
+# BSW Board
 
-`ytm32b1le0/generated/` 保留 YCT 示例产生的 PinMux、Clock、Startup、Scatter 等文件及原 .yct，具有现有 EVB 的硬件参考价值。
+`ytm32b1le0/board_support.[ch]` 是开发板初始化代码，`ytm32b1le0/generated/` 保留原 YCT 的 Clock、PinMux、GPIO IRQ、DMA/UART 及 sdk_project_config 等板级配置文件与原 YCT 工程。
 
-`ytm32b1le0/board_support.[ch]` 是自研板级初始化代码。GPIO 自测的 ISR/LED 位于 `ytm32b1le0/bringup/gpio_bringup.c`，属于 EVB 无功率板级自测，不纳入产品制动逻辑。
+芯片 `startup.S`、`vector.S`、RAM 初始化和链接脚本放在源码根目录 `startup/ytm32b1le0/`，不属于 BSW Board 驱动；GPIO EVB 自测在 `tests/target/`，不混入产品板级驱动。
 
-目标 MCU YTM32B1LE05 / EVB 引脚仅适用于上传示例。最终产品 PCB 的上电、功率禁止、电源和保护路径仍需要硬件安全设计。
+最终 PCB/制动功率安全条件须另行确认，不能从 EVB 示例外推。

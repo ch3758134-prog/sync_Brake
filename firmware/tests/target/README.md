@@ -7,3 +7,5 @@
 
 源自上传 GPIO Demo 的 Clock/PinMux 与 IRQ 依据；**本次 Keil Build、Flash、目标运行、时序测量均未执行**。
 若 LED/键位与实际 EVB 硬件不匹配，按原理图与上板证据修正，不将自测状态推广到产品板。
+
+测试代码置于 `tests/target/`，不在应用 ASW 或产品 BSW 内；仅用于无制动功率开发板验证。

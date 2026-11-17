@@ -8,3 +8,7 @@
 - 真实 Target Build / 下载 / 烧录 / LED / GPIO IRQ 测试仍由负责人执行并独立登记。
 
 原始 ZIP SHA-256：`79d79af09ed30bc7f5179b10e4d2391dc2bf66a52b2fd7ba2ed2dd422ec5aa1c`。
+
+## 当前路径（迁移记录）
+
+正式 APP 位于 `firmware/app/`；YCT BoardCfg 在 `firmware/bsw/board/ytm32b1le0/generated/`；芯片启动及链接脚本位于 `firmware/startup/ytm32b1le0/`；GPIO 无功率自测位于 `firmware/tests/target/`。以上档案历史事实保留，不应视作当前路径说明。

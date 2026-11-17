@@ -1,85 +1,72 @@
 #!/usr/bin/env python3
-"""Keil/architecture metadata checks, NOT a Target compile or safety validation."""
+"""Keil 路径、物理分组和链接元数据检查；不代表实际 Target 编译。"""
+
 from pathlib import Path
 from xml.etree import ElementTree as ET
 import sys
 
 firmware = Path(__file__).resolve().parents[1]
 project_dir = firmware / "target" / "ytm32b1le0" / "KEIL"
-proj = ET.parse(project_dir / "BrakeSync.uvprojx")
-board = firmware / "bsw" / "board" / "ytm32b1le0"
-sdk = firmware / "bsw" / "mcal" / "ytm32b1le0" / "sdk"
+project = ET.parse(project_dir / "BrakeSync.uvprojx")
 
 def fail(message: str) -> None:
     print("FAIL:", message, file=sys.stderr)
-    sys.exit(1)
+    raise SystemExit(1)
 
-if proj.findtext(".//TargetName") != "BrakeSync":
-    fail("unexpected TargetName")
-if proj.findtext(".//TargetCommonOption/Device") != "YTM32B1LE05":
-    fail("unexpected Target MCU")
-if proj.findtext(".//TargetCommonOption/OutputName") != "BrakeSync":
-    fail("unexpected OutputName")
+if project.findtext(".//TargetName") != "BrakeSync":
+    fail("TargetName changed")
+if project.findtext(".//TargetCommonOption/Device") != "YTM32B1LE05":
+    fail("Target MCU changed")
+if project.findtext(".//TargetCommonOption/OutputName") != "BrakeSync":
+    fail("OutputName changed")
 
-# 防止 Keil 出现一套与代码物理分层不同的临时逻辑目录。
-groups = proj.findall(".//Group")
-if [group.findtext("GroupName") for group in groups] != ["asw", "bsw"]:
-    fail("Keil project groups must be asw / bsw only")
+groups = project.findall(".//Target/Groups/Group")
+expected = ["app", "asw", "bsw/board", "bsw/mcal",
+            "bsw/services", "startup", "tests/target"]
+if [g.findtext("GroupName") for g in groups] != expected:
+    fail("Keil groups differ from project source directories")
 
+refs = []
 for group in groups:
-    logical_name = group.findtext("GroupName")
+    group_dir = (firmware / group.findtext("GroupName")).resolve()
     for item in group.findall("./Files/File/FilePath"):
         if not item.text:
-            fail("empty file reference in group")
-        absolute = (project_dir / item.text.replace("\\", "/")).resolve()
-        expected_prefix = firmware / logical_name.lower()
-        if not absolute.is_relative_to(expected_prefix.resolve()):
-            fail(f"Keil group {logical_name} references outside physical {logical_name}: {item.text}")
+            fail("empty project file reference")
+        path = (project_dir / item.text.replace("\\", "/")).resolve()
+        if not path.is_relative_to(group_dir):
+            fail(f"file outside matching group directory: {item.text}")
+        if not path.is_file():
+            fail(f"missing source: {item.text}")
+        refs.append(path)
 
-sources = []
-for node in proj.findall(".//Group/Files/File/FilePath"):
-    if not node.text:
-        fail("empty Keil project source path")
-    path = (project_dir / node.text.replace("\\", "/")).resolve()
-    if not path.is_relative_to(firmware.resolve()):
-        fail(f"source escapes firmware: {node.text}")
-    if not path.is_file():
-        fail(f"missing source: {node.text}")
-    if path.is_relative_to((firmware / "tests" / "host").resolve()):
-        fail(f"Host mock is linked into Keil: {node.text}")
-    sources.append(path)
+if len(refs) != len(set(refs)):
+    fail("duplicate source reference")
+if len(refs) != 97:
+    fail(f"unexpected file count: {len(refs)}")
 
-if len(sources) != len(set(sources)):
-    fail("duplicate Keil source references")
+for node in project.findall(".//TargetArmAds/Cads/VariousControls/IncludePath"):
+    for entry in (node.text or "").split(";"):
+        if entry.strip():
+            if not (project_dir / entry.replace("\\", "/")).is_dir():
+                fail(f"missing include directory: {entry}")
 
-for node in proj.findall(".//TargetArmAds/Cads/VariousControls/IncludePath"):
-    for inc in (node.text or "").split(";"):
-        if inc.strip():
-            path = (project_dir / inc.replace("\\", "/")).resolve()
-            if not path.is_dir():
-                fail(f"missing include directory: {inc}")
+scatter = project.findtext(".//TargetArmAds/LDads/ScatterFile")
+if not scatter or not (project_dir / scatter.replace("\\", "/")).is_file():
+    fail("missing Scatter file")
 
-scatter = proj.findtext(".//TargetArmAds/LDads/ScatterFile")
-if not scatter or not (project_dir / scatter.replace("\\", "/")).resolve().is_file():
-    fail("scatter file is missing")
+for name in ["app/main.c", "app/app.c", "asw/motion_sample.c",
+             "bsw/board/ytm32b1le0/board_support.c",
+             "bsw/mcal/ytm32b1le0/mcal_time.c",
+             "bsw/services/time_service.c",
+             "startup/ytm32b1le0/startup.S",
+             "startup/ytm32b1le0/vector.S",
+             "startup/ytm32b1le0/system_YTM32B1LE0.c",
+             "tests/target/gpio_bringup.c"]:
+    if (firmware / name).resolve() not in refs:
+        fail(f"mandatory source not referenced: {name}")
 
-required = [
-    firmware / "asw" / "app" / "main.c",
-    firmware / "asw" / "app" / "app.c",
-    board / "board_support.c",
-    firmware / "bsw" / "mcal" / "ytm32b1le0" / "mcal_time.c",
-    firmware / "bsw" / "services" / "time_service.c",
-    board / "bringup" / "gpio_bringup.c",
-]
-for item in required:
-    if item.resolve() not in sources:
-        fail(f"missing configured source: {item}")
+if not (firmware / "bsw/board/ytm32b1le0/generated/Gpio_Interrupt_Demo.yct").is_file():
+    fail("original Board YCT reference missing")
 
-if not any(path.is_relative_to(sdk.resolve()) for path in sources):
-    fail("Keil project does not include vendor MCU SDK")
-
-if not (board / "generated" / "Gpio_Interrupt_Demo.yct").is_file():
-    fail("original YCT config missing")
-
-print(f"PASS: Keil project metadata, {len(sources)} source paths, includes and scatter")
-print("NOTE: no Keil compile, download or brake hardware test was run")
+print(f"PASS: {len(refs)} source references, directories, scatter and target metadata")
+print("NOTE: This does not run Keil, flash or board tests")
