@@ -23,8 +23,8 @@ if proj.findtext(".//TargetCommonOption/OutputName") != "BrakeSync":
 
 # 防止 Keil 出现一套与代码物理分层不同的临时逻辑目录。
 groups = proj.findall(".//Group")
-if [group.findtext("GroupName") for group in groups] != ["ASW", "BSW"]:
-    fail("Keil project groups must be ASW / BSW only")
+if [group.findtext("GroupName") for group in groups] != ["asw", "bsw"]:
+    fail("Keil project groups must be asw / bsw only")
 
 for group in groups:
     logical_name = group.findtext("GroupName")

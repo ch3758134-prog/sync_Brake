@@ -1,6 +1,6 @@
 # BrakeSync 固件｜ASW / BSW / MCAL / CDD / Services / Board
 
-本次按负责人批准的分层组织源树、Keil 文件引用和 SDK 路径。Keil 只显示 ASW / BSW，两者与 Target 源码实际顶层目录对应。**不是重命名 Demo 就视为产品固件**。
+本次按负责人批准的分层组织源树、Keil 文件引用和 SDK 路径。Keil 只显示 asw / bsw，两者与 Target 源码实际顶层目录对应。**不是重命名 Demo 就视为产品固件**。
 
 ## 当前可运行范围
 

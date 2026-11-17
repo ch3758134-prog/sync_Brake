@@ -29,6 +29,6 @@ firmware/
 
 ## 工程组织约定
 
-所有参与 Target 编译的源代码物理归属在 `asw/` 或 `bsw/`，Keil 文件组直接使用 `ASW`、`BSW`；不为 IDE 额外创建 `Startup`、`Test` 等另一套分类。厂商 SDK 含芯片系统启动源码，YCT 启动/向量/Scatter 位于 BSW Board；链接脚本由 Target 构建配置引用。Host 测试与构建配置仍独立存放，不参与该分组分类。
+所有参与 Target 编译的源代码物理归属在 `asw/` 或 `bsw/`，Keil 文件组直接使用 `asw`、`bsw`；不为 IDE 额外创建 `Startup`、`Test` 等另一套分类。厂商 SDK 含芯片系统启动源码，YCT 启动/向量/Scatter 位于 BSW Board；链接脚本由 Target 构建配置引用。Host 测试与构建配置仍独立存放，不参与该分组分类。
 
 应用调度位于 `asw/app/`，目前编入目标的 GPIO 自测位于 `bsw/board/ytm32b1le0/bringup/`，只能用于无制动功率的 EVB 配置，不是正式制动业务模块。

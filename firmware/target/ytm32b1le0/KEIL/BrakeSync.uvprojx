@@ -379,7 +379,7 @@
       </TargetOption>
             <Groups>
         <Group>
-          <GroupName>ASW</GroupName>
+          <GroupName>asw</GroupName>
           <Files>
             <File>
             <FileName>main.c</FileName>
@@ -399,7 +399,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>BSW</GroupName>
+          <GroupName>bsw</GroupName>
           <Files>
             <File>
             <FileName>board_support.c</FileName>

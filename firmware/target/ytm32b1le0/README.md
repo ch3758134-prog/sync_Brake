@@ -26,4 +26,4 @@
 
 当前材料可核对 Keil 路径和 MCU C 语法，但不能在此环境运行 Keil ArmClang Build、Flash 或实物测试。原 Demo 历史成功不代表新结构的构建成功。
 
-Keil 左侧仅显示 `ASW`、`BSW` 两组，与编入当前 Target 的源码实际目录一致。硬件启动/向量等文件属于 BSW Board，Keil 工程路径保留在 `target/` 只是构建工具配置，不新增一套源码分类。
+Keil 左侧仅显示 `asw`、`bsw` 两组，与编入当前 Target 的源码实际目录一致。硬件启动/向量等文件属于 BSW Board，Keil 工程路径保留在 `target/` 只是构建工具配置，不新增一套源码分类。
