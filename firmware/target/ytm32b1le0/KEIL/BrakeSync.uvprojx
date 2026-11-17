@@ -337,7 +337,7 @@
               <MiscControls />
               <Define>YTM32B1LE0,CPU_YTM32B1LE0,</Define>
               <Undefine />
-              <IncludePath>../../../bsw/board/ytm32b1le0/generated;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/pins;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/dma;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/uart;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/inc;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/common;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/startup;../../../bsw/mcal/ytm32b1le0/sdk/CMSIS/Core/Include;../../../bsw/mcal/ytm32b1le0/sdk/rtos/osif;../../../app;../../../bsw/board/ytm32b1le0;../../../bsw/services;../../../bsw/mcal/include;../../../tests/target</IncludePath>
+              <IncludePath>../../../bsw/board/ytm32b1le0/generated;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/pins;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/dma;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/uart;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/inc;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/common;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/startup;../../../bsw/mcal/ytm32b1le0/sdk/CMSIS/Core/Include;../../../bsw/mcal/ytm32b1le0/sdk/rtos/osif;../../../asw/app;../../../bsw/board/ytm32b1le0;../../../bsw/services;../../../bsw/mcal/include;../../../bsw/board/ytm32b1le0/bringup</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -355,7 +355,7 @@
               <MiscControls />
               <Define />
               <Undefine />
-              <IncludePath>../../../bsw/board/ytm32b1le0/generated;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/pins;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/dma;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/uart;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/inc;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/common;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/startup;../../../bsw/mcal/ytm32b1le0/sdk/CMSIS/Core/Include;../../../bsw/mcal/ytm32b1le0/sdk/rtos/osif;../../../app;../../../bsw/board/ytm32b1le0;../../../bsw/services;../../../bsw/mcal/include;../../../tests/target</IncludePath>
+              <IncludePath>../../../bsw/board/ytm32b1le0/generated;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/pins;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/dma;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/uart;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/inc;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/common;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/startup;../../../bsw/mcal/ytm32b1le0/sdk/CMSIS/Core/Include;../../../bsw/mcal/ytm32b1le0/sdk/rtos/osif;../../../asw/app;../../../bsw/board/ytm32b1le0;../../../bsw/services;../../../bsw/mcal/include;../../../bsw/board/ytm32b1le0/bringup</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -384,17 +384,17 @@
             <File>
             <FileName>main.c</FileName>
             <FileType>1</FileType>
-            <FilePath>..\..\..\app\main.c</FilePath>
+            <FilePath>..\..\..\asw\app\main.c</FilePath>
             </File>
             <File>
             <FileName>app.c</FileName>
             <FileType>1</FileType>
-            <FilePath>..\..\..\app\app.c</FilePath>
+            <FilePath>..\..\..\asw\app\app.c</FilePath>
             </File>
             <File>
             <FileName>app.h</FileName>
             <FileType>5</FileType>
-            <FilePath>..\..\..\app\app.h</FilePath>
+            <FilePath>..\..\..\asw\app\app.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -795,11 +795,6 @@
             </File>
             <File><FileName>time_service.c</FileName><FileType>1</FileType><FilePath>..\..\..\bsw\services\time_service.c</FilePath></File>
             <File><FileName>time_service.h</FileName><FileType>5</FileType><FilePath>..\..\..\bsw\services\time_service.h</FilePath></File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Startup</GroupName>
-          <Files>
             <File>
             <FileName>RamInit0.S</FileName>
             <FileType>2</FileType>
@@ -840,13 +835,8 @@
             <FileType>5</FileType>
             <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\devices\YTM32B1LE0\startup\system_YTM32B1LE0.h</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Test</GroupName>
-          <Files>
-            <File><FileName>gpio_bringup.c</FileName><FileType>1</FileType><FilePath>..\..\..\tests\target\gpio_bringup.c</FilePath></File>
-            <File><FileName>gpio_bringup.h</FileName><FileType>5</FileType><FilePath>..\..\..\tests\target\gpio_bringup.h</FilePath></File>
+            <File><FileName>gpio_bringup.c</FileName><FileType>1</FileType><FilePath>..\..\..\bsw\board\ytm32b1le0\bringup\gpio_bringup.c</FilePath></File>
+            <File><FileName>gpio_bringup.h</FileName><FileType>5</FileType><FilePath>..\..\..\bsw\board\ytm32b1le0\bringup\gpio_bringup.h</FilePath></File>
           </Files>
         </Group>
       </Groups>

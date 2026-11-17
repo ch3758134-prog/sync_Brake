@@ -10,8 +10,8 @@
 - SDK 适配：`firmware/bsw/mcal/ytm32b1le0/mcal_time.c`。
 - 板级：`firmware/bsw/board/ytm32b1le0/`，YCT 生成物在 `generated/`。
 - 服务：`firmware/bsw/services/time_service.c`。
-- 无功率自测：`firmware/tests/target/gpio_bringup.c`。
-- `app/main.c`：只负责板级初始化、应用初始化和调度入口。
+- 无功率自测：`firmware/bsw/board/ytm32b1le0/bringup/gpio_bringup.c`。
+- `asw/app/main.c`：只负责板级初始化、应用初始化和调度入口。
 
 ### 本机工具条件
 - Keil uVision，原示例记录 MDK 5.43.1 / ArmClang 6.24。
@@ -25,3 +25,5 @@
 4. 遇到不符请保留工程修改前原状态和编译日志，先复核 EVB 真实连接和 SDK 行为。
 
 当前材料可核对 Keil 路径和 MCU C 语法，但不能在此环境运行 Keil ArmClang Build、Flash 或实物测试。原 Demo 历史成功不代表新结构的构建成功。
+
+Keil 左侧仅显示 `ASW`、`BSW` 两组，与编入当前 Target 的源码实际目录一致。硬件启动/向量等文件属于 BSW Board，Keil 工程路径保留在 `target/` 只是构建工具配置，不新增一套源码分类。

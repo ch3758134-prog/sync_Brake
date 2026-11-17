@@ -1,6 +1,6 @@
 # BrakeSync 固件｜ASW / BSW / MCAL / CDD / Services / Board
 
-本次按负责人批准的分层重新组织了源树、Keil 文件引用和 SDK 路径。**不是重命名 Demo 就视为产品固件**。
+本次按负责人批准的分层组织源树、Keil 文件引用和 SDK 路径。Keil 只显示 ASW / BSW，两者与 Target 源码实际顶层目录对应。**不是重命名 Demo 就视为产品固件**。
 
 ## 当前可运行范围
 
@@ -11,7 +11,7 @@
 - Host 单测：运动采样、时间服务以及已归档的 CAN 接口样板（后者不属于正式 MCAL 驱动）。
 
 ```text
-firmware/app/
+firmware/asw/app/
 firmware/asw/
 firmware/bsw/mcal/{include,ytm32b1le0/sdk}/
 firmware/bsw/cdd/
@@ -19,7 +19,8 @@ firmware/bsw/services/
 firmware/bsw/board/ytm32b1le0/
 firmware/config/
 firmware/target/ytm32b1le0/KEIL/BrakeSync.uvprojx
-firmware/tests/{host,target}/
+firmware/tests/host/
+firmware/bsw/board/ytm32b1le0/bringup/
 firmware/{qa,docs}/
 ```
 

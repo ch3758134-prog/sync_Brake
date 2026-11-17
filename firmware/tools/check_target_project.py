@@ -21,6 +21,21 @@ if proj.findtext(".//TargetCommonOption/Device") != "YTM32B1LE05":
 if proj.findtext(".//TargetCommonOption/OutputName") != "BrakeSync":
     fail("unexpected OutputName")
 
+# 防止 Keil 出现一套与代码物理分层不同的临时逻辑目录。
+groups = proj.findall(".//Group")
+if [group.findtext("GroupName") for group in groups] != ["ASW", "BSW"]:
+    fail("Keil project groups must be ASW / BSW only")
+
+for group in groups:
+    logical_name = group.findtext("GroupName")
+    for item in group.findall("./Files/File/FilePath"):
+        if not item.text:
+            fail("empty file reference in group")
+        absolute = (project_dir / item.text.replace("\\", "/")).resolve()
+        expected_prefix = firmware / logical_name.lower()
+        if not absolute.is_relative_to(expected_prefix.resolve()):
+            fail(f"Keil group {logical_name} references outside physical {logical_name}: {item.text}")
+
 sources = []
 for node in proj.findall(".//Group/Files/File/FilePath"):
     if not node.text:
@@ -49,12 +64,12 @@ if not scatter or not (project_dir / scatter.replace("\\", "/")).resolve().is_fi
     fail("scatter file is missing")
 
 required = [
-    firmware / "app" / "main.c",
-    firmware / "app" / "app.c",
+    firmware / "asw" / "app" / "main.c",
+    firmware / "asw" / "app" / "app.c",
     board / "board_support.c",
     firmware / "bsw" / "mcal" / "ytm32b1le0" / "mcal_time.c",
     firmware / "bsw" / "services" / "time_service.c",
-    firmware / "tests" / "target" / "gpio_bringup.c",
+    board / "bringup" / "gpio_bringup.c",
 ]
 for item in required:
     if item.resolve() not in sources:
