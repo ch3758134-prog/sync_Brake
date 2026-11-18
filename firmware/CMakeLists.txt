@@ -46,6 +46,16 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(brakesync_portable_core PRIVATE -Wall -Wextra -Wpedantic -Werror)
 endif()
 
+add_library(brakesync_can_frame STATIC
+    bsw/drivers/drv_can_frame.c
+)
+target_include_directories(brakesync_can_frame PUBLIC
+    common bsw/drivers
+)
+if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(brakesync_can_frame PRIVATE -Wall -Wextra -Wpedantic -Werror)
+endif()
+
 include(CTest)
 if(BUILD_TESTING)
     add_executable(test_can_bus tests/host/test_can_bus.c)
@@ -67,4 +77,8 @@ if(BUILD_TESTING)
     add_executable(test_qualification tests/host/test_qualification.c)
     target_link_libraries(test_qualification PRIVATE brakesync_portable_core)
     add_test(NAME test_qualification COMMAND test_qualification)
+    add_executable(test_driver_can_frame tests/host/test_driver_can_frame.c)
+    target_include_directories(test_driver_can_frame PRIVATE bsw/cdd)
+    target_link_libraries(test_driver_can_frame PRIVATE brakesync_can_frame)
+    add_test(NAME test_driver_can_frame COMMAND test_driver_can_frame)
 endif()

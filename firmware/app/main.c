@@ -20,6 +20,12 @@ int main(void)
 
     for (;;)
     {
-        app_run_once();
+        if (app_run_once() != APP_STATUS_OK)
+        {
+            /* 自测错误：不继续执行其他任务，不释放制动输出。 */
+            for (;;)
+            {
+            }
+        }
     }
 }

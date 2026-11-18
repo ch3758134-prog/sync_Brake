@@ -337,7 +337,7 @@
               <MiscControls />
               <Define>YTM32B1LE0,CPU_YTM32B1LE0,</Define>
               <Undefine />
-              <IncludePath>../../../bsw/board/ytm32b1le0/generated;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/pins;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/dma;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/uart;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/inc;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/common;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../../startup/ytm32b1le0;../../../bsw/mcal/ytm32b1le0/sdk/CMSIS/Core/Include;../../../bsw/mcal/ytm32b1le0/sdk/rtos/osif;../../../app;../../../bsw/board/ytm32b1le0;../../../bsw/services;../../../bsw/mcal/include;../../../tests/target</IncludePath>
+              <IncludePath>../../../bsw/board/ytm32b1le0/generated;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/pins;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/dma;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/uart;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/inc;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/common;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../../startup/ytm32b1le0;../../../bsw/mcal/ytm32b1le0/sdk/CMSIS/Core/Include;../../../bsw/mcal/ytm32b1le0/sdk/rtos/osif;../../../app;../../../bsw/board/ytm32b1le0;../../../bsw/services;../../../bsw/mcal/include;../../../tests/target;../../../asw;../../../common;../../../bsw/drivers;../../../bsw/cdd;../../../bsw/internal</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -355,7 +355,7 @@
               <MiscControls />
               <Define />
               <Undefine />
-              <IncludePath>../../../bsw/board/ytm32b1le0/generated;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/pins;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/dma;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/uart;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/inc;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/common;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../../startup/ytm32b1le0;../../../bsw/mcal/ytm32b1le0/sdk/CMSIS/Core/Include;../../../bsw/mcal/ytm32b1le0/sdk/rtos/osif;../../../app;../../../bsw/board/ytm32b1le0;../../../bsw/services;../../../bsw/mcal/include;../../../tests/target</IncludePath>
+              <IncludePath>../../../bsw/board/ytm32b1le0/generated;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/pins;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/dma;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/src/uart;../../../bsw/mcal/ytm32b1le0/sdk/platform/drivers/inc;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/common;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices;../../../bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../../startup/ytm32b1le0;../../../bsw/mcal/ytm32b1le0/sdk/CMSIS/Core/Include;../../../bsw/mcal/ytm32b1le0/sdk/rtos/osif;../../../app;../../../bsw/board/ytm32b1le0;../../../bsw/services;../../../bsw/mcal/include;../../../tests/target;../../../asw;../../../common;../../../bsw/drivers;../../../bsw/cdd;../../../bsw/internal</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -396,6 +396,8 @@
             <FileType>5</FileType>
             <FilePath>..\..\..\app\app.h</FilePath>
             </File>
+                      <File><FileName>app_scheduler.c</FileName><FileType>1</FileType><FilePath>..\\..\\..\\app\\app_scheduler.c</FilePath></File>
+            <File><FileName>app_scheduler.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\app\\app_scheduler.h</FilePath></File>
           </Files>
         </Group>
         <Group>
@@ -403,6 +405,56 @@
           <Files>
             <File><FileName>motion_sample.c</FileName><FileType>1</FileType><FilePath>..\..\..\asw\motion_sample.c</FilePath></File>
             <File><FileName>motion_sample.h</FileName><FileType>5</FileType><FilePath>..\..\..\asw\motion_sample.h</FilePath></File>
+                      <File><FileName>bs_control_contract.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\asw\\bs_control_contract.h</FilePath></File>
+            <File><FileName>brake_intent.c</FileName><FileType>1</FileType><FilePath>..\\..\\..\\asw\\brake_intent.c</FilePath></File>
+            <File><FileName>brake_intent.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\asw\\brake_intent.h</FilePath></File>
+            <File><FileName>motion_signal.c</FileName><FileType>1</FileType><FilePath>..\\..\\..\\asw\\motion_signal.c</FilePath></File>
+            <File><FileName>motion_signal.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\asw\\motion_signal.h</FilePath></File>
+            <File><FileName>diagnostics.c</FileName><FileType>1</FileType><FilePath>..\\..\\..\\asw\\diagnostics.c</FilePath></File>
+            <File><FileName>diagnostics.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\asw\\diagnostics.h</FilePath></File>
+            <File><FileName>run_qualification.c</FileName><FileType>1</FileType><FilePath>..\\..\\..\\asw\\run_qualification.c</FilePath></File>
+            <File><FileName>run_qualification.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\asw\\run_qualification.h</FilePath></File>
+            <File><FileName>output_authorization.c</FileName><FileType>1</FileType><FilePath>..\\..\\..\\asw\\output_authorization.c</FilePath></File>
+            <File><FileName>output_authorization.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\asw\\output_authorization.h</FilePath></File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>common</GroupName>
+          <Files>
+            <File><FileName>bs_status.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\common\\bs_status.h</FilePath></File>
+            <File><FileName>bs_observation.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\common\\bs_observation.h</FilePath></File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>bsw/drivers</GroupName>
+          <Files>
+            <File><FileName>drv_types.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_types.h</FilePath></File>
+            <File><FileName>drv_gpio.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_gpio.h</FilePath></File>
+            <File><FileName>drv_timer.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_timer.h</FilePath></File>
+            <File><FileName>drv_uart.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_uart.h</FilePath></File>
+            <File><FileName>drv_can.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_can.h</FilePath></File>
+            <File><FileName>drv_i2c.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_i2c.h</FilePath></File>
+            <File><FileName>drv_spi.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_spi.h</FilePath></File>
+            <File><FileName>drv_clock.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_clock.h</FilePath></File>
+            <File><FileName>drv_adc.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_adc.h</FilePath></File>
+            <File><FileName>drv_reset.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_reset.h</FilePath></File>
+            <File><FileName>drv_can_frame.c</FileName><FileType>1</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_can_frame.c</FilePath></File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>bsw/cdd</GroupName>
+          <Files>
+            <File><FileName>cdd_motion.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\cdd\\cdd_motion.h</FilePath></File>
+            <File><FileName>imu_can.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\cdd\\imu_can.h</FilePath></File>
+            <File><FileName>bma510.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\cdd\\bma510.h</FilePath></File>
+            <File><FileName>ble_serial.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\cdd\\ble_serial.h</FilePath></File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>bsw/internal</GroupName>
+          <Files>
+            <File><FileName>drv_can_port.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\internal\\drv_can_port.h</FilePath></File>
+            <File><FileName>drv_uart_port.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\internal\\drv_uart_port.h</FilePath></File>
           </Files>
         </Group>
         <Group>
@@ -473,6 +525,7 @@
             <FileType>5</FileType>
             <FilePath>..\..\..\bsw\board\ytm32b1le0\generated\sdk_project_config.h</FilePath>
             </File>
+                      <File><FileName>board_gpio_ids.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\board\\ytm32b1le0\\board_gpio_ids.h</FilePath></File>
           </Files>
         </Group>
         <Group>
@@ -815,6 +868,7 @@
             <FileType>5</FileType>
             <FilePath>..\..\..\bsw\mcal\ytm32b1le0\sdk\platform\devices\YTM32B1LE0\startup\system_YTM32B1LE0.h</FilePath>
             </File>
+                      <File><FileName>drv_gpio_ytm32b1le0.c</FileName><FileType>1</FileType><FilePath>..\\..\\..\\bsw\\mcal\\ytm32b1le0\\drv_gpio_ytm32b1le0.c</FilePath></File>
           </Files>
         </Group>
         <Group>
@@ -822,6 +876,7 @@
           <Files>
             <File><FileName>time_service.c</FileName><FileType>1</FileType><FilePath>..\..\..\bsw\services\time_service.c</FilePath></File>
             <File><FileName>time_service.h</FileName><FileType>5</FileType><FilePath>..\..\..\bsw\services\time_service.h</FilePath></File>
+          
           </Files>
         </Group>
         <Group>
@@ -857,6 +912,7 @@
             <FileType>1</FileType>
             <FilePath>..\..\..\startup\ytm32b1le0\vector_table_copy.c</FilePath>
             </File>
+          
           </Files>
         </Group>
         <Group>
@@ -864,6 +920,7 @@
           <Files>
             <File><FileName>gpio_bringup.c</FileName><FileType>1</FileType><FilePath>..\..\..\tests\target\gpio_bringup.c</FilePath></File>
             <File><FileName>gpio_bringup.h</FileName><FileType>5</FileType><FilePath>..\..\..\tests\target\gpio_bringup.h</FilePath></File>
+          
           </Files>
         </Group>
       </Groups>

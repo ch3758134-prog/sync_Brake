@@ -21,8 +21,7 @@ if project.findtext(".//TargetCommonOption/OutputName") != "BrakeSync":
     fail("OutputName changed")
 
 groups = project.findall(".//Target/Groups/Group")
-expected = ["app", "asw", "bsw/board", "bsw/mcal",
-            "bsw/services", "startup", "tests/target"]
+expected = ["app","asw","common","bsw/drivers","bsw/cdd","bsw/internal","bsw/board","bsw/mcal","bsw/services","startup","tests/target"]
 if [g.findtext("GroupName") for g in groups] != expected:
     fail("Keil groups differ from project source directories")
 
@@ -41,7 +40,7 @@ for group in groups:
 
 if len(refs) != len(set(refs)):
     fail("duplicate source reference")
-if len(refs) != 97:
+if len(refs) != 131:
     fail(f"unexpected file count: {len(refs)}")
 
 for node in project.findall(".//TargetArmAds/Cads/VariousControls/IncludePath"):
@@ -55,6 +54,11 @@ if not scatter or not (project_dir / scatter.replace("\\", "/")).is_file():
     fail("missing Scatter file")
 
 for name in ["app/main.c", "app/app.c", "asw/motion_sample.c",
+             "app/app_scheduler.c", "asw/brake_intent.c",
+             "asw/motion_signal.c", "asw/diagnostics.c",
+             "asw/run_qualification.c", "asw/output_authorization.c",
+             "bsw/drivers/drv_can_frame.c",
+             "bsw/mcal/ytm32b1le0/drv_gpio_ytm32b1le0.c",
              "bsw/board/ytm32b1le0/board_support.c",
              "bsw/mcal/ytm32b1le0/mcal_time.c",
              "bsw/services/time_service.c",
