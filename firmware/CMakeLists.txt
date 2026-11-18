@@ -36,6 +36,8 @@ add_library(brakesync_portable_core STATIC
     asw/motion_signal.c
     asw/diagnostics.c
     app/app_scheduler.c
+    asw/run_qualification.c
+    asw/output_authorization.c
 )
 target_include_directories(brakesync_portable_core PUBLIC
     common asw app
@@ -62,4 +64,7 @@ if(BUILD_TESTING)
         target_link_libraries(${test_name} PRIVATE brakesync_portable_core)
         add_test(NAME ${test_name} COMMAND ${test_name})
     endforeach()
+    add_executable(test_qualification tests/host/test_qualification.c)
+    target_link_libraries(test_qualification PRIVATE brakesync_portable_core)
+    add_test(NAME test_qualification COMMAND test_qualification)
 endif()

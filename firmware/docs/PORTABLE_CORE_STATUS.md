@@ -8,6 +8,8 @@
 - `asw/motion_signal.[ch]`：ECU 接收时效、方向已验证标记、质量。
 - `asw/diagnostics.[ch]`：定长故障存储、故障锁存保留、无证据禁止清除。
 - `app/app_scheduler.[ch]`：单线程、静态数组、无回调的周期任务调度和超期统计。
+- `asw/run_qualification.[ch]`：保守的逻辑运行资格检查，不推断实际制动许可。
+- `asw/output_authorization.[ch]`：只计算供未来安全审查的逻辑候选条件，不提供任何功率操作。
 
 ## 限制
 - 不决定制动控制量、重量档映射、故障时物理动作、实际功率许可。
