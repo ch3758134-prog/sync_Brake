@@ -31,6 +31,19 @@ foreach(target brakesync_can_sample brakesync_motion brakesync_time_service)
     endif()
 endforeach()
 
+add_library(brakesync_portable_core STATIC
+    asw/brake_intent.c
+    asw/motion_signal.c
+    asw/diagnostics.c
+    app/app_scheduler.c
+)
+target_include_directories(brakesync_portable_core PUBLIC
+    common asw app
+)
+if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(brakesync_portable_core PRIVATE -Wall -Wextra -Wpedantic -Werror)
+endif()
+
 include(CTest)
 if(BUILD_TESTING)
     add_executable(test_can_bus tests/host/test_can_bus.c)
@@ -44,4 +57,9 @@ if(BUILD_TESTING)
     add_executable(test_time_service tests/host/test_time_service.c)
     target_link_libraries(test_time_service PRIVATE brakesync_time_service)
     add_test(NAME time_service_host COMMAND test_time_service)
+    foreach(test_name test_brake_intent test_motion_signal test_diagnostics test_app_scheduler)
+        add_executable(${test_name} tests/host/${test_name}.c)
+        target_link_libraries(${test_name} PRIVATE brakesync_portable_core)
+        add_test(NAME ${test_name} COMMAND ${test_name})
+    endforeach()
 endif()
