@@ -81,4 +81,32 @@ if(BUILD_TESTING)
     target_include_directories(test_driver_can_frame PRIVATE bsw/cdd)
     target_link_libraries(test_driver_can_frame PRIVATE brakesync_can_frame)
     add_test(NAME test_driver_can_frame COMMAND test_driver_can_frame)
+    add_executable(test_target_gpio
+        tests/host/test_target_gpio.c
+        tests/target/test_gpio.c
+        tests/target/gpio_bringup.c
+    )
+    target_include_directories(test_target_gpio PRIVATE
+        common bsw/drivers bsw/board/ytm32b1le0
+        bsw/services tests/target
+    )
+    add_test(NAME test_target_gpio COMMAND test_target_gpio)
+
+    add_executable(test_target_timebase
+        tests/host/test_target_timebase.c
+        tests/target/test_timebase.c
+    )
+    target_include_directories(test_target_timebase PRIVATE common tests/target)
+    add_test(NAME test_target_timebase COMMAND test_target_timebase)
+
+    # Syntax check for the same main.c used by Keil, without linking MCU SDK.
+    add_library(brakesync_main_syntax OBJECT app/main.c)
+    target_include_directories(brakesync_main_syntax PRIVATE
+        common app tests/target bsw/board/ytm32b1le0 bsw/services
+    )
+    if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+        foreach(t test_target_gpio test_target_timebase brakesync_main_syntax)
+            target_compile_options(${t} PRIVATE -Wall -Wextra -Wpedantic -Werror)
+        endforeach()
+    endif()
 endif()

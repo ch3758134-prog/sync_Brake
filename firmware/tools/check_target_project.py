@@ -40,8 +40,31 @@ for group in groups:
 
 if len(refs) != len(set(refs)):
     fail("duplicate source reference")
-if len(refs) != 131:
-    fail(f"unexpected file count: {len(refs)}")
+# 以实际仓库文件覆盖率替代固定文件数，不再漏掉新增的 .c/.h。
+# tests/host 与官方 SDK 不属于业务源码清单；其构建由独立目标管理。
+first_party_roots = [
+    firmware / name for name in
+    ("app", "asw", "common", "bsw", "startup", "tests/target")
+]
+expected_first_party = set()
+for root in first_party_roots:
+    for path in root.rglob("*"):
+        if not path.is_file() or path.suffix not in (".c", ".h", ".S"):
+            continue
+        if "sdk" in path.relative_to(firmware).parts:
+            continue
+        expected_first_party.add(path.resolve())
+
+missing_from_keil = expected_first_party.difference(refs)
+if missing_from_keil:
+    fail("first-party source files missing from Keil: " +
+         ", ".join(str(p.relative_to(firmware)) for p in sorted(missing_from_keil)))
+
+unexpected_first_party = [
+    p for p in refs if "tests/host" in p.relative_to(firmware).parts
+]
+if unexpected_first_party:
+    fail("host-only test sources must not enter Keil target")
 
 for node in project.findall(".//TargetArmAds/Cads/VariousControls/IncludePath"):
     for entry in (node.text or "").split(";"):
@@ -65,7 +88,9 @@ for name in ["app/main.c", "app/app.c", "asw/motion_sample.c",
              "startup/ytm32b1le0/startup.S",
              "startup/ytm32b1le0/vector.S",
              "bsw/mcal/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/startup/system_YTM32B1LE0.c",
-             "tests/target/gpio_bringup.c"]:
+             "tests/target/gpio_bringup.c",
+             "tests/target/test_gpio.c",
+             "tests/target/test_timebase.c"]:
     if (firmware / name).resolve() not in refs:
         fail(f"mandatory source not referenced: {name}")
 

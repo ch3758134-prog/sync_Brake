@@ -921,6 +921,10 @@
             <File><FileName>gpio_bringup.c</FileName><FileType>1</FileType><FilePath>..\..\..\tests\target\gpio_bringup.c</FilePath></File>
             <File><FileName>gpio_bringup.h</FileName><FileType>5</FileType><FilePath>..\..\..\tests\target\gpio_bringup.h</FilePath></File>
           
+                      <File><FileName>test_gpio.c</FileName><FileType>1</FileType><FilePath>..\\..\\..\\tests\\target\\test_gpio.c</FilePath></File>
+            <File><FileName>test_gpio.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\tests\\target\\test_gpio.h</FilePath></File>
+            <File><FileName>test_timebase.c</FileName><FileType>1</FileType><FilePath>..\\..\\..\\tests\\target\\test_timebase.c</FilePath></File>
+            <File><FileName>test_timebase.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\tests\\target\\test_timebase.h</FilePath></File>
           </Files>
         </Group>
       </Groups>
