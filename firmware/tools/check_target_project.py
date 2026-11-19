@@ -4,7 +4,7 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 import sys
 fw = Path(__file__).resolve().parents[1]
-base = fw / "target/ytm32b1le0/KEIL"
+base = fw / "target/keil"
 x = ET.parse(base / "BrakeSync.uvprojx")
 def die(s):
     print("FAIL: "+s, file=sys.stderr)
@@ -29,7 +29,7 @@ for d in (fw / "source", fw / "platform/ytm32b1le0", fw / "tests/target"):
 if expected != refs: die("files not correctly covered: missing "+str(len(expected-refs))+" unexpected "+str(len(refs-expected)))
 paths = [(base/p.replace("\\","/")).resolve() for el in x.findall(".//TargetArmAds/Cads/VariousControls/IncludePath") for p in (el.text or "").split(";") if p.strip()]
 if not paths or any(not p.is_dir() for p in paths): die("invalid include paths")
-for name in ("board_gpio_ids.h","drv_gpio.h","evb_app.h","sdk_project_config.h","mcal_time.h","bs_control_contract.h"):
+for name in ("system_init.h","board_gpio_ids.h","drv_gpio.h","evb_app.h","sdk_project_config.h","mcal_time.h","bs_control_contract.h"):
     if not any((p/name).is_file() for p in paths): die("include unresolved: "+name)
 hdr = fw / "platform/ytm32b1le0/sdk/platform/devices/device_registers.h"
 vend = "YTM32B1LE0/startup/system_YTM32B1LE0.h"

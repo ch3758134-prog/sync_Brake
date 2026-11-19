@@ -1,5 +1,5 @@
 #include "evb_app.h"
-#include "board_support.h"
+#include "system_init.h"
 #include "bs_status.h"
 #include "time_service.h"
 #include "test_gpio.h"
@@ -23,7 +23,7 @@ volatile bs_status_t g_target_test_last_status = BS_STATUS_NOT_INITIALIZED;
 
 int main(void)
 {
-    if (board_support_init() != BOARD_STATUS_OK)
+    if (system_init() != SYSTEM_INIT_OK)
     {
         for (;;)
         {

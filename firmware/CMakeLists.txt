@@ -67,15 +67,14 @@ set(BS_PUBLIC_HEADERS
     tests/target
     platform/ytm32b1le0/config
     platform/ytm32b1le0/startup
-    platform/ytm32b1le0/board_port
-    platform/ytm32b1le0/mcal_port
+    platform/ytm32b1le0
+    tests/target/legacy
     source/BSW/Services/Scheduler
     source/ASW/BrakeInput
     source/ASW/BrakeControl
     source/ASW/Diagnostics
     source/ASW/Motion
     source/ASW/SystemState
-    source/BSW/EAL/BoardIO
     source/BSW/EAL/Bluetooth/WLT8016
     source/BSW/EAL/MotionSensor/BMA510
     source/BSW/EAL/MotionSensor
