@@ -9,10 +9,10 @@
 | 云途 PINS/Clock/UART/DMA/IRQ/OSIF | `platform/ytm32b1le0/sdk/` | 云途官方示例随附子集 | SDK API 源码存在；未证明所有接口/特定组合板上可用 |
 | YCT 生成配置 | `platform/ytm32b1le0/config` | 云途工具生成，针对当前 EVB | 时钟、复用、UART/DMA 配置仅为生成物，不等于应用已启用 DMA |
 | Startup/Scatter | `platform/ytm32b1le0/startup` | 示例原文件 | 不修改；目标链接/烧录仍待验证 |
-| Board init/GPIO IRQ/IO 绑定 | `platform/ytm32b1le0/board_port` | **BrakeSync 自研** | GPIO 调用 PINS_DRV_*；IRQ 在自研驱动中唯一实现，实板未验证 |
-| 单调时间 Port | `platform/ytm32b1le0/mcal_port` | **BrakeSync 自研** | 利用官方 OSIF 毫秒时基，精度待实测 |
+| Board init/GPIO IRQ/IO 绑定 | `tests/target/legacy` | **BrakeSync 自研** | GPIO 调用 PINS_DRV_*；IRQ 在自研驱动中唯一实现，实板未验证 |
+| 单调时间 Port | `platform/ytm32b1le0/system_time.c` | **BrakeSync 自研** | 利用官方 OSIF 毫秒时基，精度待实测 |
 | MCU 通用驱动合同 | `source/BSW/MCAL` | **BrakeSync 自研** | CAN 帧检查已实现；大部分外设仍只有头文件，不能称驱动完成 |
-| ECU/PCB 与设备 EAL | `source/BSW/EAL` | **BrakeSync 自研** | BoardIO 有 EVB 功能；CAN IMU/BMA510/BLE 只有合同、缺实协议 .c |
+| ECU/PCB 与设备 EAL | `source/BSW/EAL` | **BrakeSync 自研** | EVB GPIO 代码已划回 tests/target/legacy；CAN IMU/BMA510/BLE 只有合同、缺实协议 .c |
 | 通用服务 | `source/BSW/Services` | **BrakeSync 自研** | Time/Scheduler/Health/Buffer/EventLog 存在，存储未实现 |
 | 产品业务 ASW | `source/ASW` | **BrakeSync 自研** | 输入质量、运动质量、逻辑资格和故障处理部分实现 |
 | 控制算法 | `source/ASW/Algorithm` | **BrakeSync 自研（未来）** | **无同步制动算法正式实现** |
@@ -20,7 +20,7 @@
 
 ### GPIO 调用的真实路径
 
-`source/main.c` → `tests/target/test_gpio.c` → `tests/target/gpio_bringup.c` → `source/BSW/EAL/BoardIO/drv_gpio.h` → `platform/ytm32b1le0/board_port/drv_gpio_ytm32b1le0.c` → 官方 `sdk/platform/drivers/inc/pins_driver.h` 和 `pins_driver.c` → 芯片。
+`source/main.c` → `tests/target/test_gpio.c` → `tests/target/gpio_bringup.c` → `tests/target/legacy/drv_gpio.h` → `tests/target/legacy/evb_gpio_driver.c` → 官方 `sdk/platform/drivers/inc/pins_driver.h` 和 `pins_driver.c` → 芯片。
 
 已对照原 SDK `pins_driver.h/c`：`PINS_DRV_ReadPin`、`PINS_DRV_WritePin`、`PINS_DRV_SetPinIntSel`、`PINS_DRV_GetPortIntFlag`、`PINS_DRV_ClearPinIntFlagCmd` 接口确实存在。**这只证明所调用 API 源码有据，不等于 NVIC、引脚电气、中断时序已被验证。**
 
@@ -36,3 +36,7 @@
 
 
 已追加针对用户原始 ZIP 的源码审查：[原始云途 GPIO Demo 审查](../verification/YUNTU_GPIO_DEMO_REVIEW.md)。
+
+## 2026-11-19 工程模板阶段修订
+
+现行路径以 [固件工程模板 V1.0](FIRMWARE_LAYOUT_V1.md) 为准：`system_init.c/h` 在 `firmware/platform/ytm32b1le0/`，Keil 在 `firmware/target/keil/`；先前板级 GPIO 适配和 GPIO ID 在 `tests/target/legacy/`，仅为既有测试兼容，不代表产品 GPIO 驱动定版。旧表中“Board init/GPIO IRQ/IO 绑定”应拆开理解：System Init 是启动初始化；GPIO IRQ/ID 是旧测试代码。

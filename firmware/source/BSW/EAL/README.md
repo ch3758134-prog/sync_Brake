@@ -1,3 +1,9 @@
-# EAL
+# EAL — ECU/PCB 实际硬件接口边界
 
-负责 ECU/PCB 硬件信号与设备接口：BoardIO、CAN IMU、BMA510、WLT8016。GPIO 自研平台实现在 platform/board_port；传感器/蓝牙目前仅有头文件合同。
+未来正式 PCB 驱动应在这里描述有实际电气/器件意义的能力，例如 CAN IMU、BMA510、WLT8016，以及产品电气输入输出接口。
+
+当前 BMA510、CanImu、BLE 的接口仍属于**候审头文件**；没有真实协议驱动、完整连线依据或实板通过结果。
+
+开发板上几个 LED/按键与正式 PCB 电路不同，因此先前 GPIO 实验映射已放到 `tests/target/legacy/`，不放在正式 EAL 中。
+
+此目录不要求给厂商 SDK 的每个函数再套一层封装，未来只在确实有 PCB 器件语义或硬件差异的地方设计接口。
