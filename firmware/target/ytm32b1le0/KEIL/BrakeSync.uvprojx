@@ -881,6 +881,8 @@
           
                       <File><FileName>diag_log.c</FileName><FileType>1</FileType><FilePath>..\..\..\bsw\services\diag_log.c</FilePath></File>
             <File><FileName>diag_log.h</FileName><FileType>5</FileType><FilePath>..\..\..\bsw\services\diag_log.h</FilePath></File>
+                      <File><FileName>health_service.c</FileName><FileType>1</FileType><FilePath>..\..\..\bsw\services\health_service.c</FilePath></File>
+            <File><FileName>health_service.h</FileName><FileType>5</FileType><FilePath>..\..\..\bsw\services\health_service.h</FilePath></File>
           </Files>
         </Group>
         <Group>

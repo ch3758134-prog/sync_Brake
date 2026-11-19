@@ -60,6 +60,7 @@ endif()
 add_library(brakesync_bsw_core STATIC
     bsw/drivers/drv_byte_fifo.c
     bsw/services/diag_log.c
+    bsw/services/health_service.c
 )
 target_include_directories(brakesync_bsw_core PUBLIC
     common bsw/drivers bsw/services
@@ -131,7 +132,7 @@ if(BUILD_TESTING)
         endforeach()
     endif()
 
-    foreach(test_name test_drv_byte_fifo test_diag_log)
+    foreach(test_name test_drv_byte_fifo test_diag_log test_health_service)
         add_executable(${test_name} tests/host/${test_name}.c)
         target_link_libraries(${test_name} PRIVATE brakesync_bsw_core)
         if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
