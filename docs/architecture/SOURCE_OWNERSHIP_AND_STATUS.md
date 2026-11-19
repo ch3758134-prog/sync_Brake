@@ -33,3 +33,6 @@
 ### 验证边界
 
 只依据同一提交 GitHub Actions 可声明 Host 与工程结构检查；ArmClang Rebuild、烧录、实板中断/GPIO 及真实制动功率均未获得本次验证证据。**EVB_NO_BRAKE_POWER 不能被目录/编译检查绕过。**
+
+
+已追加针对用户原始 ZIP 的源码审查：[原始云途 GPIO Demo 审查](../verification/YUNTU_GPIO_DEMO_REVIEW.md)。
