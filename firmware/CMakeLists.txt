@@ -56,6 +56,19 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(brakesync_can_frame PRIVATE -Wall -Wextra -Wpedantic -Werror)
 endif()
 
+# Hardware-independent Driver buffering and bounded diagnostic event logging.
+add_library(brakesync_bsw_core STATIC
+    bsw/drivers/drv_byte_fifo.c
+    bsw/services/diag_log.c
+)
+target_include_directories(brakesync_bsw_core PUBLIC
+    common bsw/drivers bsw/services
+)
+if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(brakesync_bsw_core PRIVATE
+        -Wall -Wextra -Wpedantic -Werror)
+endif()
+
 include(CTest)
 if(BUILD_TESTING)
     add_executable(test_can_bus tests/host/test_can_bus.c)
@@ -117,4 +130,14 @@ if(BUILD_TESTING)
             target_compile_options(${t} PRIVATE -Wall -Wextra -Wpedantic -Werror)
         endforeach()
     endif()
+
+    foreach(test_name test_drv_byte_fifo test_diag_log)
+        add_executable(${test_name} tests/host/${test_name}.c)
+        target_link_libraries(${test_name} PRIVATE brakesync_bsw_core)
+        if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+            target_compile_options(${test_name} PRIVATE
+                -Wall -Wextra -Wpedantic -Werror)
+        endif()
+        add_test(NAME ${test_name} COMMAND ${test_name})
+    endforeach()
 endif()

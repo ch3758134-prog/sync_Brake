@@ -439,6 +439,8 @@
             <File><FileName>drv_adc.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_adc.h</FilePath></File>
             <File><FileName>drv_reset.h</FileName><FileType>5</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_reset.h</FilePath></File>
             <File><FileName>drv_can_frame.c</FileName><FileType>1</FileType><FilePath>..\\..\\..\\bsw\\drivers\\drv_can_frame.c</FilePath></File>
+                      <File><FileName>drv_byte_fifo.c</FileName><FileType>1</FileType><FilePath>..\..\..\bsw\drivers\drv_byte_fifo.c</FilePath></File>
+            <File><FileName>drv_byte_fifo.h</FileName><FileType>5</FileType><FilePath>..\..\..\bsw\drivers\drv_byte_fifo.h</FilePath></File>
           </Files>
         </Group>
         <Group>
@@ -877,6 +879,8 @@
             <File><FileName>time_service.c</FileName><FileType>1</FileType><FilePath>..\..\..\bsw\services\time_service.c</FilePath></File>
             <File><FileName>time_service.h</FileName><FileType>5</FileType><FilePath>..\..\..\bsw\services\time_service.h</FilePath></File>
           
+                      <File><FileName>diag_log.c</FileName><FileType>1</FileType><FilePath>..\..\..\bsw\services\diag_log.c</FilePath></File>
+            <File><FileName>diag_log.h</FileName><FileType>5</FileType><FilePath>..\..\..\bsw\services\diag_log.h</FilePath></File>
           </Files>
         </Group>
         <Group>

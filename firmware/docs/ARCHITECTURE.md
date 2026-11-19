@@ -37,3 +37,9 @@ firmware/
 - **真正 Keil ArmClang Rebuild、下载、按键 IRQ/LED 实测仍需负责人在实板确认**。本提交改变 GPIO ISR 所有权，因此尤其要做 GPIO Target 回归。
 
 无真实制动功率接线；没有新增 PWM、执行使能、制动功率接口。
+
+## 通信缓冲与事件日志（2026-11-19）
+
+- `bsw/drivers/drv_byte_fifo`：纯 C 的固定容量通用字节 FIFO。用于后续 UART 适配中的数据复制，不直接绑定 DMA/ISR；调用方负责并发互斥。
+- `bsw/services/diag_log`：易失有界诊断事件记录，32 条容量，禁止把事件存在视为实际硬件已经发生/验证；ASW 仍是故障状态权威来源。
+- 两者均进入 Host CMake 及 Keil Target 编译文件引用。未改变 `main.c` 当前默认测试项及任何外设硬件配置。

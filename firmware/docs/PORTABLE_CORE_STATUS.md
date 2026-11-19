@@ -26,3 +26,11 @@ ctest --test-dir build/firmware --output-on-failure
 ```
 
 GCC/Clang Host CI 通过仅说明 Host 编译和单测，不是 Keil Target 编译、烧录和板测。
+
+## 2026-11-19 新增离线模块（F02 / F01）
+
+- `bsw/drivers/drv_byte_fifo.[ch]`：静态内存无声截断禁止的字节 FIFO，可为后续 UART RX/TX Core 提供基础复制与缓冲；**没有实现 UART 硬件驱动**，不声称支持 DMA 中断。
+- `bsw/services/diag_log.[ch]`：32 条容量的易失事件 FIFO，数据满时保留旧事件并统计丢弃；它**不代替** ASW 故障锁存/故障恢复策略。
+- 同一提交更新 CMake 和 Keil 项目引用，并新增 Host 正常/溢出/回绕/错误输入测试。
+- 两个模块都只允许单一执行上下文；发生 ISR 与前台并发前必须由适配层落实临界区，**不能直接在中断与主循环中无锁调用**。
+- 当前分支已将先前新增 ASW 和测试模块引用到 Keil；但**真实 ArmClang Rebuild 仍 NOT_RUN**。本节优先作为最新状态描述，前面历史初次提交说明不应理解为当前 Keil 状态。
