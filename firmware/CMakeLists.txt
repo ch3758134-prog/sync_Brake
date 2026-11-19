@@ -99,13 +99,21 @@ if(BUILD_TESTING)
     target_include_directories(test_target_timebase PRIVATE common tests/target)
     add_test(NAME test_target_timebase COMMAND test_target_timebase)
 
-    # Syntax check for the same main.c used by Keil, without linking MCU SDK.
-    add_library(brakesync_main_syntax OBJECT app/main.c)
-    target_include_directories(brakesync_main_syntax PRIVATE
-        common app tests/target bsw/board/ytm32b1le0 bsw/services
-    )
+    # Compile all three main.c branches using identical headers.
+    # OBJECT targets intentionally are not linked into Host test executables.
+    foreach(main_mode RANGE 0 2)
+        add_library(brakesync_main_mode_${main_mode} OBJECT app/main.c)
+        target_compile_definitions(brakesync_main_mode_${main_mode}
+            PRIVATE BS_TARGET_TEST_SELECTED=${main_mode})
+        target_include_directories(brakesync_main_mode_${main_mode} PRIVATE
+            common app tests/target bsw/board/ytm32b1le0 bsw/services)
+        if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+            target_compile_options(brakesync_main_mode_${main_mode}
+                PRIVATE -Wall -Wextra -Wpedantic -Werror)
+        endif()
+    endforeach()
     if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
-        foreach(t test_target_gpio test_target_timebase brakesync_main_syntax)
+        foreach(t test_target_gpio test_target_timebase)
             target_compile_options(${t} PRIVATE -Wall -Wextra -Wpedantic -Werror)
         endforeach()
     endif()

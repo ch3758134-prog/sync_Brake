@@ -61,7 +61,7 @@ if missing_from_keil:
          ", ".join(str(p.relative_to(firmware)) for p in sorted(missing_from_keil)))
 
 unexpected_first_party = [
-    p for p in refs if "tests/host" in p.relative_to(firmware).parts
+    p for p in refs if p.relative_to(firmware).parts[:2] == ("tests", "host")
 ]
 if unexpected_first_party:
     fail("host-only test sources must not enter Keil target")

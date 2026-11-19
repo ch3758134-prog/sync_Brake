@@ -14,7 +14,9 @@
 #define BS_TARGET_TEST_APP       (0)
 #define BS_TARGET_TEST_GPIO      (1)
 #define BS_TARGET_TEST_TIMEBASE  (2)
+#ifndef BS_TARGET_TEST_SELECTED
 #define BS_TARGET_TEST_SELECTED  BS_TARGET_TEST_GPIO
+#endif
 
 /* Keil Watch 可监视该变量；错误时停在 main 的无限循环。 */
 volatile bs_status_t g_target_test_last_status = BS_STATUS_NOT_INITIALIZED;

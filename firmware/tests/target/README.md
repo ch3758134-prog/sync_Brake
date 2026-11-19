@@ -27,3 +27,7 @@ Host Fake 测试只能验证测试逻辑和 API 合同，不能证实电气行�
   `.c/.h/.S` 都已经在 Keil 工程中引用。
 - Driver 中断由 Port 唯一实现，测试函数只能调用公共 Driver。
 - 不接真实制动功率；不在测试代码中加入使能功率的后门。
+
+CI 会用 Host 编译器分别对 main 的 APP/GPIO/TIMEBASE 三个选择进行语法编译，
+但不会执行 Keil ArmClang 或实体 MCU。命令行可用 `-DBS_TARGET_TEST_SELECTED=2`
+覆盖默认值；Keil 现场可以直接改 main 中的默认宏。
