@@ -14,16 +14,14 @@ target_include_directories(brakesync_can_sample PUBLIC
 )
 
 add_library(brakesync_motion STATIC
-    asw/motion_sample.c
+    source/ASW/Motion/motion_sample.c
 )
-target_include_directories(brakesync_motion PUBLIC asw)
+
 
 add_library(brakesync_time_service STATIC
-    bsw/services/time_service.c
+    source/BSW/Services/Time/time_service.c
 )
-target_include_directories(brakesync_time_service PUBLIC
-    bsw/services bsw/mcal/include
-)
+
 
 foreach(target brakesync_can_sample brakesync_motion brakesync_time_service)
     if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
@@ -32,44 +30,74 @@ foreach(target brakesync_can_sample brakesync_motion brakesync_time_service)
 endforeach()
 
 add_library(brakesync_portable_core STATIC
-    asw/brake_intent.c
-    asw/motion_signal.c
-    asw/diagnostics.c
-    app/app_scheduler.c
-    asw/run_qualification.c
-    asw/output_authorization.c
+    source/ASW/BrakeInput/brake_intent.c
+    source/ASW/Motion/motion_signal.c
+    source/ASW/Diagnostics/diagnostics.c
+    source/BSW/Services/Scheduler/app_scheduler.c
+    source/ASW/SystemState/run_qualification.c
+    source/ASW/SystemState/output_authorization.c
 )
-target_include_directories(brakesync_portable_core PUBLIC
-    common asw app
-)
+
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(brakesync_portable_core PRIVATE -Wall -Wextra -Wpedantic -Werror)
 endif()
 
 add_library(brakesync_can_frame STATIC
-    bsw/drivers/drv_can_frame.c
+    source/BSW/MCAL/CAN/drv_can_frame.c
 )
-target_include_directories(brakesync_can_frame PUBLIC
-    common bsw/drivers
-)
+
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(brakesync_can_frame PRIVATE -Wall -Wextra -Wpedantic -Werror)
 endif()
 
 # Hardware-independent Driver buffering and bounded diagnostic event logging.
 add_library(brakesync_bsw_core STATIC
-    bsw/drivers/drv_byte_fifo.c
-    bsw/services/diag_log.c
-    bsw/services/health_service.c
+    source/BSW/Services/Buffer/drv_byte_fifo.c
+    source/BSW/Services/EventLog/diag_log.c
+    source/BSW/Services/Health/health_service.c
 )
-target_include_directories(brakesync_bsw_core PUBLIC
-    common bsw/drivers bsw/services
-)
+
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(brakesync_bsw_core PRIVATE
         -Wall -Wextra -Wpedantic -Werror)
 endif()
 
+set(BS_PUBLIC_HEADERS
+    source
+    tests/target
+    platform/ytm32b1le0/config
+    platform/ytm32b1le0/startup
+    platform/ytm32b1le0/board_port
+    platform/ytm32b1le0/mcal_port
+    source/BSW/Services/Scheduler
+    source/ASW/BrakeInput
+    source/ASW/BrakeControl
+    source/ASW/Diagnostics
+    source/ASW/Motion
+    source/ASW/SystemState
+    source/BSW/EAL/BoardIO
+    source/BSW/EAL/Bluetooth/WLT8016
+    source/BSW/EAL/MotionSensor/BMA510
+    source/BSW/EAL/MotionSensor
+    source/BSW/EAL/MotionSensor/CanImu
+    source/BSW/MCAL/ADC
+    source/BSW/Services/Buffer
+    source/BSW/MCAL/CAN
+    source/BSW/MCAL/System
+    source/BSW/MCAL/I2C
+    source/BSW/MCAL/SPI
+    source/BSW/MCAL/Timer
+    source/BSW/MCAL/Common
+    source/BSW/MCAL/UART
+    source/BSW/Services/EventLog
+    source/BSW/Services/Health
+    source/BSW/Services/Time
+    source/Common
+)
+foreach(t brakesync_can_sample brakesync_motion brakesync_time_service
+          brakesync_portable_core brakesync_can_frame brakesync_bsw_core)
+    target_include_directories(${t} PUBLIC ${BS_PUBLIC_HEADERS})
+endforeach()
 include(CTest)
 if(BUILD_TESTING)
     add_executable(test_can_bus tests/host/test_can_bus.c)
@@ -92,7 +120,7 @@ if(BUILD_TESTING)
     target_link_libraries(test_qualification PRIVATE brakesync_portable_core)
     add_test(NAME test_qualification COMMAND test_qualification)
     add_executable(test_driver_can_frame tests/host/test_driver_can_frame.c)
-    target_include_directories(test_driver_can_frame PRIVATE bsw/cdd)
+    
     target_link_libraries(test_driver_can_frame PRIVATE brakesync_can_frame)
     add_test(NAME test_driver_can_frame COMMAND test_driver_can_frame)
     add_executable(test_target_gpio
@@ -100,27 +128,26 @@ if(BUILD_TESTING)
         tests/target/test_gpio.c
         tests/target/gpio_bringup.c
     )
-    target_include_directories(test_target_gpio PRIVATE
-        common bsw/drivers bsw/board/ytm32b1le0
-        bsw/services tests/target
-    )
+    
+    target_include_directories(test_target_gpio PRIVATE ${BS_PUBLIC_HEADERS})
     add_test(NAME test_target_gpio COMMAND test_target_gpio)
 
     add_executable(test_target_timebase
         tests/host/test_target_timebase.c
         tests/target/test_timebase.c
     )
-    target_include_directories(test_target_timebase PRIVATE common tests/target)
+    
+    target_include_directories(test_target_timebase PRIVATE ${BS_PUBLIC_HEADERS})
     add_test(NAME test_target_timebase COMMAND test_target_timebase)
 
     # Compile all three main.c branches using identical headers.
     # OBJECT targets intentionally are not linked into Host test executables.
     foreach(main_mode RANGE 0 2)
-        add_library(brakesync_main_mode_${main_mode} OBJECT app/main.c)
+        add_library(brakesync_main_mode_${main_mode} OBJECT source/main.c)
+        target_include_directories(brakesync_main_mode_${main_mode} PRIVATE ${BS_PUBLIC_HEADERS})
         target_compile_definitions(brakesync_main_mode_${main_mode}
             PRIVATE BS_TARGET_TEST_SELECTED=${main_mode})
-        target_include_directories(brakesync_main_mode_${main_mode} PRIVATE
-            common app tests/target bsw/board/ytm32b1le0 bsw/services)
+        
         if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
             target_compile_options(brakesync_main_mode_${main_mode}
                 PRIVATE -Wall -Wextra -Wpedantic -Werror)

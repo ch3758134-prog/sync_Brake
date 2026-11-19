@@ -1,5 +1,5 @@
-#ifndef BRAKESYNC_APP_H
-#define BRAKESYNC_APP_H
+#ifndef BRAKESYNC_EVB_APP_H
+#define BRAKESYNC_EVB_APP_H
 
 typedef enum {
     APP_STATUS_OK = 0,
