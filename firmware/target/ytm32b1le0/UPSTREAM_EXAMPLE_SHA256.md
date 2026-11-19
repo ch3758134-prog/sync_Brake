@@ -12,3 +12,14 @@
 ## 当前路径（迁移记录）
 
 正式 APP 位于 `firmware/app/`；YCT BoardCfg 在 `firmware/bsw/board/ytm32b1le0/generated/`；芯片启动及链接脚本位于 `firmware/startup/ytm32b1le0/`；GPIO 无功率自测位于 `firmware/tests/target/`。以上档案历史事实保留，不应视作当前路径说明。
+
+## 2026-11-19 目录迁移后的现行位置
+
+- 固件入口：`firmware/source/main.c`。
+- 官方示例 SDK/CMSIS/OSIF：`firmware/platform/ytm32b1le0/sdk/`。
+- YCT：`firmware/platform/ytm32b1le0/config/`。
+- Startup/Scatter：`firmware/platform/ytm32b1le0/startup/`。
+- 自研 GPIO/Board Port：`firmware/platform/ytm32b1le0/board_port/`。
+- 厂商和生成物完整性指纹：`firmware/platform/ytm32b1le0/ORIGIN_GIT_BLOBS.tsv`，由自动检查核对字节未变。
+
+上述旧路径描述为当时版本的历史事实，不再作为当前源文件路径使用。

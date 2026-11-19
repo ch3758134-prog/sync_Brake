@@ -14,3 +14,5 @@ jobs:
           python-version: '3.12'
       - name: Validate all referenced Keil source paths
         run: python firmware/tools/check_target_project.py
+      - name: Verify original Yuntu SDK, YCT and startup source blobs
+        run: python firmware/tools/check_platform_origin.py

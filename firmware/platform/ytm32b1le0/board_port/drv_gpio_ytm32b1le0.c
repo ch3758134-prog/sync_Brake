@@ -13,9 +13,9 @@ typedef struct {
     drv_gpio_id_t id;
     GPIO_Type *gpio;
     uint32_t pin;
-    bool input;
-    bool output;
-    bool interrupt;
+    bool can_read;       /* 允许读取，不代表引脚电气方向 */
+    bool can_write;      /* 允许写入，方向仍由 YCT 配置 */
+    bool supports_irq;   /* 是否为 BoardCfg 已配置的中断资源 */
 } evb_gpio_binding_t;
 
 static const evb_gpio_binding_t gpio_map[] = {
@@ -52,7 +52,7 @@ bs_status_t drv_gpio_read(drv_gpio_id_t id, bool *level)
     if (binding == NULL) {
         return BS_STATUS_INVALID_ARGUMENT;
     }
-    if (!binding->input) {
+    if (!binding->can_read) {
         return BS_STATUS_NOT_AUTHORIZED;
     }
     *level = (PINS_DRV_ReadPin(binding->gpio, binding->pin) != 0U);
@@ -65,7 +65,7 @@ bs_status_t drv_gpio_write(drv_gpio_id_t id, bool level)
     if (binding == NULL) {
         return BS_STATUS_INVALID_ARGUMENT;
     }
-    if (!binding->output) {
+    if (!binding->can_write) {
         return BS_STATUS_NOT_AUTHORIZED;
     }
     PINS_DRV_WritePin(binding->gpio, binding->pin, level ? 1U : 0U);
@@ -79,7 +79,7 @@ bs_status_t drv_gpio_set_irq_enabled(drv_gpio_id_t id, bool enabled)
     if (binding == NULL) {
         return BS_STATUS_INVALID_ARGUMENT;
     }
-    if (!binding->interrupt) {
+    if (!binding->supports_irq) {
         return BS_STATUS_UNSUPPORTED;
     }
     /* API 只允许在 BoardCfg 初始化后由主循环调用。 */

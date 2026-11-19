@@ -7,11 +7,11 @@
 
 /*
  * EVB_NO_BRAKE_POWER 测试选择：仅修改这一行。
- * 0 = 现有 APP 集成入口（仍非正式制动固件）
+ * 0 = 旧 EVB GPIO 演示（tests/target/evb_app，不是产品 ASW）
  * 1 = GPIO / 按键 IRQ 回归
  * 2 = 软件时间基准观测
  */
-#define BS_TARGET_TEST_APP       (0)
+#define BS_TARGET_TEST_EVB_DEMO       (0)
 #define BS_TARGET_TEST_GPIO      (1)
 #define BS_TARGET_TEST_TIMEBASE  (2)
 #ifndef BS_TARGET_TEST_SELECTED
@@ -30,7 +30,7 @@ int main(void)
         }
     }
 
-#if BS_TARGET_TEST_SELECTED == BS_TARGET_TEST_APP
+#if BS_TARGET_TEST_SELECTED == BS_TARGET_TEST_EVB_DEMO
     if (app_init() != APP_STATUS_OK)
     {
         for (;;)
@@ -56,7 +56,7 @@ int main(void)
 
     for (;;)
     {
-#if BS_TARGET_TEST_SELECTED == BS_TARGET_TEST_APP
+#if BS_TARGET_TEST_SELECTED == BS_TARGET_TEST_EVB_DEMO
         if (app_run_once() != APP_STATUS_OK)
         {
             for (;;)
@@ -68,7 +68,7 @@ int main(void)
 #elif BS_TARGET_TEST_SELECTED == BS_TARGET_TEST_TIMEBASE
         g_target_test_last_status = test_timebase_run_once(time_service_now_ms());
 #endif
-#if BS_TARGET_TEST_SELECTED != BS_TARGET_TEST_APP
+#if BS_TARGET_TEST_SELECTED != BS_TARGET_TEST_EVB_DEMO
         if (g_target_test_last_status != BS_STATUS_OK)
         {
             for (;;)
