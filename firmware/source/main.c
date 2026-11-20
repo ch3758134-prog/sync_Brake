@@ -4,6 +4,7 @@
 #include "time_service.h"
 #include "test_gpio.h"
 #include "test_timebase.h"
+#include "test_uart1.h"
 
 /*
  * EVB_NO_BRAKE_POWER 测试选择：仅修改这一行。
@@ -14,6 +15,7 @@
 #define BS_TARGET_TEST_EVB_DEMO       (0)
 #define BS_TARGET_TEST_GPIO      (1)
 #define BS_TARGET_TEST_TIMEBASE  (2)
+#define BS_TARGET_TEST_UART1     (3)
 #ifndef BS_TARGET_TEST_SELECTED
 #define BS_TARGET_TEST_SELECTED  BS_TARGET_TEST_GPIO
 #endif
@@ -43,6 +45,8 @@ int main(void)
     g_target_test_last_status = test_gpio_init(time_service_now_ms());
 #elif BS_TARGET_TEST_SELECTED == BS_TARGET_TEST_TIMEBASE
     g_target_test_last_status = test_timebase_init(time_service_now_ms());
+#elif BS_TARGET_TEST_SELECTED == BS_TARGET_TEST_UART1
+    g_target_test_last_status = test_uart1_init() ? BS_STATUS_OK : BS_STATUS_IO_ERROR;
 #else
 #error "Unsupported BS_TARGET_TEST_SELECTED"
 #endif
@@ -67,6 +71,9 @@ int main(void)
         g_target_test_last_status = test_gpio_run_once(time_service_now_ms());
 #elif BS_TARGET_TEST_SELECTED == BS_TARGET_TEST_TIMEBASE
         g_target_test_last_status = test_timebase_run_once(time_service_now_ms());
+#elif BS_TARGET_TEST_SELECTED == BS_TARGET_TEST_UART1
+        test_uart1_run_once();
+        g_target_test_last_status = BS_STATUS_OK;
 #endif
 #if BS_TARGET_TEST_SELECTED != BS_TARGET_TEST_EVB_DEMO
         if (g_target_test_last_status != BS_STATUS_OK)

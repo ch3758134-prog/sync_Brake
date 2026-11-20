@@ -88,6 +88,9 @@ set(BS_PUBLIC_HEADERS
     source/BSW/MCAL/Timer
     source/BSW/MCAL/Common
     source/BSW/MCAL/UART
+    source/BSW/MCAL/GPIO
+    source/BSW/MCAL/Clock
+    source/BSW/EAL/GPIO
     source/BSW/Services/EventLog
     source/BSW/Services/Health
     source/BSW/Services/Time
@@ -167,4 +170,16 @@ if(BUILD_TESTING)
         endif()
         add_test(NAME ${test_name} COMMAND ${test_name})
     endforeach()
+endif()
+
+# BMA510 sensor-register driver: hardware-independent host tests.
+add_library(brakesync_bma510 STATIC source/BSW/EAL/MotionSensor/BMA510/bma510_device.c)
+target_include_directories(brakesync_bma510 PUBLIC source/BSW/EAL/MotionSensor/BMA510)
+if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(brakesync_bma510 PRIVATE -Wall -Wextra -Wpedantic -Werror)
+endif()
+if(BUILD_TESTING)
+    add_executable(test_bma510_device tests/host/test_bma510_device.c)
+    target_link_libraries(test_bma510_device PRIVATE brakesync_bma510)
+    add_test(NAME test_bma510_device COMMAND test_bma510_device)
 endif()

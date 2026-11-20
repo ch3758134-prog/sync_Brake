@@ -337,7 +337,7 @@
               <MiscControls />
               <Define>YTM32B1LE0,CPU_YTM32B1LE0,</Define>
               <Undefine />
-              <IncludePath>../../source;../../tests/target;../../platform/ytm32b1le0/config;../../platform/ytm32b1le0/startup;../../platform/ytm32b1le0;../../platform/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../platform/ytm32b1le0/sdk/platform/drivers/src/pins;../../platform/ytm32b1le0/sdk/platform/drivers/src/dma;../../platform/ytm32b1le0/sdk/platform/drivers/src/uart;../../platform/ytm32b1le0/sdk/platform/drivers/inc;../../platform/ytm32b1le0/sdk/platform/devices/common;../../platform/ytm32b1le0/sdk/platform/devices;../../platform/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../platform/ytm32b1le0/sdk/CMSIS/Core/Include;../../platform/ytm32b1le0/sdk/rtos/osif;../../source/BSW/Services/Scheduler;../../source/ASW/BrakeInput;../../source/ASW/BrakeControl;../../source/ASW/Diagnostics;../../source/ASW/Motion;../../source/ASW/SystemState;../../tests/target/legacy;../../source/BSW/EAL/Bluetooth/WLT8016;../../source/BSW/EAL/MotionSensor/BMA510;../../source/BSW/EAL/MotionSensor;../../source/BSW/EAL/MotionSensor/CanImu;../../source/BSW/MCAL/ADC;../../source/BSW/Services/Buffer;../../source/BSW/MCAL/CAN;../../source/BSW/MCAL/System;../../source/BSW/MCAL/I2C;../../source/BSW/MCAL/SPI;../../source/BSW/MCAL/Timer;../../source/BSW/MCAL/Common;../../source/BSW/MCAL/UART;../../platform/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/startup;../../source/BSW/Services/EventLog;../../source/BSW/Services/Health;../../source/BSW/Services/Time;../../source/Common</IncludePath>
+              <IncludePath>../../source;../../tests/target;../../platform/ytm32b1le0/config;../../platform/ytm32b1le0/startup;../../platform/ytm32b1le0;../../platform/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../platform/ytm32b1le0/sdk/platform/drivers/src/pins;../../platform/ytm32b1le0/sdk/platform/drivers/src/dma;../../platform/ytm32b1le0/sdk/platform/drivers/src/uart;../../platform/ytm32b1le0/sdk/platform/drivers/inc;../../platform/ytm32b1le0/sdk/platform/devices/common;../../platform/ytm32b1le0/sdk/platform/devices;../../platform/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../platform/ytm32b1le0/sdk/CMSIS/Core/Include;../../platform/ytm32b1le0/sdk/rtos/osif;../../source/BSW/Services/Scheduler;../../source/ASW/BrakeInput;../../source/ASW/BrakeControl;../../source/ASW/Diagnostics;../../source/ASW/Motion;../../source/ASW/SystemState;../../tests/target/legacy;../../source/BSW/EAL/Bluetooth/WLT8016;../../source/BSW/EAL/MotionSensor/BMA510;../../source/BSW/EAL/MotionSensor;../../source/BSW/EAL/MotionSensor/CanImu;../../source/BSW/MCAL/ADC;../../source/BSW/Services/Buffer;../../source/BSW/MCAL/CAN;../../source/BSW/MCAL/System;../../source/BSW/MCAL/I2C;../../source/BSW/MCAL/SPI;../../source/BSW/MCAL/Timer;../../source/BSW/MCAL/Common;../../source/BSW/MCAL/UART;../../platform/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/startup;../../source/BSW/Services/EventLog;../../source/BSW/Services/Health;../../source/BSW/Services/Time;../../source/Common;../../source/BSW/MCAL/GPIO;../../source/BSW/MCAL/Clock;../../source/BSW/MCAL/UART;../../source/BSW/EAL/GPIO;../../source/BSW/EAL/Bluetooth/WLT8016;../../source/BSW/EAL/MotionSensor/BMA510</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -355,7 +355,7 @@
               <MiscControls />
               <Define />
               <Undefine />
-              <IncludePath>../../source;../../tests/target;../../platform/ytm32b1le0/config;../../platform/ytm32b1le0/startup;../../platform/ytm32b1le0;../../platform/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../platform/ytm32b1le0/sdk/platform/drivers/src/pins;../../platform/ytm32b1le0/sdk/platform/drivers/src/dma;../../platform/ytm32b1le0/sdk/platform/drivers/src/uart;../../platform/ytm32b1le0/sdk/platform/drivers/inc;../../platform/ytm32b1le0/sdk/platform/devices/common;../../platform/ytm32b1le0/sdk/platform/devices;../../platform/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../platform/ytm32b1le0/sdk/CMSIS/Core/Include;../../platform/ytm32b1le0/sdk/rtos/osif;../../source/BSW/Services/Scheduler;../../source/ASW/BrakeInput;../../source/ASW/BrakeControl;../../source/ASW/Diagnostics;../../source/ASW/Motion;../../source/ASW/SystemState;../../tests/target/legacy;../../source/BSW/EAL/Bluetooth/WLT8016;../../source/BSW/EAL/MotionSensor/BMA510;../../source/BSW/EAL/MotionSensor;../../source/BSW/EAL/MotionSensor/CanImu;../../source/BSW/MCAL/ADC;../../source/BSW/Services/Buffer;../../source/BSW/MCAL/CAN;../../source/BSW/MCAL/System;../../source/BSW/MCAL/I2C;../../source/BSW/MCAL/SPI;../../source/BSW/MCAL/Timer;../../source/BSW/MCAL/Common;../../source/BSW/MCAL/UART;../../platform/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/startup;../../source/BSW/Services/EventLog;../../source/BSW/Services/Health;../../source/BSW/Services/Time;../../source/Common</IncludePath>
+              <IncludePath>../../source;../../tests/target;../../platform/ytm32b1le0/config;../../platform/ytm32b1le0/startup;../../platform/ytm32b1le0;../../platform/ytm32b1le0/sdk/platform/drivers/src/clock/YTM32B1Lx;../../platform/ytm32b1le0/sdk/platform/drivers/src/pins;../../platform/ytm32b1le0/sdk/platform/drivers/src/dma;../../platform/ytm32b1le0/sdk/platform/drivers/src/uart;../../platform/ytm32b1le0/sdk/platform/drivers/inc;../../platform/ytm32b1le0/sdk/platform/devices/common;../../platform/ytm32b1le0/sdk/platform/devices;../../platform/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/include;../../platform/ytm32b1le0/sdk/CMSIS/Core/Include;../../platform/ytm32b1le0/sdk/rtos/osif;../../source/BSW/Services/Scheduler;../../source/ASW/BrakeInput;../../source/ASW/BrakeControl;../../source/ASW/Diagnostics;../../source/ASW/Motion;../../source/ASW/SystemState;../../tests/target/legacy;../../source/BSW/EAL/Bluetooth/WLT8016;../../source/BSW/EAL/MotionSensor/BMA510;../../source/BSW/EAL/MotionSensor;../../source/BSW/EAL/MotionSensor/CanImu;../../source/BSW/MCAL/ADC;../../source/BSW/Services/Buffer;../../source/BSW/MCAL/CAN;../../source/BSW/MCAL/System;../../source/BSW/MCAL/I2C;../../source/BSW/MCAL/SPI;../../source/BSW/MCAL/Timer;../../source/BSW/MCAL/Common;../../source/BSW/MCAL/UART;../../platform/ytm32b1le0/sdk/platform/devices/YTM32B1LE0/startup;../../source/BSW/Services/EventLog;../../source/BSW/Services/Health;../../source/BSW/Services/Time;../../source/Common;../../source/BSW/MCAL/GPIO;../../source/BSW/MCAL/Clock;../../source/BSW/MCAL/UART;../../source/BSW/EAL/GPIO;../../source/BSW/EAL/Bluetooth/WLT8016;../../source/BSW/EAL/MotionSensor/BMA510</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -917,7 +917,7 @@
 <Group><GroupName>50 Test / Legacy GPIO</GroupName><Files>
 <File><FileName>drv_gpio.h</FileName><FileType>5</FileType><FilePath>..\..\tests\target\legacy\drv_gpio.h</FilePath></File>
 <File><FileName>board_gpio_ids.h</FileName><FileType>5</FileType><FilePath>..\..\tests\target\legacy\board_gpio_ids.h</FilePath></File>
-<File><FileName>evb_gpio_driver.c</FileName><FileType>1</FileType><FilePath>..\..\tests\target\legacy\evb_gpio_driver.c</FilePath></File>
+
 </Files></Group>
 <Group><GroupName>51 Test / Target</GroupName><Files>
 <File>
@@ -936,6 +936,34 @@
 <File><FileName>test_gpio.h</FileName><FileType>5</FileType><FilePath>..\..\tests\target\test_gpio.h</FilePath></File>
 <File><FileName>test_timebase.c</FileName><FileType>1</FileType><FilePath>..\..\tests\target\test_timebase.c</FilePath></File>
 <File><FileName>test_timebase.h</FileName><FileType>5</FileType><FilePath>..\..\tests\target\test_timebase.h</FilePath></File>
+</Files></Group>
+<Group><GroupName>20 BSW / MCAL / GPIO</GroupName><Files>
+<File><FileName>mcal_gpio.c</FileName><FileType>1</FileType><FilePath>..\..\source\BSW\MCAL\GPIO\mcal_gpio.c</FilePath></File>
+<File><FileName>mcal_gpio.h</FileName><FileType>5</FileType><FilePath>..\..\source\BSW\MCAL\GPIO\mcal_gpio.h</FilePath></File>
+</Files></Group>
+<Group><GroupName>20 BSW / MCAL / Clock</GroupName><Files>
+<File><FileName>mcal_clock.c</FileName><FileType>1</FileType><FilePath>..\..\source\BSW\MCAL\Clock\mcal_clock.c</FilePath></File>
+<File><FileName>mcal_clock.h</FileName><FileType>5</FileType><FilePath>..\..\source\BSW\MCAL\Clock\mcal_clock.h</FilePath></File>
+</Files></Group>
+<Group><GroupName>20 BSW / MCAL / UART Driver</GroupName><Files>
+<File><FileName>mcal_uart.c</FileName><FileType>1</FileType><FilePath>..\..\source\BSW\MCAL\UART\mcal_uart.c</FilePath></File>
+<File><FileName>mcal_uart.h</FileName><FileType>5</FileType><FilePath>..\..\source\BSW\MCAL\UART\mcal_uart.h</FilePath></File>
+</Files></Group>
+<Group><GroupName>21 BSW / EAL / GPIO</GroupName><Files>
+<File><FileName>eal_gpio.c</FileName><FileType>1</FileType><FilePath>..\..\source\BSW\EAL\GPIO\eal_gpio.c</FilePath></File>
+<File><FileName>eal_gpio.h</FileName><FileType>5</FileType><FilePath>..\..\source\BSW\EAL\GPIO\eal_gpio.h</FilePath></File>
+</Files></Group>
+<Group><GroupName>21 BSW / EAL / WLT8016</GroupName><Files>
+<File><FileName>wlt8016_transport.c</FileName><FileType>1</FileType><FilePath>..\..\source\BSW\EAL\Bluetooth\WLT8016\wlt8016_transport.c</FilePath></File>
+<File><FileName>wlt8016_transport.h</FileName><FileType>5</FileType><FilePath>..\..\source\BSW\EAL\Bluetooth\WLT8016\wlt8016_transport.h</FilePath></File>
+</Files></Group>
+<Group><GroupName>21 BSW / EAL / BMA510</GroupName><Files>
+<File><FileName>bma510_device.c</FileName><FileType>1</FileType><FilePath>..\..\source\BSW\EAL\MotionSensor\BMA510\bma510_device.c</FilePath></File>
+<File><FileName>bma510_device.h</FileName><FileType>5</FileType><FilePath>..\..\source\BSW\EAL\MotionSensor\BMA510\bma510_device.h</FilePath></File>
+</Files></Group>
+<Group><GroupName>51 Test / UART1</GroupName><Files>
+<File><FileName>test_uart1.c</FileName><FileType>1</FileType><FilePath>..\..\tests\target\test_uart1.c</FilePath></File>
+<File><FileName>test_uart1.h</FileName><FileType>5</FileType><FilePath>..\..\tests\target\test_uart1.h</FilePath></File>
 </Files></Group>
 </Groups>
     </Target>
